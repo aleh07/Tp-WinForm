@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,20 @@ namespace Gestor_Articulos
 {
     public partial class ListadoProductos : Form
     {
+        private List<Producto> listaProductos;
         public ListadoProductos()
         {
             InitializeComponent();
         }
 
         private void ListadoProductos_Load(object sender, EventArgs e)
+        {
+            //ProductoNegocio negocio = new ProductoNegocio();
+            //listaProductos = negocio.listar();
+            
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
