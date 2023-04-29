@@ -21,5 +21,10 @@ namespace Gestor_Articulos
         {
 
         }
+
+        private void TSSBtnArticulo_ButtonClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

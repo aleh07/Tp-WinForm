@@ -8,10 +8,46 @@ namespace Negocio
 {
     public class AccesoDatos
     {
-       private SqlConnection connection;
+       private SqlConnection conexion;
         private SqlCommand comando;
-        private SqlDataReader Lector;
+        private SqlDataReader lector;
 
-        public AccesoDatos
+        public AccesoDatos()
+        {
+            conexion = new SqlConnection("data source=.\\SQLEXPRESS; initial catalog=NOMBRE DB; integrated security=sspi");
+            comando = new SqlCommand();
+        }
+
+        public void setearConsulta(string consulta)
+        {
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = consulta;
+        }
+
+        public void ejecutarLectura()
+        {
+            comando.Connection = conexion;
+            conexion.Open();
+            lector = comando.ExecuteReader();
+        }
+
+        public void cerrarConexion()
+        {
+            if (lector != null)
+                lector.Close();
+            conexion.Close();
+        }
+
+        public SqlDataReader Lector
+        {
+            get { return lector; }
+        }
+
+        internal void ejectutarAccion()
+        {
+            comando.Connection = conexion;
+            conexion.Open();
+            comando.ExecuteNonQuery();
+        }
     }
 }
