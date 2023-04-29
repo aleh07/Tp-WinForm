@@ -26,5 +26,16 @@ namespace Gestor_Articulos
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ListadoProductos listado = new ListadoProductos();
+            listado.Show();
+        }
+
+        private void BtnArticulos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
