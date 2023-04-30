@@ -19,23 +19,31 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT A.id, Nombre, A.descripcion, M.descripcion as marca, C.descripcion as categoria, I.ImagenUrl from ARTICULOS A, MARCAS M, CATEGORIAS C, IMAGENES I \r\nwhere A.IdMarca = M.Id and C.Id = A.IdCategoria and I.IdArticulo = A.Id");
+                datos.setearConsulta("SELECT A.id,A.codigo, A.Nombre, A.descripcion,M.descripcion as marca , C.descripcion as categoria, I.ImagenUrl, a.precio from ARTICULOS A, MARCAS M, CATEGORIAS C, IMAGENES I where A.IdMarca = M.Id and C.Id = A.IdCategoria and I.IdArticulo = A.Id");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Producto aux = new Producto();
-                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Id = (Int32)datos.Lector["Id"];
+                    aux.CodArtículo = (string)datos.Lector["codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripción = (string)datos.Lector["Descripcion"];
-                    aux.marca = (Marca)datos.Lector["marca"];
-                    aux.categoria = (Categoria)datos.Lector["categoria"];
-                    aux.ImgArt = (ImagenArticulo)datos.Lector["ImagenUrl"];
+                    aux.ImgArt = new ImagenArticulo();
+                    aux.ImgArt.Imagen = (string)datos.Lector["ImagenUrl"];
+                    aux.Precio = (decimal)datos.Lector["precio"];
+                    aux.marca = new Marca();
+                    aux.marca.Nombre = (string)datos.Lector["marca"];
+                    aux.categoria = new Categoria();
+                    aux.categoria.Nombre = (string)datos.lector["categoria"];
+
+
+
                     lista.Add(aux);
                 }
 
                 return lista;
-            }
+            } 
             catch (Exception ex)
             {
                 throw ex;

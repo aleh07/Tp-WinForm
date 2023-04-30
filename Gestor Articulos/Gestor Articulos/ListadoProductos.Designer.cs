@@ -35,9 +35,9 @@
             // dgvProducto
             // 
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducto.Location = new System.Drawing.Point(0, 0);
+            this.dgvProducto.Location = new System.Drawing.Point(87, 124);
             this.dgvProducto.Name = "dgvProducto";
-            this.dgvProducto.Size = new System.Drawing.Size(240, 150);
+            this.dgvProducto.Size = new System.Drawing.Size(573, 150);
             this.dgvProducto.TabIndex = 0;
             this.dgvProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

@@ -27,12 +27,7 @@ namespace Gestor_Articulos
             {
                 listaProductos = negocio.listar();
                 dgvProducto.DataSource = listaProductos;
-                dgvProducto.Columns["id"].Visible= false;
-                dgvProducto.Columns["nombre"].Visible = false;
-                dgvProducto.Columns["descripcion"].Visible = false;
-                dgvProducto.Columns["marca"].Visible = false;
-                dgvProducto.Columns["categoria"].Visible = false;
-                dgvProducto.Columns["ImgArt"].Visible = false;
+               
             }
             catch (Exception ex)
             {
