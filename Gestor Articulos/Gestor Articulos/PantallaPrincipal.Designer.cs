@@ -109,6 +109,29 @@ namespace Gestor_Articulos
             this.BtnArticulos.Tag = "";
             this.BtnArticulos.UseVisualStyleBackColor = true;
             this.BtnArticulos.Click += new System.EventHandler(this.BtnArticulos_Click);
+<<<<<<< HEAD
+=======
+            // 
+            // button2
+            // 
+            this.button2.Image = global::Gestor_Articulos.Properties.Resources._1587795;
+            this.button2.Location = new System.Drawing.Point(332, 162);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(83, 83);
+            this.button2.TabIndex = 4;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Image = global::Gestor_Articulos.Properties.Resources.marca;
+            this.button3.Location = new System.Drawing.Point(503, 162);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(83, 83);
+            this.button3.TabIndex = 5;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+>>>>>>> ff18944925276e0cf72dab6c8324f11259465a08
             // 
             // FrmPrincipal
             // 

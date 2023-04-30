@@ -1,9 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
+=======
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+using Dominio;
+
+
+>>>>>>> ff18944925276e0cf72dab6c8324f11259465a08
 namespace Negocio
 {
     public class ProductoNegocio
@@ -27,6 +38,7 @@ namespace Negocio
                     aux.Descripción = (string)datos.Lector["Descripcion"];
                     aux.ImgArt = new ImagenArticulo();
                     aux.ImgArt.Imagen = (string)datos.Lector["ImagenUrl"];
+<<<<<<< HEAD
                     decimal DosDecimal;
                     DosDecimal= (decimal)datos.Lector["precio"];
                     aux.Precio =Decimal.Parse( DosDecimal.ToString("0.00"));
@@ -34,6 +46,13 @@ namespace Negocio
                     aux.marca.Nombre = (string)datos.Lector["marca"];
                     aux.categoria = new Categoria();
                     aux.categoria.Nombre = (string)datos.Lector["categoria"];
+=======
+                    aux.Precio = (decimal)datos.Lector["precio"];
+                    aux.marca = new Marca();
+                    aux.marca.Nombre = (string)datos.Lector["marca"];
+                    aux.categoria = new Categoria();
+                    aux.categoria.Nombre = (string)datos.lector["categoria"];
+>>>>>>> ff18944925276e0cf72dab6c8324f11259465a08
 
 
 
@@ -41,7 +60,11 @@ namespace Negocio
                 }
 
                 return lista;
+<<<<<<< HEAD
             }
+=======
+            } 
+>>>>>>> ff18944925276e0cf72dab6c8324f11259465a08
             catch (Exception ex)
             {
                 throw ex;
@@ -51,6 +74,7 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+<<<<<<< HEAD
 
        
 
@@ -59,3 +83,9 @@ namespace Negocio
     }
 }
 
+=======
+    }
+}
+
+    
+>>>>>>> ff18944925276e0cf72dab6c8324f11259465a08

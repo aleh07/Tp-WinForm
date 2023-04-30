@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Articulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +76,13 @@
     </Compile>
     <Compile Include="NuevaMarca.Designer.cs">
       <DependentUpon>NuevaMarca.cs</DependentUpon>
+=======
+    <Compile Include="ListadoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoProductos.Designer.cs">
+      <DependentUpon>ListadoProductos.cs</DependentUpon>
+>>>>>>> ff18944925276e0cf72dab6c8324f11259465a08
     </Compile>
     <Compile Include="NuevoArticulo.cs">
       <SubType>Form</SubType>
@@ -90,6 +98,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="Articulos.resx">
       <DependentUpon>Articulos.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,6 +107,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Marcas.resx">
       <DependentUpon>Marcas.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="ListadoProductos.resx">
+      <DependentUpon>ListadoProductos.cs</DependentUpon>
+>>>>>>> ff18944925276e0cf72dab6c8324f11259465a08
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoArticulo.resx">
       <DependentUpon>NuevoArticulo.cs</DependentUpon>
