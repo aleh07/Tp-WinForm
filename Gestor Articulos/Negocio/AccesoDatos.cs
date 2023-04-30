@@ -8,13 +8,14 @@ namespace Negocio
 {
     public class AccesoDatos
     {
-       private SqlConnection conexion;
-        private SqlCommand comando;
-        private SqlDataReader lector;
+       
+       public SqlConnection conexion;
+        public SqlCommand comando;
+        public SqlDataReader lector;
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("data source=.\\SQLEXPRESS; initial catalog=NOMBRE DB; integrated security=sspi");
+            conexion = new SqlConnection("data source=.\\SQLEXPRESS; initial catalog=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
