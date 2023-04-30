@@ -17,14 +17,28 @@ namespace Gestor_Articulos
             InitializeComponent();
         }
 
-        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        
+        private void BtnArticulos_Click(object sender, EventArgs e)
+        {
+            Articulos VentanaArt = new Articulos();
+            VentanaArt.ShowDialog();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void TSSBtnArticulo_ButtonClick(object sender, EventArgs e)
+        private void BtnCategorias_Click(object sender, EventArgs e)
         {
+            Categorias VentanaCat = new Categorias();
+            VentanaCat.ShowDialog();
+        }
 
+        private void BtnMarcas_Click(object sender, EventArgs e)
+        {
+            Marcas VentanaMar = new Marcas();
+            VentanaMar.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
