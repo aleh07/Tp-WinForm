@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace Gestor_Articulos
 {
@@ -45,6 +47,23 @@ namespace Gestor_Articulos
         {
             Nuevo_Articulo VentanaNewArt = new Nuevo_Articulo();
             VentanaNewArt.ShowDialog();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CategoriaNegocio categoria = new CategoriaNegocio();
+            dgvCategoria.DataSource = categoria.listar();
+        }
+
+        private void Categorias_Load(object sender, EventArgs e)
+        {
+            CategoriaNegocio categoria = new CategoriaNegocio();
+            dgvCategoria.DataSource = categoria.listar();
         }
     }
 }
