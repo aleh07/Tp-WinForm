@@ -169,6 +169,7 @@ namespace Gestor_Articulos
             this.dgvProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dgvProducto.Size = new System.Drawing.Size(621, 240);
             this.dgvProducto.TabIndex = 5;
+            this.dgvProducto.SelectionChanged += new System.EventHandler(this.dgvProducto_SelectionChanged);
             // 
             // BtnModificar
             // 
@@ -226,14 +227,14 @@ namespace Gestor_Articulos
             this.DgvImagenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvImagenes.Location = new System.Drawing.Point(23, 339);
             this.DgvImagenes.Name = "DgvImagenes";
-            this.DgvImagenes.Size = new System.Drawing.Size(224, 40);
+            this.DgvImagenes.Size = new System.Drawing.Size(261, 95);
             this.DgvImagenes.TabIndex = 10;
             // 
             // PBoxImgArt
             // 
-            this.PBoxImgArt.Location = new System.Drawing.Point(269, 339);
+            this.PBoxImgArt.Location = new System.Drawing.Point(336, 339);
             this.PBoxImgArt.Name = "PBoxImgArt";
-            this.PBoxImgArt.Size = new System.Drawing.Size(346, 106);
+            this.PBoxImgArt.Size = new System.Drawing.Size(279, 106);
             this.PBoxImgArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBoxImgArt.TabIndex = 11;
             this.PBoxImgArt.TabStop = false;

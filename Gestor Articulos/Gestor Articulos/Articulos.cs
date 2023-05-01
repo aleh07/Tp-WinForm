@@ -15,11 +15,16 @@ namespace Gestor_Articulos
     {
        private List<Producto> listaProductos;
         private List<ImagenArticulo> listaImagenes;
+        private Producto producto;
         public Articulos()
         {
             InitializeComponent();
         }
-       
+        public Articulos(Producto ProdCargado)
+        {
+            InitializeComponent();
+            producto = ProdCargado;
+        }
         private void NuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Nuevo_Articulo VentanaNewArt = new Nuevo_Articulo();
@@ -53,22 +58,26 @@ namespace Gestor_Articulos
         private void Articulos_Load(object sender, EventArgs e)
         {
 
+
             ProductoNegocio negocio = new ProductoNegocio();
             try
             {
-                listaProductos = negocio.listar();
-                dgvProducto.DataSource = listaProductos;
-                dgvProducto.Columns["Id"].Visible = false;
-                dgvProducto.Columns["imgArt"].Visible = false;
-
-                listaImagenes = negocio.listarImgArt();
-                DgvImagenes.DataSource = listaImagenes;
-                DgvImagenes.Columns[0].Visible = false;
-                DgvImagenes.Columns[2].Visible = false;
-                PBoxImgArt.Load(listaImagenes[0].Imagen); 
+                if (producto == null)
+                {
+                    listaProductos = negocio.listar();
+                    dgvProducto.DataSource = listaProductos;
+                    dgvProducto.Columns["Id"].Visible = false;
+                    dgvProducto.Columns["imgArt"].Visible = false;
+                    Int32 IdArt = 1;
+                    listaImagenes = negocio.listarImgArt(IdArt);
+                    DgvImagenes.DataSource = listaImagenes;
+                    DgvImagenes.Columns[0].Visible = false;
+                    DgvImagenes.Columns[2].Visible = false;
+                    PBoxImgArt.Load(listaImagenes[0].Imagen);
+                }
                 
-                    }
-            catch (Exception ex)
+             }
+             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -77,6 +86,11 @@ namespace Gestor_Articulos
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void dgvProducto_SelectionChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

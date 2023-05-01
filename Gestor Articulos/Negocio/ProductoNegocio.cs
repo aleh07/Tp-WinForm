@@ -57,14 +57,14 @@ namespace Negocio
             }
         }
 
-        public List<ImagenArticulo> listarImgArt()
+        public List<ImagenArticulo> listarImgArt(Int32 id)
         {
             List<ImagenArticulo> lista = new List<ImagenArticulo>();
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("select  a.Nombre, i.IdArticulo , i.ImagenUrl from imagenes as i inner join ARTICULOS as a on a.id = i.IdArticulo ");
+                datos.setearConsulta("select  a.Nombre, i.IdArticulo , i.ImagenUrl from imagenes as i inner join ARTICULOS as a on a.id = i.IdArticulo  where a.id=" + id);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
