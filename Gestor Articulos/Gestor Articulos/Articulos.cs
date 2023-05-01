@@ -63,8 +63,6 @@ namespace Gestor_Articulos
 
                 listaImagenes = negocio.listarImgArt();
                 DgvImagenes.DataSource = listaImagenes;
-
-               
                 DgvImagenes.Columns[0].Visible = false;
                 DgvImagenes.Columns[2].Visible = false;
                 PBoxImgArt.Load(listaImagenes[0].Imagen); 
@@ -80,7 +78,5 @@ namespace Gestor_Articulos
         {
 
         }
-
-       
     }
 }

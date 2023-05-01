@@ -226,14 +226,14 @@ namespace Gestor_Articulos
             this.DgvImagenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvImagenes.Location = new System.Drawing.Point(23, 339);
             this.DgvImagenes.Name = "DgvImagenes";
-            this.DgvImagenes.Size = new System.Drawing.Size(224, 122);
+            this.DgvImagenes.Size = new System.Drawing.Size(224, 40);
             this.DgvImagenes.TabIndex = 10;
             // 
             // PBoxImgArt
             // 
-            this.PBoxImgArt.Location = new System.Drawing.Point(398, 339);
+            this.PBoxImgArt.Location = new System.Drawing.Point(269, 339);
             this.PBoxImgArt.Name = "PBoxImgArt";
-            this.PBoxImgArt.Size = new System.Drawing.Size(191, 106);
+            this.PBoxImgArt.Size = new System.Drawing.Size(346, 106);
             this.PBoxImgArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBoxImgArt.TabIndex = 11;
             this.PBoxImgArt.TabStop = false;
