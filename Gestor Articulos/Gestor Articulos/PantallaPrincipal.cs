@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace Gestor_Articulos
 {
@@ -26,7 +29,7 @@ namespace Gestor_Articulos
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void BtnCategorias_Click(object sender, EventArgs e)

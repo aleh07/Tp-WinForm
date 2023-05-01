@@ -88,9 +88,36 @@ namespace Gestor_Articulos
 
         }
 
+<<<<<<< HEAD
         private void dgvProducto_SelectionChanged(object sender, EventArgs e)
         {
             
         }
+=======
+        private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvProducto_SelectionChanged(object sender, EventArgs e)
+        {
+            Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.ImgArt.Imagen);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                PBoxImgArt.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
+
+>>>>>>> e258a4b6ef6a459595954a6a5ab0e281431f07b9
     }
 }
