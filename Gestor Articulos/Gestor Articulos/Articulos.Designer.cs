@@ -169,6 +169,8 @@ namespace Gestor_Articulos
             this.dgvProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dgvProducto.Size = new System.Drawing.Size(621, 240);
             this.dgvProducto.TabIndex = 5;
+            this.dgvProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellContentClick);
+            this.dgvProducto.SelectionChanged += new System.EventHandler(this.dgvProducto_SelectionChanged);
             // 
             // BtnModificar
             // 

@@ -78,5 +78,30 @@ namespace Gestor_Articulos
         {
 
         }
+
+        private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvProducto_SelectionChanged(object sender, EventArgs e)
+        {
+            Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.ImgArt.Imagen);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                PBoxImgArt.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
+
     }
 }
