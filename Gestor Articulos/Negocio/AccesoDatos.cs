@@ -20,6 +20,8 @@ namespace Negocio
             comando = new SqlCommand();
         }
 
+       
+
         public void setearConsulta(string consulta)
         {
             comando.CommandType = System.Data.CommandType.Text;
@@ -31,6 +33,10 @@ namespace Negocio
             comando.Connection = conexion;
             conexion.Open();
             lector = comando.ExecuteReader();
+        }
+        public void setearConsulta(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
         }
 
         public void cerrarConexion()
