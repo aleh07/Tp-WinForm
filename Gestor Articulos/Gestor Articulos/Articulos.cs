@@ -14,6 +14,7 @@ namespace Gestor_Articulos
     public partial class Articulos : Form
     {
        private List<Producto> listaProductos;
+        private List<ImagenArticulo> listaImagenes;
         public Articulos()
         {
             InitializeComponent();
@@ -60,16 +61,26 @@ namespace Gestor_Articulos
                 dgvProducto.Columns["Id"].Visible = false;
                 dgvProducto.Columns["imgArt"].Visible = false;
 
-            }
+                listaImagenes = negocio.listarImgArt();
+                DgvImagenes.DataSource = listaImagenes;
+
+               
+                DgvImagenes.Columns[0].Visible = false;
+                DgvImagenes.Columns[2].Visible = false;
+                PBoxImgArt.Load(listaImagenes[0].Imagen); 
+                
+                    }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
 
-        private void PBxArt_Click(object sender, EventArgs e)
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
+
+       
     }
 }

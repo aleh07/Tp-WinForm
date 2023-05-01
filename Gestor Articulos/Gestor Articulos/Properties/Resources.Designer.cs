@@ -63,29 +63,9 @@ namespace Gestor_Articulos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1280865 {
+        internal static System.Drawing.Bitmap _677299 {
             get {
-                object obj = ResourceManager.GetObject("1280865", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _134345 {
-            get {
-                object obj = ResourceManager.GetObject("134345", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1587795 {
-            get {
-                object obj = ResourceManager.GetObject("1587795", resourceCulture);
+                object obj = ResourceManager.GetObject("677299", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,26 +93,6 @@ namespace Gestor_Articulos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap inicio {
-            get {
-                object obj = ResourceManager.GetObject("inicio", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap lupa {
-            get {
-                object obj = ResourceManager.GetObject("lupa", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap lupa_registro {
             get {
                 object obj = ResourceManager.GetObject("lupa registro", resourceCulture);
@@ -153,29 +113,9 @@ namespace Gestor_Articulos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OIP {
+        internal static System.Drawing.Bitmap registro__eliminado {
             get {
-                object obj = ResourceManager.GetObject("OIP", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OIP__1_ {
-            get {
-                object obj = ResourceManager.GetObject("OIP (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OIP1 {
-            get {
-                object obj = ResourceManager.GetObject("OIP1", resourceCulture);
+                object obj = ResourceManager.GetObject("registro  eliminado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -89,7 +89,7 @@ namespace Gestor_Articulos
             // BtnCategorias
             // 
             this.BtnCategorias.AccessibleDescription = "";
-            this.BtnCategorias.Image = global::Gestor_Articulos.Properties.Resources._1587795;
+            this.BtnCategorias.Image = global::Gestor_Articulos.Properties.Resources._677299;
             this.BtnCategorias.Location = new System.Drawing.Point(332, 162);
             this.BtnCategorias.Name = "BtnCategorias";
             this.BtnCategorias.Size = new System.Drawing.Size(83, 83);
@@ -101,37 +101,14 @@ namespace Gestor_Articulos
             // 
             this.BtnArticulos.AccessibleDescription = "";
             this.BtnArticulos.AutoSize = true;
-            this.BtnArticulos.Image = global::Gestor_Articulos.Properties.Resources.registro_detalle;
+            this.BtnArticulos.Image = global::Gestor_Articulos.Properties.Resources._929250;
             this.BtnArticulos.Location = new System.Drawing.Point(185, 162);
             this.BtnArticulos.Name = "BtnArticulos";
             this.BtnArticulos.Size = new System.Drawing.Size(83, 83);
             this.BtnArticulos.TabIndex = 3;
             this.BtnArticulos.Tag = "";
             this.BtnArticulos.UseVisualStyleBackColor = true;
-            this.BtnArticulos.Click += new System.EventHandler(this.BtnArticulos_Click);
-<<<<<<< HEAD
-=======
-            // 
-            // button2
-            // 
-            this.button2.Image = global::Gestor_Articulos.Properties.Resources._1587795;
-            this.button2.Location = new System.Drawing.Point(332, 162);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 83);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Image = global::Gestor_Articulos.Properties.Resources.marca;
-            this.button3.Location = new System.Drawing.Point(503, 162);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(83, 83);
-            this.button3.TabIndex = 5;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
->>>>>>> ff18944925276e0cf72dab6c8324f11259465a08
+            this.BtnArticulos.Click += new System.EventHandler(this.BtnArticulos_Click_1);
             // 
             // FrmPrincipal
             // 

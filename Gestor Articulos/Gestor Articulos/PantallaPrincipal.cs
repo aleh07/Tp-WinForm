@@ -41,21 +41,13 @@ namespace Gestor_Articulos
             VentanaMar.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ListadoProductos listado = new ListadoProductos();
-            listado.Show();
-        }
+        
+        
 
-        private void BtnArticulos_Click(object sender, EventArgs e)
+        private void BtnArticulos_Click_1(object sender, EventArgs e)
         {
-            ListadoProductos listado = new ListadoProductos();
-            listado.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
+            Articulos VentanaArt = new Articulos();
+            VentanaArt.ShowDialog();
         }
     }
 }

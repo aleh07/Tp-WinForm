@@ -10,7 +10,7 @@ namespace Dominio
     {
         public Int32 Id { get; set; }
          
-        public Int32 IdArticulo { get; set; }
+       public Producto producto { get; set; }
         public string Imagen { get; set; }
     }
 }

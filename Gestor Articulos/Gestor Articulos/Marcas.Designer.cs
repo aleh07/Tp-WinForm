@@ -67,7 +67,7 @@ namespace Gestor_Articulos
             // 
             // nuevoToolStripMenuItem
             // 
-            this.nuevoToolStripMenuItem.Image = global::Gestor_Articulos.Properties.Resources.agregar_registro;
+           
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
@@ -84,7 +84,7 @@ namespace Gestor_Articulos
             // 
             // verTodasToolStripMenuItem
             // 
-            this.verTodasToolStripMenuItem.Image = global::Gestor_Articulos.Properties.Resources.lupa_registro;
+            
             this.verTodasToolStripMenuItem.Name = "verTodasToolStripMenuItem";
             this.verTodasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verTodasToolStripMenuItem.Text = "Ver Todas";
@@ -92,7 +92,7 @@ namespace Gestor_Articulos
             // 
             // nuevoToolStripMenuItem1
             // 
-            this.nuevoToolStripMenuItem1.Image = global::Gestor_Articulos.Properties.Resources.agregar_registro;
+          
             this.nuevoToolStripMenuItem1.Name = "nuevoToolStripMenuItem1";
             this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.nuevoToolStripMenuItem1.Text = "Nuevo";
@@ -109,7 +109,6 @@ namespace Gestor_Articulos
             // 
             // verTodosToolStripMenuItem
             // 
-            this.verTodosToolStripMenuItem.Image = global::Gestor_Articulos.Properties.Resources.lupa_registro;
             this.verTodosToolStripMenuItem.Name = "verTodosToolStripMenuItem";
             this.verTodosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verTodosToolStripMenuItem.Text = "Ver todos";
@@ -117,7 +116,6 @@ namespace Gestor_Articulos
             // 
             // nuevoToolStripMenuItem2
             // 
-            this.nuevoToolStripMenuItem2.Image = global::Gestor_Articulos.Properties.Resources.agregar_registro;
             this.nuevoToolStripMenuItem2.Name = "nuevoToolStripMenuItem2";
             this.nuevoToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.nuevoToolStripMenuItem2.Text = "Nuevo";

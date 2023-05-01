@@ -20,6 +20,10 @@ namespace Dominio
 
         public Decimal Precio { get; set; }
 
+        public override string ToString()
+        {
+            return Nombre;
+        }
 
     }
 }

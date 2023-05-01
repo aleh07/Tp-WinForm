@@ -8,16 +8,11 @@ namespace Negocio
 {
     public class AccesoDatos
     {
-<<<<<<< HEAD
-       
-       public SqlConnection conexion;
-        public SqlCommand comando;
-        public SqlDataReader lector;
-=======
+
        public SqlConnection conexion;
        public SqlCommand comando;
-   public SqlDataReader lector;
->>>>>>> ff18944925276e0cf72dab6c8324f11259465a08
+       public SqlDataReader lector;
+
 
         public AccesoDatos()
         {

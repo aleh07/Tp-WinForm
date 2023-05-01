@@ -45,13 +45,16 @@ namespace Gestor_Articulos
             this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnImgArt = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.PBxArt = new System.Windows.Forms.PictureBox();
+            this.LblEliminar = new System.Windows.Forms.Label();
+            this.LblModificar = new System.Windows.Forms.Label();
+            this.DgvImagenes = new System.Windows.Forms.DataGridView();
+            this.PBoxImgArt = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxArt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvImagenes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -66,6 +69,7 @@ namespace Gestor_Articulos
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // menuStrip1
             // 
@@ -149,7 +153,7 @@ namespace Gestor_Articulos
             // 
             this.LblTitulo.AutoSize = true;
             this.LblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitulo.Location = new System.Drawing.Point(284, 49);
+            this.LblTitulo.Location = new System.Drawing.Point(264, 38);
             this.LblTitulo.Name = "LblTitulo";
             this.LblTitulo.Size = new System.Drawing.Size(105, 29);
             this.LblTitulo.TabIndex = 4;
@@ -158,7 +162,7 @@ namespace Gestor_Articulos
             // dgvProducto
             // 
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducto.Location = new System.Drawing.Point(12, 102);
+            this.dgvProducto.Location = new System.Drawing.Point(12, 70);
             this.dgvProducto.MultiSelect = false;
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
@@ -168,34 +172,28 @@ namespace Gestor_Articulos
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(31, 122);
+            this.BtnModificar.AutoSize = true;
+            this.BtnModificar.Image = global::Gestor_Articulos.Properties.Resources.registro_detalle;
+            this.BtnModificar.Location = new System.Drawing.Point(26, 23);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(75, 23);
+            this.BtnModificar.Size = new System.Drawing.Size(86, 83);
             this.BtnModificar.TabIndex = 6;
-            this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = true;
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(31, 217);
+            this.BtnEliminar.AutoSize = true;
+            this.BtnEliminar.Image = global::Gestor_Articulos.Properties.Resources.registro__eliminado;
+            this.BtnEliminar.Location = new System.Drawing.Point(26, 142);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.BtnEliminar.Size = new System.Drawing.Size(86, 83);
             this.BtnEliminar.TabIndex = 7;
-            this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // BtnImgArt
-            // 
-            this.BtnImgArt.Location = new System.Drawing.Point(31, 21);
-            this.BtnImgArt.Name = "BtnImgArt";
-            this.BtnImgArt.Size = new System.Drawing.Size(75, 49);
-            this.BtnImgArt.TabIndex = 8;
-            this.BtnImgArt.Text = "Imagenes\r\n por Articulo\r\n";
-            this.BtnImgArt.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.BtnImgArt);
+            this.groupBox1.Controls.Add(this.LblEliminar);
+            this.groupBox1.Controls.Add(this.LblModificar);
             this.groupBox1.Controls.Add(this.BtnEliminar);
             this.groupBox1.Controls.Add(this.BtnModificar);
             this.groupBox1.Location = new System.Drawing.Point(639, 95);
@@ -204,21 +202,49 @@ namespace Gestor_Articulos
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
-            // PBxArt
+            // LblEliminar
             // 
-            this.PBxArt.Location = new System.Drawing.Point(264, 366);
-            this.PBxArt.Name = "PBxArt";
-            this.PBxArt.Size = new System.Drawing.Size(100, 50);
-            this.PBxArt.TabIndex = 10;
-            this.PBxArt.TabStop = false;
-            this.PBxArt.Click += new System.EventHandler(this.PBxArt_Click);
+            this.LblEliminar.AutoSize = true;
+            this.LblEliminar.Location = new System.Drawing.Point(46, 228);
+            this.LblEliminar.Name = "LblEliminar";
+            this.LblEliminar.Size = new System.Drawing.Size(43, 13);
+            this.LblEliminar.TabIndex = 9;
+            this.LblEliminar.Text = "Eliminar";
+            // 
+            // LblModificar
+            // 
+            this.LblModificar.AutoSize = true;
+            this.LblModificar.Location = new System.Drawing.Point(46, 7);
+            this.LblModificar.Name = "LblModificar";
+            this.LblModificar.Size = new System.Drawing.Size(50, 13);
+            this.LblModificar.TabIndex = 8;
+            this.LblModificar.Text = "Modificar";
+            // 
+            // DgvImagenes
+            // 
+            this.DgvImagenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvImagenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvImagenes.Location = new System.Drawing.Point(23, 339);
+            this.DgvImagenes.Name = "DgvImagenes";
+            this.DgvImagenes.Size = new System.Drawing.Size(224, 122);
+            this.DgvImagenes.TabIndex = 10;
+            // 
+            // PBoxImgArt
+            // 
+            this.PBoxImgArt.Location = new System.Drawing.Point(398, 339);
+            this.PBoxImgArt.Name = "PBoxImgArt";
+            this.PBoxImgArt.Size = new System.Drawing.Size(191, 106);
+            this.PBoxImgArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBoxImgArt.TabIndex = 11;
+            this.PBoxImgArt.TabStop = false;
             // 
             // Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.PBxArt);
+            this.ClientSize = new System.Drawing.Size(800, 473);
+            this.Controls.Add(this.PBoxImgArt);
+            this.Controls.Add(this.DgvImagenes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvProducto);
             this.Controls.Add(this.LblTitulo);
@@ -233,7 +259,9 @@ namespace Gestor_Articulos
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PBxArt)).EndInit();
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvImagenes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,10 +282,12 @@ namespace Gestor_Articulos
         private System.Windows.Forms.ToolStripMenuItem verTodasToolStripMenuItem1;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnEliminar;
-        private System.Windows.Forms.Button BtnImgArt;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem2;
-        private System.Windows.Forms.PictureBox PBxArt;
+        private System.Windows.Forms.Label LblEliminar;
+        private System.Windows.Forms.Label LblModificar;
+        private System.Windows.Forms.DataGridView DgvImagenes;
+        private System.Windows.Forms.PictureBox PBoxImgArt;
     }
 }
