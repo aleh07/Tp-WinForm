@@ -29,6 +29,7 @@ namespace Gestor_Articulos
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +55,7 @@ namespace Gestor_Articulos
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // gestionarToolStripMenuItem
@@ -63,7 +64,7 @@ namespace Gestor_Articulos
             this.nuevoToolStripMenuItem});
             this.gestionarToolStripMenuItem.Name = "gestionarToolStripMenuItem";
             this.gestionarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.gestionarToolStripMenuItem.Text = "Gestionar";
+            this.gestionarToolStripMenuItem.Text = "Ges&tionar";
             // 
             // nuevoToolStripMenuItem
             // 
@@ -79,7 +80,7 @@ namespace Gestor_Articulos
             this.nuevoToolStripMenuItem1});
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
             this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.categoriasToolStripMenuItem.Text = "Categorias";
+            this.categoriasToolStripMenuItem.Text = "Cat&egorias";
             // 
             // verTodasToolStripMenuItem
             // 
@@ -102,7 +103,7 @@ namespace Gestor_Articulos
             this.nuevoToolStripMenuItem2});
             this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
             this.articulosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.articulosToolStripMenuItem.Text = "Articulos";
+            this.articulosToolStripMenuItem.Text = "&Articulos";
             // 
             // verTodosToolStripMenuItem
             // 
@@ -120,15 +121,20 @@ namespace Gestor_Articulos
             // 
             // DgvMarcas
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
+            this.DgvMarcas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvMarcas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DgvMarcas.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.DgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvMarcas.Location = new System.Drawing.Point(12, 104);
             this.DgvMarcas.Name = "DgvMarcas";
-            this.DgvMarcas.Size = new System.Drawing.Size(621, 240);
-            this.DgvMarcas.TabIndex = 7;
+            this.DgvMarcas.Size = new System.Drawing.Size(292, 263);
+            this.DgvMarcas.TabIndex = 1;
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(699, 161);
+            this.BtnModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnModificar.Location = new System.Drawing.Point(351, 144);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(75, 23);
             this.BtnModificar.TabIndex = 8;
@@ -137,7 +143,8 @@ namespace Gestor_Articulos
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(689, 252);
+            this.BtnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnEliminar.Location = new System.Drawing.Point(351, 222);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
             this.BtnEliminar.TabIndex = 9;
@@ -148,6 +155,7 @@ namespace Gestor_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnModificar);
