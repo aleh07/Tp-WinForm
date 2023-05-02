@@ -1,5 +1,4 @@
-﻿using Negocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,10 +26,6 @@ namespace Gestor_Articulos
             VentanaArt.ShowDialog();
         }
 
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-           
-        }
 
         private void BtnCategorias_Click(object sender, EventArgs e)
         {
