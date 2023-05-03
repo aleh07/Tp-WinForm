@@ -95,7 +95,7 @@ namespace Gestor_Articulos
             // 
             this.eliminarToolStripMenuItem.Image = global::Gestor_Articulos.Properties.Resources.agregar_registro;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.eliminarToolStripMenuItem.Text = "Nuevo";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.NuevoToolStripMenuItem_Click);
             // 
@@ -137,7 +137,7 @@ namespace Gestor_Articulos
             // 
             this.verTodasToolStripMenuItem1.Image = global::Gestor_Articulos.Properties.Resources.lupa_registro;
             this.verTodasToolStripMenuItem1.Name = "verTodasToolStripMenuItem1";
-            this.verTodasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.verTodasToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
             this.verTodasToolStripMenuItem1.Text = "Ver Todas";
             this.verTodasToolStripMenuItem1.Click += new System.EventHandler(this.verTodasToolStripMenuItem1_Click);
             // 
@@ -145,7 +145,7 @@ namespace Gestor_Articulos
             // 
             this.nuevoToolStripMenuItem2.Image = global::Gestor_Articulos.Properties.Resources.agregar_registro;
             this.nuevoToolStripMenuItem2.Name = "nuevoToolStripMenuItem2";
-            this.nuevoToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem2.Size = new System.Drawing.Size(123, 22);
             this.nuevoToolStripMenuItem2.Text = "Nuevo";
             this.nuevoToolStripMenuItem2.Click += new System.EventHandler(this.nuevoToolStripMenuItem2_Click);
             // 
@@ -167,12 +167,10 @@ namespace Gestor_Articulos
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
             this.dgvProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            this.dgvProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducto.Size = new System.Drawing.Size(621, 240);
             this.dgvProducto.TabIndex = 5;
-
             this.dgvProducto.SelectionChanged += new System.EventHandler(this.dgvProducto_SelectionChanged);
-
-
             // 
             // BtnModificar
             // 
@@ -229,7 +227,10 @@ namespace Gestor_Articulos
             this.DgvImagenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvImagenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvImagenes.Location = new System.Drawing.Point(23, 339);
+            this.DgvImagenes.MultiSelect = false;
             this.DgvImagenes.Name = "DgvImagenes";
+            this.DgvImagenes.ReadOnly = true;
+            this.DgvImagenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvImagenes.Size = new System.Drawing.Size(261, 95);
             this.DgvImagenes.TabIndex = 10;
             this.DgvImagenes.SelectionChanged += new System.EventHandler(this.DgvImagenes_SelectionChanged);

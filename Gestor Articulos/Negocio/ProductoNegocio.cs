@@ -62,7 +62,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("select  a.Nombre, i.IdArticulo , i.ImagenUrl from imagenes as i inner join ARTICULOS as a on a.id = i.IdArticulo  where a.id=" + id);
+                datos.setearConsulta("select  a.Codigo, i.IdArticulo , i.ImagenUrl from imagenes as i inner join ARTICULOS as a on a.id = i.IdArticulo  where a.id=" + id);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -70,7 +70,7 @@ namespace Negocio
                     ImagenArticulo aux = new ImagenArticulo();
                     aux.producto = new Producto();
                     aux.producto.Id = (Int32)datos.Lector["IdArticulo"];
-                    aux.producto.Nombre= (string)datos.Lector["Nombre"];
+                    aux.producto.Nombre= (string)datos.Lector["Codigo"];
                     aux.Imagen = (string)datos.Lector["ImagenUrl"];
 
 

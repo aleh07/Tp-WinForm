@@ -16,7 +16,7 @@ namespace Gestor_Articulos
         private List<Producto> listaProductos;
         private List<ImagenArticulo> listaImagenes;
         private Producto producto;
-        private int ImgProducto = 0;
+        private int ImgProducto = 1;
         public Articulos()
         {
             InitializeComponent();
@@ -96,6 +96,7 @@ namespace Gestor_Articulos
                 DgvImagenes.DataSource = listaImagenes;
                 DgvImagenes.Columns[0].Visible = false;
                 DgvImagenes.Columns[2].Visible = false;
+               
             }
   
             catch (Exception ex)
@@ -110,7 +111,9 @@ namespace Gestor_Articulos
             {
                 try
                 {
+                
                     PBoxImgArt.Load(imagen);
+                    
                 }
                 catch (Exception ex)
                 {
@@ -120,18 +123,25 @@ namespace Gestor_Articulos
 
             private void DgvImagenes_SelectionChanged(object sender, EventArgs e)
             {
-
-                if (producto == null)
-                {
-                    PBoxImgArt.Load(listaImagenes[0].Imagen);
-
-                    ImgProducto = 1;
-                }
-                else
-                {
-                    
-                }
+            ImagenArticulo seleccionado = listaImagenes[0];
+            if (ImgProducto == 1)
+            {
+                seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
+                PBoxImgArt.Load(listaImagenes[0].Imagen);
+                ImgProducto = 2;
             }
+
+            else 
+            { 
+            cargarImagen(seleccionado.Imagen);
+                MessageBox.Show(seleccionado.Imagen);
+            }
+            
+
+
+
+        }
+            
 
             private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
             {
