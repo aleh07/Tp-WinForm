@@ -54,8 +54,23 @@ namespace Negocio
         internal void ejectutarAccion()
         {
             comando.Connection = conexion;
-            conexion.Open();
-            comando.ExecuteNonQuery();
+            try
+            {
+               
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
+
+        public void setearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
+
+
     }
 }

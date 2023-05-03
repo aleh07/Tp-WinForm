@@ -74,9 +74,18 @@ namespace Gestor_Articulos
             }
         }
 
+        private void bntAgregar_Click(object sender, EventArgs e)
+        {
+            NuevaMarca VentanaNewMar = new NuevaMarca();
+            VentanaNewMar.ShowDialog();
 
+        }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
 
-
+            NuevaMarca VentanaNewMar = new NuevaMarca();
+            VentanaNewMar.ShowDialog();
+        }
     }
 }
