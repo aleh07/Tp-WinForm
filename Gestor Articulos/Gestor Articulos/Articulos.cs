@@ -74,7 +74,7 @@ namespace Gestor_Articulos
                     dgvProducto.DataSource = listaProductos;
                     dgvProducto.Columns["Id"].Visible = false;
 
-                    Int32 IdArt = listaProductos[0].Id; ;
+                     Int32 IdArt = listaProductos[0].Id; ;
                     listaImagenes = negocio.listarImgArt(IdArt);
                     DgvImagenes.DataSource = listaImagenes;
                     DgvImagenes.Columns[0].Visible = false;
@@ -127,25 +127,11 @@ namespace Gestor_Articulos
 
             private void DgvImagenes_SelectionChanged(object sender, EventArgs e)
             {
-            ImagenArticulo seleccionado = listaImagenes[0];
-            if (ImgProducto == 1)
-            {
-                seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
+            
+            
                 PBoxImgArt.Load(listaImagenes[0].Imagen);
-                ImgProducto = 2;
-            }
-
-            else 
-            { 
-            cargarImagen(seleccionado.Imagen);
              
             }
-            
-
-
-
-        }
-            
 
             private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
             {
@@ -159,6 +145,12 @@ namespace Gestor_Articulos
             VentanaNewArt.ShowDialog();
             CargarPaginaIncial();
 
+        }
+
+        private void DgvImagenes_Click(object sender, EventArgs e)
+        {
+            ImagenArticulo seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.Imagen);
         }
     }
     }
