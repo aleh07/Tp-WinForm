@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Negocio;
+using Dominio;
 namespace Gestor_Articulos
 {
     public partial class Marcas : Form
     {
+        private List<Marca> listaMarca;
         public Marcas()
         {
             InitializeComponent();
@@ -46,5 +48,21 @@ namespace Gestor_Articulos
             Nuevo_Articulo VentanaNewArt = new Nuevo_Articulo();
             VentanaNewArt.ShowDialog();
         }
+
+        private void Marcas_Load(object sender, EventArgs e)
+        {
+             MarcaNegocio negocio = new MarcaNegocio();
+            try
+            {
+                       listaMarca = negocio.listar();
+                        DgvMarcas.DataSource = listaMarca;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }   
     }
 }

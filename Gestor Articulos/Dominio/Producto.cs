@@ -15,9 +15,6 @@ namespace Dominio
         public Marca marca { get; set; }
         public Categoria categoria { get; set; }
 
-        //la idea es que tenga una lista de imagenes  
-        public ImagenArticulo ImgArt { get; set; }
-
         public Decimal Precio { get; set; }
 
         public override string ToString()

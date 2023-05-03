@@ -16,6 +16,7 @@ namespace Gestor_Articulos
        private List<Producto> listaProductos;
         private List<ImagenArticulo> listaImagenes;
         private Producto producto;
+        private int ImgProducto= 0;
         public Articulos()
         {
             InitializeComponent();
@@ -67,7 +68,7 @@ namespace Gestor_Articulos
                     listaProductos = negocio.listar();
                     dgvProducto.DataSource = listaProductos;
                     dgvProducto.Columns["Id"].Visible = false;
-                    dgvProducto.Columns["imgArt"].Visible = false;
+                   
                     Int32 IdArt = 1;
                     listaImagenes = negocio.listarImgArt(IdArt);
                     DgvImagenes.DataSource = listaImagenes;
@@ -76,6 +77,7 @@ namespace Gestor_Articulos
                     PBoxImgArt.Load(listaImagenes[0].Imagen);
                 }
                 
+                
              }
              catch (Exception ex)
             {
@@ -83,26 +85,30 @@ namespace Gestor_Articulos
             }
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
+       
 
-        }
 
-<<<<<<< HEAD
+      
+
+       
         private void dgvProducto_SelectionChanged(object sender, EventArgs e)
         {
-            
-        }
-=======
-        private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            try
+            {
+                ProductoNegocio negocio = new ProductoNegocio();
+                Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+                listaImagenes = negocio.listarImgArt(seleccionado.Id);
+                DgvImagenes.DataSource = listaImagenes;
+                DgvImagenes.Columns[0].Visible = false;
+                DgvImagenes.Columns[2].Visible = false;
+            }
 
-        }
+            catch (Exception ex)
+            {
 
-        private void dgvProducto_SelectionChanged(object sender, EventArgs e)
-        {
-            Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.ImgArt.Imagen);
+                PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+           ;
         }
 
         private void cargarImagen(string imagen)
@@ -117,7 +123,26 @@ namespace Gestor_Articulos
             }
         }
 
+        private void DgvImagenes_SelectionChanged(object sender, EventArgs e)
+        {
+            
+            if (ImgProducto == 0)
+            {
+                PBoxImgArt.Load(listaImagenes[0].Imagen);
+                
+               ImgProducto = 1;
+            }
+            else
+            { 
+            ImagenArticulo seleccionado =(ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.Imagen);
+                this.Refresh();
+            }
+        }
 
->>>>>>> e258a4b6ef6a459595954a6a5ab0e281431f07b9
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

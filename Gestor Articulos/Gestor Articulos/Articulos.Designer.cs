@@ -169,10 +169,6 @@ namespace Gestor_Articulos
             this.dgvProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dgvProducto.Size = new System.Drawing.Size(621, 240);
             this.dgvProducto.TabIndex = 5;
-<<<<<<< HEAD
-=======
-            this.dgvProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellContentClick);
->>>>>>> e258a4b6ef6a459595954a6a5ab0e281431f07b9
             this.dgvProducto.SelectionChanged += new System.EventHandler(this.dgvProducto_SelectionChanged);
             // 
             // BtnModificar
@@ -233,6 +229,7 @@ namespace Gestor_Articulos
             this.DgvImagenes.Name = "DgvImagenes";
             this.DgvImagenes.Size = new System.Drawing.Size(261, 95);
             this.DgvImagenes.TabIndex = 10;
+            this.DgvImagenes.SelectionChanged += new System.EventHandler(this.DgvImagenes_SelectionChanged);
             // 
             // PBoxImgArt
             // 

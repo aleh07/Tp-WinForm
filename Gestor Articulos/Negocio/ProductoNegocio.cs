@@ -17,7 +17,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT A.id,A.codigo, A.Nombre, A.descripcion,M.descripcion as marca , C.descripcion as categoria, I.ImagenUrl, a.precio from ARTICULOS A, MARCAS M, CATEGORIAS C, IMAGENES I where A.IdMarca = M.Id and C.Id = A.IdCategoria and I.IdArticulo = A.Id");
+                datos.setearConsulta("SELECT A.id,A.codigo, A.Nombre, A.descripcion,M.descripcion as marca , C.descripcion as categoria, a.precio from ARTICULOS A, MARCAS M, CATEGORIAS C  where A.IdMarca = M.Id and C.Id = A.IdCategoria ");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -26,9 +26,7 @@ namespace Negocio
                     aux.Id = (Int32)datos.Lector["Id"];
                     aux.CodArtículo = (string)datos.Lector["codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.Descripción = (string)datos.Lector["Descripcion"];
-                    aux.ImgArt = new ImagenArticulo();
-                    aux.ImgArt.Imagen = (string)datos.Lector["ImagenUrl"];
+                    aux.Descripción = (string)datos.Lector["Descripcion"];                  
                     decimal DosDecimal;
                     DosDecimal= (decimal)datos.Lector["precio"];
                     aux.Precio =Decimal.Parse( DosDecimal.ToString("0.00"));
