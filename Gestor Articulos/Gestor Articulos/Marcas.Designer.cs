@@ -121,13 +121,13 @@ namespace Gestor_Articulos
             // 
             // DgvMarcas
             // 
-<<<<<<< HEAD
+
             this.DgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvMarcas.Location = new System.Drawing.Point(12, 104);
             this.DgvMarcas.Name = "DgvMarcas";
             this.DgvMarcas.Size = new System.Drawing.Size(621, 240);
             this.DgvMarcas.TabIndex = 7;
-=======
+
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
             this.DgvMarcas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvMarcas.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -137,7 +137,7 @@ namespace Gestor_Articulos
             this.DgvMarcas.Name = "DgvMarcas";
             this.DgvMarcas.Size = new System.Drawing.Size(292, 263);
             this.DgvMarcas.TabIndex = 1;
->>>>>>> ec1af2688d30ddf87c86577a321ac1e24d9d2798
+
             // 
             // BtnModificar
             // 
@@ -172,11 +172,11 @@ namespace Gestor_Articulos
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Marcas";
             this.Text = "Marcas";
-<<<<<<< HEAD
+
             this.Load += new System.EventHandler(this.Marcas_Load);
-=======
-            this.Load += new System.EventHandler(this.Marcas_Load_1);
->>>>>>> ec1af2688d30ddf87c86577a321ac1e24d9d2798
+
+         
+
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMarcas)).EndInit();

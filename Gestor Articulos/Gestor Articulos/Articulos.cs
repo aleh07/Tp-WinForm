@@ -13,10 +13,10 @@ namespace Gestor_Articulos
 {
     public partial class Articulos : Form
     {
-       private List<Producto> listaProductos;
+        private List<Producto> listaProductos;
         private List<ImagenArticulo> listaImagenes;
         private Producto producto;
-        private int ImgProducto= 0;
+        private int ImgProducto = 0;
         public Articulos()
         {
             InitializeComponent();
@@ -68,7 +68,7 @@ namespace Gestor_Articulos
                     listaProductos = negocio.listar();
                     dgvProducto.DataSource = listaProductos;
                     dgvProducto.Columns["Id"].Visible = false;
-                   
+
                     Int32 IdArt = 1;
                     listaImagenes = negocio.listarImgArt(IdArt);
                     DgvImagenes.DataSource = listaImagenes;
@@ -76,22 +76,16 @@ namespace Gestor_Articulos
                     DgvImagenes.Columns[2].Visible = false;
                     PBoxImgArt.Load(listaImagenes[0].Imagen);
                 }
-                
-                
-             }
-             catch (Exception ex)
+
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
 
-       
 
-
-<<<<<<< HEAD
-      
-
-       
         private void dgvProducto_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -103,62 +97,48 @@ namespace Gestor_Articulos
                 DgvImagenes.Columns[0].Visible = false;
                 DgvImagenes.Columns[2].Visible = false;
             }
-=======
-        private void dgvProducto_SelectionChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
->>>>>>> ec1af2688d30ddf87c86577a321ac1e24d9d2798
-
+  
             catch (Exception ex)
+                {
+
+                    PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+                }
+               
+            }
+
+            private void cargarImagen(string imagen)
+            {
+                try
+                {
+                    PBoxImgArt.Load(imagen);
+                }
+                catch (Exception ex)
+                {
+                    PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+                }
+            }
+
+            private void DgvImagenes_SelectionChanged(object sender, EventArgs e)
             {
 
-<<<<<<< HEAD
-                PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
-            }
-           ;
-        }
+                if (producto == null)
+                {
+                    PBoxImgArt.Load(listaImagenes[0].Imagen);
 
-=======
->>>>>>> ec1af2688d30ddf87c86577a321ac1e24d9d2798
-        private void cargarImagen(string imagen)
-        {
-            try
+                    ImgProducto = 1;
+                }
+                else
+                {
+                    
+                }
+            }
+
+            private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
             {
-                PBoxImgArt.Load(imagen);
-            }
-            catch (Exception ex)
-            {
-                PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
-            }
-        }
 
-        private void DgvImagenes_SelectionChanged(object sender, EventArgs e)
-        {
-            
-            if (ImgProducto == 0)
-            {
-                PBoxImgArt.Load(listaImagenes[0].Imagen);
-                
-               ImgProducto = 1;
-            }
-            else
-            { 
-            ImagenArticulo seleccionado =(ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.Imagen);
-                this.Refresh();
-            }
-        }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
+            }
 
-<<<<<<< HEAD
         }
-=======
->>>>>>> ec1af2688d30ddf87c86577a321ac1e24d9d2798
     }
-}
+
