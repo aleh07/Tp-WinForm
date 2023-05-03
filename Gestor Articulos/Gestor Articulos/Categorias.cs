@@ -65,5 +65,12 @@ namespace Gestor_Articulos
             CategoriaNegocio categoria = new CategoriaNegocio();
             dgvCategoria.DataSource = categoria.listar();
         }
+
+        private void btbAgregar_Click(object sender, EventArgs e)
+        {
+
+            NuevaCategoria VetanaNewCat = new NuevaCategoria();
+            VetanaNewCat.ShowDialog();
+        }
     }
 }

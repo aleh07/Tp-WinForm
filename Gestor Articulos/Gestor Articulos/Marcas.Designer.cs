@@ -42,6 +42,7 @@ namespace Gestor_Articulos
             this.DgvMarcas = new System.Windows.Forms.DataGridView();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMarcas)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +70,7 @@ namespace Gestor_Articulos
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
@@ -121,13 +122,6 @@ namespace Gestor_Articulos
             // 
             // DgvMarcas
             // 
-
-            this.DgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvMarcas.Location = new System.Drawing.Point(12, 104);
-            this.DgvMarcas.Name = "DgvMarcas";
-            this.DgvMarcas.Size = new System.Drawing.Size(621, 240);
-            this.DgvMarcas.TabIndex = 7;
-
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
             this.DgvMarcas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvMarcas.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -137,12 +131,11 @@ namespace Gestor_Articulos
             this.DgvMarcas.Name = "DgvMarcas";
             this.DgvMarcas.Size = new System.Drawing.Size(292, 263);
             this.DgvMarcas.TabIndex = 1;
-
             // 
             // BtnModificar
             // 
             this.BtnModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnModificar.Location = new System.Drawing.Point(351, 144);
+            this.BtnModificar.Location = new System.Drawing.Point(351, 193);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(75, 23);
             this.BtnModificar.TabIndex = 8;
@@ -152,12 +145,22 @@ namespace Gestor_Articulos
             // BtnEliminar
             // 
             this.BtnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnEliminar.Location = new System.Drawing.Point(351, 222);
+            this.BtnEliminar.Location = new System.Drawing.Point(351, 258);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
             this.BtnEliminar.TabIndex = 9;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(351, 127);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 10;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // Marcas
             // 
@@ -165,6 +168,7 @@ namespace Gestor_Articulos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.DgvMarcas);
@@ -172,11 +176,7 @@ namespace Gestor_Articulos
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Marcas";
             this.Text = "Marcas";
-
             this.Load += new System.EventHandler(this.Marcas_Load);
-
-         
-
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMarcas)).EndInit();
@@ -199,5 +199,6 @@ namespace Gestor_Articulos
         private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verTodosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem2;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
