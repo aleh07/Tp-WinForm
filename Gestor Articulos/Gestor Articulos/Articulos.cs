@@ -59,23 +59,28 @@ namespace Gestor_Articulos
         private void Articulos_Load(object sender, EventArgs e)
         {
 
+            CargarPaginaIncial();
+        }
+
+        private void CargarPaginaIncial()
+            {
 
             ProductoNegocio negocio = new ProductoNegocio();
             try
             {
-                if (producto == null)
-                {
+                
+
                     listaProductos = negocio.listar();
                     dgvProducto.DataSource = listaProductos;
                     dgvProducto.Columns["Id"].Visible = false;
 
-                    Int32 IdArt = 1;
+                    Int32 IdArt = listaProductos[0].Id; ;
                     listaImagenes = negocio.listarImgArt(IdArt);
                     DgvImagenes.DataSource = listaImagenes;
                     DgvImagenes.Columns[0].Visible = false;
                     DgvImagenes.Columns[2].Visible = false;
                     PBoxImgArt.Load(listaImagenes[0].Imagen);
-                }
+                
 
 
             }
@@ -83,9 +88,8 @@ namespace Gestor_Articulos
             {
                 MessageBox.Show(ex.ToString());
             }
+
         }
-
-
         private void dgvProducto_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -134,7 +138,7 @@ namespace Gestor_Articulos
             else 
             { 
             cargarImagen(seleccionado.Imagen);
-                MessageBox.Show(seleccionado.Imagen);
+             
             }
             
 
@@ -153,6 +157,7 @@ namespace Gestor_Articulos
         {
             Nuevo_Articulo VentanaNewArt = new Nuevo_Articulo();
             VentanaNewArt.ShowDialog();
+            CargarPaginaIncial();
 
         }
     }

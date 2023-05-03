@@ -93,7 +93,7 @@ namespace Gestor_Articulos
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.nuevoToolStripMenuItem.Text = "Ges&tionar";
             // 
-<<<<<<< HEAD
+
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Image = global::Gestor_Articulos.Properties.Resources.agregar_registro;
@@ -102,8 +102,7 @@ namespace Gestor_Articulos
             this.eliminarToolStripMenuItem.Text = "Nuevo";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.NuevoToolStripMenuItem_Click);
             // 
-=======
->>>>>>> ed1e0ef886058621783828b57b6e0a60f6e87fff
+
             // categoriasToolStripMenuItem
             // 
             this.categoriasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -122,7 +121,7 @@ namespace Gestor_Articulos
             this.marcasToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.marcasToolStripMenuItem.Text = "Marca&s";
             // 
-<<<<<<< HEAD
+
             // verTodasToolStripMenuItem1
             // 
             this.verTodasToolStripMenuItem1.Image = global::Gestor_Articulos.Properties.Resources.lupa_registro;
@@ -139,8 +138,7 @@ namespace Gestor_Articulos
             this.nuevoToolStripMenuItem2.Text = "Nuevo";
             this.nuevoToolStripMenuItem2.Click += new System.EventHandler(this.nuevoToolStripMenuItem2_Click);
             // 
-=======
->>>>>>> ed1e0ef886058621783828b57b6e0a60f6e87fff
+
             // LblTitulo
             // 
             this.LblTitulo.AutoSize = true;
@@ -163,7 +161,7 @@ namespace Gestor_Articulos
             this.dgvProducto.Size = new System.Drawing.Size(621, 240);
             this.dgvProducto.TabIndex = 5;
             this.dgvProducto.SelectionChanged += new System.EventHandler(this.dgvProducto_SelectionChanged);
-<<<<<<< HEAD
+
             // 
             // BtnModificar
             // 
@@ -176,7 +174,7 @@ namespace Gestor_Articulos
             this.BtnModificar.UseVisualStyleBackColor = true;
             // 
             // BtnEliminar
-            // 
+            //  
             this.BtnEliminar.AutoSize = true;
             this.BtnEliminar.Image = global::Gestor_Articulos.Properties.Resources.registro__eliminado;
             this.BtnEliminar.Location = new System.Drawing.Point(26, 142);
@@ -184,8 +182,7 @@ namespace Gestor_Articulos
             this.BtnEliminar.Size = new System.Drawing.Size(86, 83);
             this.BtnEliminar.TabIndex = 7;
             this.BtnEliminar.UseVisualStyleBackColor = true;
-=======
->>>>>>> ed1e0ef886058621783828b57b6e0a60f6e87fff
+
             // 
             // groupBox1
             // 

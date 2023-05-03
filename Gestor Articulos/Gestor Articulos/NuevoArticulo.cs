@@ -54,6 +54,7 @@ namespace Gestor_Articulos
 
                 productoNegocio.agregar(producto);
                 MessageBox.Show("Agregado exitosamente");
+                this.Refresh();
                 Close();
             }
             catch (Exception ex)
