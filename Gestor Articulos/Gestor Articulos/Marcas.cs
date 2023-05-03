@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +16,10 @@ namespace Gestor_Articulos
     public partial class Marcas : Form
     {
         private List<Marca> listaMarca;
+<<<<<<< HEAD
+=======
+
+>>>>>>> ec1af2688d30ddf87c86577a321ac1e24d9d2798
         public Marcas()
         {
             InitializeComponent();
@@ -48,6 +54,7 @@ namespace Gestor_Articulos
             Nuevo_Articulo VentanaNewArt = new Nuevo_Articulo();
             VentanaNewArt.ShowDialog();
         }
+<<<<<<< HEAD
 
         private void Marcas_Load(object sender, EventArgs e)
         {
@@ -56,13 +63,28 @@ namespace Gestor_Articulos
             {
                        listaMarca = negocio.listar();
                         DgvMarcas.DataSource = listaMarca;
+=======
+      
+        private void Marcas_Load_1(object sender, EventArgs e)
+        {
+         MarcaNegocio negocio = new MarcaNegocio();
+            try
+            {
+                listaMarca = negocio.listar();
+                DgvMarcas.DataSource = listaMarca;
+>>>>>>> ec1af2688d30ddf87c86577a321ac1e24d9d2798
 
             }
             catch (Exception)
             {
 
                 throw;
+<<<<<<< HEAD
             }
         }   
+=======
+            }       
+        }
+>>>>>>> ec1af2688d30ddf87c86577a321ac1e24d9d2798
     }
 }

@@ -1,5 +1,4 @@
-﻿using Negocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,19 +17,18 @@ namespace Gestor_Articulos
         public FrmPrincipal()
         {
             InitializeComponent();
+            DateTime fecha = DateTime.Now;
+            lblFecha.Text = fecha.ToString(); 
+           
         }
 
-        
+
         private void BtnArticulos_Click(object sender, EventArgs e)
         {
             Articulos VentanaArt = new Articulos();
             VentanaArt.ShowDialog();
         }
 
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-           
-        }
 
         private void BtnCategorias_Click(object sender, EventArgs e)
         {
@@ -44,8 +42,7 @@ namespace Gestor_Articulos
             VentanaMar.ShowDialog();
         }
 
-        
-        
+
 
         private void BtnArticulos_Click_1(object sender, EventArgs e)
         {

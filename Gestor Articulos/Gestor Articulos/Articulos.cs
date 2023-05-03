@@ -88,6 +88,7 @@ namespace Gestor_Articulos
        
 
 
+<<<<<<< HEAD
       
 
        
@@ -102,15 +103,27 @@ namespace Gestor_Articulos
                 DgvImagenes.Columns[0].Visible = false;
                 DgvImagenes.Columns[2].Visible = false;
             }
+=======
+        private void dgvProducto_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+>>>>>>> ec1af2688d30ddf87c86577a321ac1e24d9d2798
 
             catch (Exception ex)
             {
 
+<<<<<<< HEAD
                 PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
            ;
         }
 
+=======
+>>>>>>> ec1af2688d30ddf87c86577a321ac1e24d9d2798
         private void cargarImagen(string imagen)
         {
             try
@@ -143,6 +156,9 @@ namespace Gestor_Articulos
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+<<<<<<< HEAD
         }
+=======
+>>>>>>> ec1af2688d30ddf87c86577a321ac1e24d9d2798
     }
 }

@@ -1,13 +1,14 @@
-﻿using Dominio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using Dominio;
 
 namespace Negocio
 {
-   public class MarcaNegocio
+    public class MarcaNegocio
     {
         public List<Marca> listar()
         {
@@ -41,3 +42,4 @@ namespace Negocio
         }
     }
 }
+
