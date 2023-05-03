@@ -139,6 +139,12 @@ namespace Gestor_Articulos
 
             }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Nuevo_Articulo VentanaNewArt = new Nuevo_Articulo();
+            VentanaNewArt.ShowDialog();
+
         }
+    }
     }
 
