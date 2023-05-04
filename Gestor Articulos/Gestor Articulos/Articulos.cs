@@ -153,6 +153,7 @@ namespace Gestor_Articulos
             cargarImagen(seleccionado.Imagen);
         }
 
+<<<<<<< HEAD
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
            
@@ -174,6 +175,16 @@ namespace Gestor_Articulos
 
                 throw ex;
             }
+=======
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            Producto seleccionado;
+            seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+            
+            Nuevo_Articulo modificar = new Nuevo_Articulo(seleccionado);
+            modificar.ShowDialog();
+            CargarPaginaIncial();
+>>>>>>> 47ecde4aac7405bb0dd723d856c5b90c9936f155
         }
     }
     }

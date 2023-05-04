@@ -174,6 +174,70 @@ namespace Gestor_Articulos
             this.dgvProducto.TabIndex = 5;
             this.dgvProducto.SelectionChanged += new System.EventHandler(this.dgvProducto_SelectionChanged);
             // 
+<<<<<<< HEAD
+=======
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblAgregar);
+            this.groupBox1.Controls.Add(this.btnAgregar);
+            this.groupBox1.Controls.Add(this.LblEliminar);
+            this.groupBox1.Controls.Add(this.LblModificar);
+            this.groupBox1.Controls.Add(this.BtnModificar);
+            this.groupBox1.Location = new System.Drawing.Point(639, 95);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(143, 339);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            // 
+            // lblAgregar
+            // 
+            this.lblAgregar.AutoSize = true;
+            this.lblAgregar.Location = new System.Drawing.Point(46, 16);
+            this.lblAgregar.Name = "lblAgregar";
+            this.lblAgregar.Size = new System.Drawing.Size(44, 13);
+            this.lblAgregar.TabIndex = 11;
+            this.lblAgregar.Text = "Agregar";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = global::Gestor_Articulos.Properties.Resources.nuevo21;
+            this.btnAgregar.Location = new System.Drawing.Point(26, 29);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(86, 84);
+            this.btnAgregar.TabIndex = 10;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // LblEliminar
+            // 
+            this.LblEliminar.AutoSize = true;
+            this.LblEliminar.Location = new System.Drawing.Point(46, 240);
+            this.LblEliminar.Name = "LblEliminar";
+            this.LblEliminar.Size = new System.Drawing.Size(43, 13);
+            this.LblEliminar.TabIndex = 9;
+            this.LblEliminar.Text = "Eliminar";
+            // 
+            // LblModificar
+            // 
+            this.LblModificar.AutoSize = true;
+            this.LblModificar.Location = new System.Drawing.Point(39, 129);
+            this.LblModificar.Name = "LblModificar";
+            this.LblModificar.Size = new System.Drawing.Size(50, 13);
+            this.LblModificar.TabIndex = 8;
+            this.LblModificar.Text = "Modificar";
+            // 
+            // BtnModificar
+            // 
+            this.BtnModificar.AutoSize = true;
+            this.BtnModificar.Image = global::Gestor_Articulos.Properties.Resources.registro_detalle;
+            this.BtnModificar.Location = new System.Drawing.Point(26, 145);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(86, 83);
+            this.BtnModificar.TabIndex = 0;
+            this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
+>>>>>>> 47ecde4aac7405bb0dd723d856c5b90c9936f155
             // DgvImagenes
             // 
             this.DgvImagenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;

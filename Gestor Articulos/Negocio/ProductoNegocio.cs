@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Dominio;
+
 namespace Negocio
 {
     public class ProductoNegocio
@@ -17,7 +18,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT A.id,A.codigo, A.Nombre, A.descripcion,M.descripcion as marca , C.descripcion as categoria, a.precio from ARTICULOS A, MARCAS M, CATEGORIAS C  where A.IdMarca = M.Id and C.Id = A.IdCategoria ");
+                datos.setearConsulta("SELECT A.id,A.codigo, A.Nombre, A.descripcion,A.IdMArca,A.IdCategoria,M.descripcion as marca , C.descripcion as categoria, a.precio from ARTICULOS A, MARCAS M, CATEGORIAS C  where A.IdMarca = M.Id and C.Id = A.IdCategoria ");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -31,10 +32,11 @@ namespace Negocio
                     DosDecimal= (decimal)datos.Lector["precio"];
                     aux.Precio =Decimal.Parse( DosDecimal.ToString("0.00"));
                     aux.marca = new Marca();
+                    aux.marca.Id = (Int32)datos.Lector["IdMarca"];
                     aux.marca.Nombre = (string)datos.Lector["marca"];
                     aux.categoria = new Categoria();
                     aux.categoria.Nombre = (string)datos.Lector["categoria"];
-
+                    aux.categoria.Id = (Int32)datos.Lector["IdCategoria"];
 
                     lista.Add(aux);
                 }
@@ -114,6 +116,7 @@ namespace Negocio
             }
         }
 
+<<<<<<< HEAD
     
 
        public void EliminarFisico(Int32 Id)
@@ -135,7 +138,36 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+=======
+        public void Modificar(Producto producto)
+        {
+            AccesoDatos datos = new AccesoDatos();
 
+            try
+            {
+                datos.setearConsulta("UPDATE  Articulos set Codigo =@codigo, Nombre =@nombre, Descripcion=@descripcion, IdMarca= @idMarca, IdCategoria =@idCategoria, Precio = @precio where id = @id");
+                datos.setearParametro("@codigo", producto.CodArtículo);
+                datos.setearParametro("@nombre", producto.Nombre);
+                datos.setearParametro("@descripcion", producto.Descripción);
+                datos.setearParametro("@idMarca", producto.marca.Id);
+                datos.setearParametro("@idCategoria", producto.categoria.Id);
+                datos.setearParametro("@precio", producto.Precio);
+                datos.setearParametro("@id", producto.Id);
+
+                datos.ejectutarAccion();
+            }
+>>>>>>> 47ecde4aac7405bb0dd723d856c5b90c9936f155
+
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        
+        }  
 
     }
 }
