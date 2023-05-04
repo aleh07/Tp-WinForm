@@ -152,6 +152,16 @@ namespace Gestor_Articulos
             ImagenArticulo seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.Imagen);
         }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            Producto seleccionado;
+            seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+            
+            Nuevo_Articulo modificar = new Nuevo_Articulo(seleccionado);
+            modificar.ShowDialog();
+            CargarPaginaIncial();
+        }
     }
     }
 

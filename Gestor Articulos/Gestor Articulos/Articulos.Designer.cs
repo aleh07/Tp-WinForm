@@ -233,6 +233,7 @@ namespace Gestor_Articulos
             this.BtnModificar.Size = new System.Drawing.Size(86, 83);
             this.BtnModificar.TabIndex = 0;
             this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // DgvImagenes
             // 
