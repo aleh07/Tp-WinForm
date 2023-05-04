@@ -174,8 +174,8 @@ namespace Gestor_Articulos
             this.dgvProducto.TabIndex = 5;
             this.dgvProducto.SelectionChanged += new System.EventHandler(this.dgvProducto_SelectionChanged);
             // 
-<<<<<<< HEAD
-=======
+
+
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblAgregar);
@@ -237,7 +237,7 @@ namespace Gestor_Articulos
             this.BtnModificar.UseVisualStyleBackColor = true;
             this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
->>>>>>> 47ecde4aac7405bb0dd723d856c5b90c9936f155
+
             // DgvImagenes
             // 
             this.DgvImagenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;

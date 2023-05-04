@@ -63,24 +63,24 @@ namespace Gestor_Articulos
         }
 
         private void CargarPaginaIncial()
-            {
+        {
 
             ProductoNegocio negocio = new ProductoNegocio();
             try
             {
-                
 
-                    listaProductos = negocio.listar();
-                    dgvProducto.DataSource = listaProductos;
-                    dgvProducto.Columns["Id"].Visible = false;
 
-                     Int32 IdArt = listaProductos[0].Id; ;
-                    listaImagenes = negocio.listarImgArt(IdArt);
-                    DgvImagenes.DataSource = listaImagenes;
-                    DgvImagenes.Columns[0].Visible = false;
-                    DgvImagenes.Columns[2].Visible = false;
-                    PBoxImgArt.Load(listaImagenes[0].Imagen);
-                
+                listaProductos = negocio.listar();
+                dgvProducto.DataSource = listaProductos;
+                dgvProducto.Columns["Id"].Visible = false;
+
+                Int32 IdArt = listaProductos[0].Id; ;
+                listaImagenes = negocio.listarImgArt(IdArt);
+                DgvImagenes.DataSource = listaImagenes;
+                DgvImagenes.Columns[0].Visible = false;
+                DgvImagenes.Columns[2].Visible = false;
+                PBoxImgArt.Load(listaImagenes[0].Imagen);
+
 
 
             }
@@ -100,44 +100,44 @@ namespace Gestor_Articulos
                 DgvImagenes.DataSource = listaImagenes;
                 DgvImagenes.Columns[0].Visible = false;
                 DgvImagenes.Columns[2].Visible = false;
-               
+
             }
-  
+
             catch (Exception ex)
-                {
-
-                    PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
-                }
-               
-            }
-
-            private void cargarImagen(string imagen)
-            {
-                try
-                {
-                
-                    PBoxImgArt.Load(imagen);
-                    
-                }
-                catch (Exception ex)
-                {
-                    PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
-                }
-            }
-
-            private void DgvImagenes_SelectionChanged(object sender, EventArgs e)
-            {
-            
-            
-                PBoxImgArt.Load(listaImagenes[0].Imagen);
-             
-            }
-
-            private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
             {
 
+                PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+
+                PBoxImgArt.Load(imagen);
 
             }
+            catch (Exception ex)
+            {
+                PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
+        private void DgvImagenes_SelectionChanged(object sender, EventArgs e)
+        {
+
+
+            PBoxImgArt.Load(listaImagenes[0].Imagen);
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+
+        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -153,39 +153,44 @@ namespace Gestor_Articulos
             cargarImagen(seleccionado.Imagen);
         }
 
-<<<<<<< HEAD
-        private void BtnEliminar_Click(object sender, EventArgs e)
+        private  void Eliminar() 
         {
-           
+
             try
             {
                 ProductoNegocio negocio = new ProductoNegocio();
-                DialogResult respuesta = MessageBox.Show("Se Eliminara de manera permanente ,Desea seguir?","Eliminando...",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                DialogResult respuesta = MessageBox.Show("Se Eliminara de manera permanente ,Desea seguir?", "Eliminando...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (respuesta == DialogResult.Yes)
-                { 
-                 Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
-                negocio.EliminarFisico(seleccionado.Id);
-                CargarPaginaIncial();
-                
+                {
+                    Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+                    negocio.EliminarFisico(seleccionado.Id);
+                    CargarPaginaIncial();
+
                 }
-               
+
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-=======
+
+        }
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+
+            Eliminar();
+        }
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             Producto seleccionado;
             seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
-            
+
             Nuevo_Articulo modificar = new Nuevo_Articulo(seleccionado);
             modificar.ShowDialog();
             CargarPaginaIncial();
->>>>>>> 47ecde4aac7405bb0dd723d856c5b90c9936f155
+
         }
     }
-    }
+}
 

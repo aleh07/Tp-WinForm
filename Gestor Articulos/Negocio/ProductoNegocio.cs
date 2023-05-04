@@ -116,7 +116,7 @@ namespace Negocio
             }
         }
 
-<<<<<<< HEAD
+
     
 
        public void EliminarFisico(Int32 Id)
@@ -138,7 +138,7 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
-=======
+
         public void Modificar(Producto producto)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -156,7 +156,7 @@ namespace Negocio
 
                 datos.ejectutarAccion();
             }
->>>>>>> 47ecde4aac7405bb0dd723d856c5b90c9936f155
+
 
             catch(Exception ex)
             {
