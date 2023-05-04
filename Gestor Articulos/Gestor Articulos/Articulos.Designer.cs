@@ -43,20 +43,20 @@ namespace Gestor_Articulos
             this.nuevoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.LblTitulo = new System.Windows.Forms.Label();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblAgregar = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.LblEliminar = new System.Windows.Forms.Label();
-            this.LblModificar = new System.Windows.Forms.Label();
-            this.BtnModificar = new System.Windows.Forms.Button();
             this.DgvImagenes = new System.Windows.Forms.DataGridView();
             this.PBoxImgArt = new System.Windows.Forms.PictureBox();
             this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnModificar = new System.Windows.Forms.Button();
+            this.LblModificar = new System.Windows.Forms.Label();
+            this.LblEliminar = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.lblAgregar = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvImagenes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -174,66 +174,6 @@ namespace Gestor_Articulos
             this.dgvProducto.TabIndex = 5;
             this.dgvProducto.SelectionChanged += new System.EventHandler(this.dgvProducto_SelectionChanged);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblAgregar);
-            this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Controls.Add(this.LblEliminar);
-            this.groupBox1.Controls.Add(this.LblModificar);
-            this.groupBox1.Controls.Add(this.BtnModificar);
-            this.groupBox1.Location = new System.Drawing.Point(639, 95);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(143, 339);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            // 
-            // lblAgregar
-            // 
-            this.lblAgregar.AutoSize = true;
-            this.lblAgregar.Location = new System.Drawing.Point(46, 16);
-            this.lblAgregar.Name = "lblAgregar";
-            this.lblAgregar.Size = new System.Drawing.Size(44, 13);
-            this.lblAgregar.TabIndex = 11;
-            this.lblAgregar.Text = "Agregar";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Image = global::Gestor_Articulos.Properties.Resources.nuevo21;
-            this.btnAgregar.Location = new System.Drawing.Point(26, 29);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(86, 84);
-            this.btnAgregar.TabIndex = 10;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // LblEliminar
-            // 
-            this.LblEliminar.AutoSize = true;
-            this.LblEliminar.Location = new System.Drawing.Point(46, 240);
-            this.LblEliminar.Name = "LblEliminar";
-            this.LblEliminar.Size = new System.Drawing.Size(43, 13);
-            this.LblEliminar.TabIndex = 9;
-            this.LblEliminar.Text = "Eliminar";
-            // 
-            // LblModificar
-            // 
-            this.LblModificar.AutoSize = true;
-            this.LblModificar.Location = new System.Drawing.Point(39, 129);
-            this.LblModificar.Name = "LblModificar";
-            this.LblModificar.Size = new System.Drawing.Size(50, 13);
-            this.LblModificar.TabIndex = 8;
-            this.LblModificar.Text = "Modificar";
-            // 
-            // BtnModificar
-            // 
-            this.BtnModificar.AutoSize = true;
-            this.BtnModificar.Image = global::Gestor_Articulos.Properties.Resources.registro_detalle;
-            this.BtnModificar.Location = new System.Drawing.Point(26, 145);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(86, 83);
-            this.BtnModificar.TabIndex = 0;
-            this.BtnModificar.UseVisualStyleBackColor = true;
-            // 
             // DgvImagenes
             // 
             this.DgvImagenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -261,11 +201,73 @@ namespace Gestor_Articulos
             // 
             this.BtnEliminar.AutoSize = true;
             this.BtnEliminar.Image = global::Gestor_Articulos.Properties.Resources.registro__eliminado;
-            this.BtnEliminar.Location = new System.Drawing.Point(665, 351);
+            this.BtnEliminar.Location = new System.Drawing.Point(26, 283);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(86, 83);
             this.BtnEliminar.TabIndex = 7;
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // BtnModificar
+            // 
+            this.BtnModificar.AutoSize = true;
+            this.BtnModificar.Image = global::Gestor_Articulos.Properties.Resources.registro_detalle;
+            this.BtnModificar.Location = new System.Drawing.Point(26, 145);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(86, 83);
+            this.BtnModificar.TabIndex = 0;
+            this.BtnModificar.UseVisualStyleBackColor = true;
+            // 
+            // LblModificar
+            // 
+            this.LblModificar.AutoSize = true;
+            this.LblModificar.Location = new System.Drawing.Point(39, 129);
+            this.LblModificar.Name = "LblModificar";
+            this.LblModificar.Size = new System.Drawing.Size(50, 13);
+            this.LblModificar.TabIndex = 8;
+            this.LblModificar.Text = "Modificar";
+            // 
+            // LblEliminar
+            // 
+            this.LblEliminar.AutoSize = true;
+            this.LblEliminar.Location = new System.Drawing.Point(39, 258);
+            this.LblEliminar.Name = "LblEliminar";
+            this.LblEliminar.Size = new System.Drawing.Size(73, 13);
+            this.LblEliminar.TabIndex = 9;
+            this.LblEliminar.Text = "Eliminar Fisico";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = global::Gestor_Articulos.Properties.Resources.nuevo21;
+            this.btnAgregar.Location = new System.Drawing.Point(26, 29);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(86, 84);
+            this.btnAgregar.TabIndex = 10;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // lblAgregar
+            // 
+            this.lblAgregar.AutoSize = true;
+            this.lblAgregar.Location = new System.Drawing.Point(46, 16);
+            this.lblAgregar.Name = "lblAgregar";
+            this.lblAgregar.Size = new System.Drawing.Size(44, 13);
+            this.lblAgregar.TabIndex = 11;
+            this.lblAgregar.Text = "Agregar";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblAgregar);
+            this.groupBox1.Controls.Add(this.btnAgregar);
+            this.groupBox1.Controls.Add(this.BtnEliminar);
+            this.groupBox1.Controls.Add(this.LblEliminar);
+            this.groupBox1.Controls.Add(this.LblModificar);
+            this.groupBox1.Controls.Add(this.BtnModificar);
+            this.groupBox1.Location = new System.Drawing.Point(652, 24);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(131, 426);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
             // 
             // Articulos
             // 
@@ -273,7 +275,6 @@ namespace Gestor_Articulos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 564);
             this.Controls.Add(this.PBoxImgArt);
-            this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.DgvImagenes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvProducto);
@@ -288,10 +289,10 @@ namespace Gestor_Articulos
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvImagenes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,16 +311,16 @@ namespace Gestor_Articulos
         private System.Windows.Forms.ToolStripMenuItem verTodasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem marcasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verTodasToolStripMenuItem1;
-        private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnEliminar;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem2;
-        private System.Windows.Forms.Label LblEliminar;
-        private System.Windows.Forms.Label LblModificar;
         private System.Windows.Forms.DataGridView DgvImagenes;
         private System.Windows.Forms.PictureBox PBoxImgArt;
+        private System.Windows.Forms.Button BtnModificar;
+        private System.Windows.Forms.Label LblModificar;
+        private System.Windows.Forms.Label LblEliminar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblAgregar;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

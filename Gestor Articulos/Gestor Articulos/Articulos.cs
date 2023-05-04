@@ -152,6 +152,29 @@ namespace Gestor_Articulos
             ImagenArticulo seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.Imagen);
         }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                ProductoNegocio negocio = new ProductoNegocio();
+                DialogResult respuesta = MessageBox.Show("Se Eliminara de manera permanente ,Desea seguir?","Eliminando...",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                { 
+                 Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+                negocio.EliminarFisico(seleccionado.Id);
+                CargarPaginaIncial();
+                
+                }
+               
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
     }
 
