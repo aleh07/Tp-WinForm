@@ -16,5 +16,10 @@ namespace Gestor_Articulos
         {
             InitializeComponent();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

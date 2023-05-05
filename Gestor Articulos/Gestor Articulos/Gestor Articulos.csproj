@@ -99,6 +99,12 @@
     <EmbeddedResource Include="Marcas.resx">
       <DependentUpon>Marcas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NuevaCategoria.resx">
+      <DependentUpon>NuevaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevaMarca.resx">
+      <DependentUpon>NuevaMarca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NuevoArticulo.resx">
       <DependentUpon>NuevoArticulo.cs</DependentUpon>
     </EmbeddedResource>

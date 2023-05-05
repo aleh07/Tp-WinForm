@@ -44,6 +44,7 @@ namespace Gestor_Articulos
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -177,11 +178,22 @@ namespace Gestor_Articulos
             this.comboBoxCategoria.Size = new System.Drawing.Size(100, 21);
             this.comboBoxCategoria.TabIndex = 14;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(334, 362);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(125, 23);
+            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // Nuevo_Articulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.comboBoxCategoria);
             this.Controls.Add(this.comboBoxMarca);
             this.Controls.Add(this.label6);
@@ -224,5 +236,6 @@ namespace Gestor_Articulos
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxMarca;
         private System.Windows.Forms.ComboBox comboBoxCategoria;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
