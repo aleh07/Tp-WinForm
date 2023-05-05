@@ -16,6 +16,7 @@ namespace Gestor_Articulos
     public partial class Nuevo_Articulo : Form
     {
         private Producto producto = null;
+      
         
         public Nuevo_Articulo()
         {
@@ -52,10 +53,12 @@ namespace Gestor_Articulos
         {
             //Producto producto = new Producto();
             ProductoNegocio productoNegocio = new ProductoNegocio();
+           ImagenArticulo imagenNuevo = new ImagenArticulo();
             try
             {
                if(producto == null)
                 producto = new Producto();  
+               
 
                 producto.CodArtículo = TxtCodigo.Text;
                 producto.Nombre = txtNombre.Text;
@@ -63,7 +66,7 @@ namespace Gestor_Articulos
                 producto.marca = (Marca)comboBoxMarca.SelectedItem;
                 producto.categoria = (Categoria)comboBoxCategoria.SelectedItem;
                 producto.Precio = Decimal.Parse(txtPrecio.Text);
-
+                imagenNuevo.Imagen = txtImagen.Text;
                 if (producto.Id != 0)
                 {
                     productoNegocio.Modificar(producto);
@@ -71,7 +74,7 @@ namespace Gestor_Articulos
                 }
                 else
                 {
-                    productoNegocio.agregar(producto);
+                    productoNegocio.agregar(producto,imagenNuevo);
                     MessageBox.Show("Agregado exitosamente");
                 }
                 
@@ -125,5 +128,25 @@ namespace Gestor_Articulos
         {
             Close();
         }
+
+        private void txtImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtImagen.Text);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+
+                PBoxImgArt.Load(imagen);
+
+            }
+            catch (Exception ex)
+            {
+                PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
     }
 }

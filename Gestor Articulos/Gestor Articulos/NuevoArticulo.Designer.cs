@@ -45,6 +45,10 @@ namespace Gestor_Articulos
             this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblImagen = new System.Windows.Forms.Label();
+            this.txtImagen = new System.Windows.Forms.TextBox();
+            this.PBoxImgArt = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -57,7 +61,7 @@ namespace Gestor_Articulos
             // 
             // BtnCargarArt
             // 
-            this.BtnCargarArt.Location = new System.Drawing.Point(334, 316);
+            this.BtnCargarArt.Location = new System.Drawing.Point(334, 366);
             this.BtnCargarArt.Name = "BtnCargarArt";
             this.BtnCargarArt.Size = new System.Drawing.Size(125, 23);
             this.BtnCargarArt.TabIndex = 1;
@@ -104,7 +108,7 @@ namespace Gestor_Articulos
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 132);
+            this.label3.Location = new System.Drawing.Point(274, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 6;
@@ -114,7 +118,7 @@ namespace Gestor_Articulos
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(280, 251);
+            this.label4.Location = new System.Drawing.Point(280, 257);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 7;
@@ -129,14 +133,14 @@ namespace Gestor_Articulos
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(343, 132);
+            this.txtDescripcion.Location = new System.Drawing.Point(343, 136);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 9;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(343, 248);
+            this.txtPrecio.Location = new System.Drawing.Point(343, 254);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecio.TabIndex = 10;
@@ -144,7 +148,7 @@ namespace Gestor_Articulos
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(280, 166);
+            this.label5.Location = new System.Drawing.Point(280, 172);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 11;
@@ -153,7 +157,7 @@ namespace Gestor_Articulos
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(280, 204);
+            this.label6.Location = new System.Drawing.Point(280, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 12;
@@ -163,7 +167,7 @@ namespace Gestor_Articulos
             // 
             this.comboBoxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMarca.FormattingEnabled = true;
-            this.comboBoxMarca.Location = new System.Drawing.Point(343, 163);
+            this.comboBoxMarca.Location = new System.Drawing.Point(343, 169);
             this.comboBoxMarca.Name = "comboBoxMarca";
             this.comboBoxMarca.Size = new System.Drawing.Size(100, 21);
             this.comboBoxMarca.TabIndex = 13;
@@ -173,14 +177,14 @@ namespace Gestor_Articulos
             // 
             this.comboBoxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategoria.FormattingEnabled = true;
-            this.comboBoxCategoria.Location = new System.Drawing.Point(343, 204);
+            this.comboBoxCategoria.Location = new System.Drawing.Point(343, 210);
             this.comboBoxCategoria.Name = "comboBoxCategoria";
             this.comboBoxCategoria.Size = new System.Drawing.Size(100, 21);
             this.comboBoxCategoria.TabIndex = 14;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(334, 362);
+            this.btnCancelar.Location = new System.Drawing.Point(334, 412);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 23);
             this.btnCancelar.TabIndex = 15;
@@ -188,11 +192,40 @@ namespace Gestor_Articulos
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblImagen
+            // 
+            this.lblImagen.AutoSize = true;
+            this.lblImagen.Location = new System.Drawing.Point(283, 306);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(42, 13);
+            this.lblImagen.TabIndex = 16;
+            this.lblImagen.Text = "Imagen";
+            // 
+            // txtImagen
+            // 
+            this.txtImagen.Location = new System.Drawing.Point(343, 303);
+            this.txtImagen.Name = "txtImagen";
+            this.txtImagen.Size = new System.Drawing.Size(100, 20);
+            this.txtImagen.TabIndex = 17;
+            this.txtImagen.Leave += new System.EventHandler(this.txtImagen_Leave);
+            // 
+            // PBoxImgArt
+            // 
+            this.PBoxImgArt.Location = new System.Drawing.Point(547, 226);
+            this.PBoxImgArt.Name = "PBoxImgArt";
+            this.PBoxImgArt.Size = new System.Drawing.Size(107, 97);
+            this.PBoxImgArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBoxImgArt.TabIndex = 18;
+            this.PBoxImgArt.TabStop = false;
+            // 
             // Nuevo_Articulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PBoxImgArt);
+            this.Controls.Add(this.txtImagen);
+            this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.comboBoxCategoria);
             this.Controls.Add(this.comboBoxMarca);
@@ -214,6 +247,7 @@ namespace Gestor_Articulos
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Articulo";
             this.Load += new System.EventHandler(this.Nuevo_Articulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +271,8 @@ namespace Gestor_Articulos
         private System.Windows.Forms.ComboBox comboBoxMarca;
         private System.Windows.Forms.ComboBox comboBoxCategoria;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblImagen;
+        private System.Windows.Forms.TextBox txtImagen;
+        private System.Windows.Forms.PictureBox PBoxImgArt;
     }
 }

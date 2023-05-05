@@ -103,15 +103,17 @@ namespace Negocio
             }
         }
 
-        public void agregar(Producto nuevo)
+        public void agregar(Producto nuevo, ImagenArticulo imagenNueva)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             { 
-                datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion,IdMarca, IdCategoria,Precio)values('" + nuevo.CodArtículo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripción + "', @idMarca, @idCategoria, "+nuevo.Precio+")");
+                datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion,IdMarca, IdCategoria,Precio,Activo)values('" + nuevo.CodArtículo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripción + "', @idMarca, @idCategoria, "+nuevo.Precio+",1)");
                 datos.setearParametro("@idMarca", nuevo.marca.Id);
                 datos.setearParametro("@idCategoria", nuevo.categoria.Id);
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo,ImagenUrl)values('" + imagenNueva.Id + "',@ImagenUrl");
+                datos.setearParametro("@ImagenUrl", imagenNueva.Imagen);
                 datos.ejectutarAccion();
             }
             catch (Exception ex)
