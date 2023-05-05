@@ -94,12 +94,16 @@ namespace Gestor_Articulos
         {
             try
             {
-                ProductoNegocio negocio = new ProductoNegocio();
-                Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
-                listaImagenes = negocio.listarImgArt(seleccionado.Id);
-                DgvImagenes.DataSource = listaImagenes;
-                DgvImagenes.Columns[0].Visible = false;
-                DgvImagenes.Columns[2].Visible = false;
+                if (dgvProducto.CurrentRow != null)
+                {
+                    ProductoNegocio negocio = new ProductoNegocio();
+                    Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+                    listaImagenes = negocio.listarImgArt(seleccionado.Id);
+                    DgvImagenes.DataSource = listaImagenes;
+                    DgvImagenes.Columns[0].Visible = false;
+                    DgvImagenes.Columns[2].Visible = false;
+                }
+               
 
             }
 
@@ -190,6 +194,38 @@ namespace Gestor_Articulos
             modificar.ShowDialog();
             CargarPaginaIncial();
 
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+       
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Producto> listaFiltrada;
+            string filtro = txtFiltro.Text;
+
+            if (filtro.Length >=3)
+            {
+
+                listaFiltrada = listaProductos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.categoria.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripción.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaProductos;
+            }
+
+            dgvProducto.DataSource = null;
+            dgvProducto.DataSource = listaFiltrada;
+            dgvProducto.Columns["Id"].Visible = false;
         }
     }
 }
