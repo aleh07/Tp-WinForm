@@ -96,8 +96,10 @@ namespace Gestor_Articulos
         {
             MarcaNegocio marca = new MarcaNegocio();
             CategoriaNegocio categoria = new CategoriaNegocio();
+            
             try
             {
+
                 comboBoxMarca.DataSource = marca.listar();
                 comboBoxMarca.ValueMember = "Id";
                 comboBoxMarca.DisplayMember = "Nombre";
@@ -112,10 +114,10 @@ namespace Gestor_Articulos
                     txtNombre.Text = producto.Nombre;
                     txtDescripcion.Text = producto.Descripción;
                     txtPrecio.Text = producto.Precio.ToString();
-                    comboBoxMarca.SelectedValue = producto.marca.Id.ToString();
-                    comboBoxCategoria.SelectedValue = producto.categoria.Id.ToString();
-                    
+                    comboBoxMarca.SelectedValue = producto.marca.Id;
+                    comboBoxCategoria.SelectedValue = producto.categoria.Id;
                 }
+            
             }
 
             catch (Exception ex)

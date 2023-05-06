@@ -65,7 +65,7 @@ namespace Gestor_Articulos
             this.BtnCargarArt.Name = "BtnCargarArt";
             this.BtnCargarArt.Size = new System.Drawing.Size(125, 23);
             this.BtnCargarArt.TabIndex = 1;
-            this.BtnCargarArt.Text = "Cargar Articulo";
+            this.BtnCargarArt.Text = "Modificar Articulo";
             this.BtnCargarArt.UseVisualStyleBackColor = true;
             this.BtnCargarArt.Click += new System.EventHandler(this.BtnCargarArt_Click);
             // 

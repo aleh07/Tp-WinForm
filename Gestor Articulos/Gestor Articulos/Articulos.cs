@@ -187,8 +187,7 @@ namespace Gestor_Articulos
         }
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            Producto seleccionado;
-            seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+            Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
 
             Nuevo_Articulo modificar = new Nuevo_Articulo(seleccionado);
             modificar.ShowDialog();
