@@ -29,70 +29,8 @@ namespace Gestor_Articulos
             Text = "Modificar Producto";
         }
 
-        private void LblArticulos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnCargarArt_Click(object sender, EventArgs e)
-        {
-            //Producto producto = new Producto();
-            ProductoNegocio productoNegocio = new ProductoNegocio();
-           ImagenArticulo imagenNuevo = new ImagenArticulo();
-            try
-            {
-               if(producto == null)
-                producto = new Producto();  
-               
-
-                producto.CodArtículo = TxtCodigo.Text;
-                producto.Nombre = txtNombre.Text;
-                producto.Descripción = txtDescripcion.Text;
-                producto.marca = (Marca)comboBoxMarca.SelectedItem;
-                producto.categoria = (Categoria)comboBoxCategoria.SelectedItem;
-                producto.Precio = Decimal.Parse(txtPrecio.Text);
-                imagenNuevo.Imagen = txtImagen.Text;
-                if (producto.Id != 0)
-                {
-                    productoNegocio.Modificar(producto);
-                    MessageBox.Show("Modificado exitosamente");
-                }
-                else
-                {
-                    productoNegocio.agregar(producto,imagenNuevo);
-                    MessageBox.Show("Agregado exitosamente");
-                }
-                
-                this.Refresh();
-                Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Nuevo_Articulo_Load(object sender, EventArgs e)
+      
+ private void Nuevo_Articulo_Load(object sender, EventArgs e)
         {
             MarcaNegocio marca = new MarcaNegocio();
             CategoriaNegocio categoria = new CategoriaNegocio();
@@ -123,6 +61,48 @@ namespace Gestor_Articulos
                 MessageBox.Show(ex.ToString());
             }
         }
+        private void BtnCargarArt_Click(object sender, EventArgs e)
+        {
+            //Producto producto = new Producto();
+            ProductoNegocio productoNegocio = new ProductoNegocio();
+           ImagenArticulo imagenNuevo = new ImagenArticulo();
+            try
+            {
+               if(producto == null)
+                producto = new Producto();  
+               
+
+                producto.CodArtículo = TxtCodigo.Text;
+                producto.Nombre = txtNombre.Text;
+                producto.Descripción = txtDescripcion.Text;
+                producto.marca = (Marca)comboBoxMarca.SelectedItem;
+                producto.categoria = (Categoria)comboBoxCategoria.SelectedItem;
+                producto.Precio = Decimal.Parse(txtPrecio.Text);
+                imagenNuevo.Imagen = txtImagen.Text;
+                Int32 IdArt = productoNegocio.UltimoId();
+                imagenNuevo.IdProducto = IdArt+1 ;
+
+                if (producto.Id != 0)
+                {
+                    productoNegocio.Modificar(producto);
+                    MessageBox.Show("Modificado exitosamente");
+                    
+                }
+                else
+                {
+                   
+                    productoNegocio.agregar(producto,imagenNuevo);
+                    MessageBox.Show("Agregado exitosamente");
+                }
+                
+                this.Refresh();
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -148,5 +128,11 @@ namespace Gestor_Articulos
             }
         }
 
+       
+
+        private void txtImagen_TextChanged(object sender, EventArgs e)
+        {
+            cargarImagen(txtImagen.Text);
+        }
     }
 }

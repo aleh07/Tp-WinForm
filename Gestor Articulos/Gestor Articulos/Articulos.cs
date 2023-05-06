@@ -16,7 +16,7 @@ namespace Gestor_Articulos
         private List<Producto> listaProductos;
         private List<ImagenArticulo> listaImagenes;
         private Producto producto;
-        private int ImgProducto = 1;
+      
         public Articulos()
         {
             InitializeComponent();
@@ -102,6 +102,7 @@ namespace Gestor_Articulos
                     DgvImagenes.DataSource = listaImagenes;
                     DgvImagenes.Columns[0].Visible = false;
                     DgvImagenes.Columns[2].Visible = false;
+                    
                 }
                
 
@@ -201,10 +202,7 @@ namespace Gestor_Articulos
 
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-           
-        }
+       
 
        
 
@@ -226,6 +224,18 @@ namespace Gestor_Articulos
             dgvProducto.DataSource = null;
             dgvProducto.DataSource = listaFiltrada;
             dgvProducto.Columns["Id"].Visible = false;
+        }
+
+        private void BtnImagenes_Click(object sender, EventArgs e)
+        {
+
+            Producto seleccionado;
+            seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+
+            NuevaImgArt VentanaNewImg = new NuevaImgArt(seleccionado);
+            VentanaNewImg.ShowDialog();
+            CargarPaginaIncial();
+
         }
     }
 }

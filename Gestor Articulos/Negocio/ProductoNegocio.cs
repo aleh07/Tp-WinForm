@@ -103,17 +103,56 @@ namespace Negocio
             }
         }
 
-        public void agregar(Producto nuevo, ImagenArticulo imagenNueva)
+
+        public Int32 UltimoId()
+        {
+
+            Int32 UltimoId = new Int32();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta(" select MAX(id) as IdArticulo from articulos");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Int32 aux = new Int32();
+         
+                    aux = (Int32)datos.Lector["IdArticulo"];
+                    UltimoId = aux;
+                    
+                }
+                return UltimoId;
+                
+
+            }
+
+
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void agregar(Producto nuevo,ImagenArticulo ImagenNueva)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             { 
-                datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion,IdMarca, IdCategoria,Precio,Activo)values('" + nuevo.CodArtículo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripción + "', @idMarca, @idCategoria, "+nuevo.Precio+",1)");
+                datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion,IdMarca, IdCategoria,Precio)values('" + nuevo.CodArtículo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripción + "', @idMarca, @idCategoria, "+nuevo.Precio+")");
                 datos.setearParametro("@idMarca", nuevo.marca.Id);
                 datos.setearParametro("@idCategoria", nuevo.categoria.Id);
-                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo,ImagenUrl)values('" + imagenNueva.Id + "',@ImagenUrl");
-                datos.setearParametro("@ImagenUrl", imagenNueva.Imagen);
+                datos.ejectutarAccion();
+                datos.cerrarConexion();
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo,ImagenUrl)values(@IdArt,@ImagenUrl)");
+                datos.setearParametro("@ImagenUrl", ImagenNueva.Imagen);
+                datos.setearParametro("@IdArt", ImagenNueva.IdProducto);
                 datos.ejectutarAccion();
             }
             catch (Exception ex)
@@ -126,8 +165,28 @@ namespace Negocio
             }
         }
 
+        public void agregarImg(ImagenArticulo ImagenNueva)
+        {
+            AccesoDatos datos = new AccesoDatos();
 
-    
+            try
+            {
+              
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo,ImagenUrl)values(@IdArt,@ImagenUrl)");
+                datos.setearParametro("@ImagenUrl", ImagenNueva.Imagen);
+                datos.setearParametro("@IdArt", ImagenNueva.IdProducto);
+                datos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+       
 
        public void EliminarFisico(Int32 Id)
         {

@@ -52,6 +52,13 @@ namespace Gestor_Articulos
 
         private void Marcas_Load(object sender, EventArgs e)
         {
+
+            CargarPrincipal();
+            
+        }
+
+        private void CargarPrincipal() 
+        {
             MarcaNegocio negocio = new MarcaNegocio();
             try
             {
@@ -72,18 +79,36 @@ namespace Gestor_Articulos
             }
         }
 
-        private void bntAgregar_Click(object sender, EventArgs e)
-        {
-            NuevaMarca VentanaNewMar = new NuevaMarca();
-            VentanaNewMar.ShowDialog();
-
-        }
+       
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
             NuevaMarca VentanaNewMar = new NuevaMarca();
             VentanaNewMar.ShowDialog();
+            CargarPrincipal();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MarcaNegocio negocio = new MarcaNegocio();
+                DialogResult respuesta = MessageBox.Show("Se Eliminara de manera permanente ,Desea seguir?", "Eliminando...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    Marca seleccionado = (Marca)DgvMarcas.CurrentRow.DataBoundItem;
+                    negocio.EliminarFisico(seleccionado.Id);
+                    CargarPrincipal();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

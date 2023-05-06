@@ -49,11 +49,7 @@ namespace Gestor_Articulos
             VentanaNewArt.ShowDialog();
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
+       
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             CategoriaNegocio categoria = new CategoriaNegocio();
@@ -62,6 +58,12 @@ namespace Gestor_Articulos
 
         private void Categorias_Load(object sender, EventArgs e)
         {
+            CargarPrincipal();
+        }
+
+        private void CargarPrincipal()
+        {
+
             CategoriaNegocio categoria = new CategoriaNegocio();
             dgvCategoria.DataSource = categoria.listar();
         }
@@ -71,6 +73,30 @@ namespace Gestor_Articulos
 
             NuevaCategoria VetanaNewCat = new NuevaCategoria();
             VetanaNewCat.ShowDialog();
+            CargarPrincipal();
+
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CategoriaNegocio negocio = new CategoriaNegocio();
+                DialogResult respuesta = MessageBox.Show("Se Eliminara de manera permanente ,Desea seguir?", "Eliminando...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    Categoria seleccionado = (Categoria)dgvCategoria.CurrentRow.DataBoundItem;
+                    negocio.EliminarFisico(seleccionado.Id);
+                    CargarPrincipal();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

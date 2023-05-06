@@ -11,6 +11,8 @@ namespace Dominio
         public Int32 Id { get; set; }
          
        public Producto producto { get; set; }
+
+        public Int32 IdProducto { get; set; }
         public string Imagen { get; set; }
     }
 }

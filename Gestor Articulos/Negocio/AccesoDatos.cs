@@ -17,7 +17,7 @@ namespace Negocio
         public AccesoDatos()
         {
 
-            conexion = new SqlConnection("data source=.\\SQLSERVER; initial catalog=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("data source=.\\SQLEXPRESS; initial catalog=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -35,7 +35,7 @@ namespace Negocio
             conexion.Open();
             lector = comando.ExecuteReader();
         }
-        public void setearConsulta(string nombre, object valor)
+        public void setearParametro(string nombre, object valor)
         {
             comando.Parameters.AddWithValue(nombre, valor);
         }
@@ -67,10 +67,7 @@ namespace Negocio
             }
         }
 
-        public void setearParametro(string nombre, object valor)
-        {
-            comando.Parameters.AddWithValue(nombre, valor);
-        }
+        
 
 
     }

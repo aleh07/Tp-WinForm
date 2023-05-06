@@ -77,7 +77,7 @@ namespace Gestor_Articulos
             this.LblArticulos.Size = new System.Drawing.Size(77, 13);
             this.LblArticulos.TabIndex = 2;
             this.LblArticulos.Text = "Nuevo Articulo";
-            this.LblArticulos.Click += new System.EventHandler(this.LblArticulos_Click);
+       
             // 
             // TxtCodigo
             // 
@@ -94,7 +94,7 @@ namespace Gestor_Articulos
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Código";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            
             // 
             // label2
             // 
@@ -113,7 +113,7 @@ namespace Gestor_Articulos
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Descripción";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            
             // 
             // label4
             // 
@@ -171,7 +171,7 @@ namespace Gestor_Articulos
             this.comboBoxMarca.Name = "comboBoxMarca";
             this.comboBoxMarca.Size = new System.Drawing.Size(100, 21);
             this.comboBoxMarca.TabIndex = 13;
-            this.comboBoxMarca.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            
             // 
             // comboBoxCategoria
             // 
@@ -207,6 +207,9 @@ namespace Gestor_Articulos
             this.txtImagen.Name = "txtImagen";
             this.txtImagen.Size = new System.Drawing.Size(100, 20);
             this.txtImagen.TabIndex = 17;
+            
+            this.txtImagen.TextChanged += new System.EventHandler(this.txtImagen_TextChanged);
+         
             this.txtImagen.Leave += new System.EventHandler(this.txtImagen_Leave);
             // 
             // PBoxImgArt

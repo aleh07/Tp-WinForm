@@ -29,7 +29,7 @@ namespace Gestor_Articulos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +40,6 @@ namespace Gestor_Articulos
             this.verTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.DgvMarcas = new System.Windows.Forms.DataGridView();
-            this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -70,7 +69,7 @@ namespace Gestor_Articulos
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
@@ -122,8 +121,8 @@ namespace Gestor_Articulos
             // 
             // DgvMarcas
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            this.DgvMarcas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            this.DgvMarcas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.DgvMarcas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DgvMarcas.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.DgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -131,16 +130,6 @@ namespace Gestor_Articulos
             this.DgvMarcas.Name = "DgvMarcas";
             this.DgvMarcas.Size = new System.Drawing.Size(292, 263);
             this.DgvMarcas.TabIndex = 1;
-            // 
-            // BtnModificar
-            // 
-            this.BtnModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnModificar.Location = new System.Drawing.Point(351, 193);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(75, 23);
-            this.BtnModificar.TabIndex = 8;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = true;
             // 
             // BtnEliminar
             // 
@@ -151,6 +140,7 @@ namespace Gestor_Articulos
             this.BtnEliminar.TabIndex = 9;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnAgregar
             // 
@@ -170,7 +160,6 @@ namespace Gestor_Articulos
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.BtnEliminar);
-            this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.DgvMarcas);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -189,7 +178,6 @@ namespace Gestor_Articulos
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.DataGridView DgvMarcas;
-        private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.ToolStripMenuItem gestionarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.Button BtnEliminar;

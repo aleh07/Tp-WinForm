@@ -70,6 +70,12 @@
     <Compile Include="NuevaCategoria.Designer.cs">
       <DependentUpon>NuevaCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="NuevaImgArt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevaImgArt.Designer.cs">
+      <DependentUpon>NuevaImgArt.cs</DependentUpon>
+    </Compile>
     <Compile Include="NuevaMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NuevaCategoria.resx">
       <DependentUpon>NuevaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevaImgArt.resx">
+      <DependentUpon>NuevaImgArt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevaMarca.resx">
       <DependentUpon>NuevaMarca.cs</DependentUpon>
@@ -207,6 +216,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nuevo21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen de carpeta 16x16.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

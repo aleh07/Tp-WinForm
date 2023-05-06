@@ -40,6 +40,47 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+
+        public void agregar(Marca nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string valores = "values( '" + nuevo.Nombre + "')";
+                datos.setearConsulta("insert into  Marcas (Descripcion) " + valores);
+
+                datos.ejectutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void EliminarFisico(Int32 Id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("delete from Marcas where id = @id");
+                datos.setearParametro("@id", Id);
+                datos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
 
