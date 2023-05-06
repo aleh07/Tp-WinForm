@@ -73,7 +73,7 @@ namespace Gestor_Articulos
                 listaProductos = negocio.listar();
                 dgvProducto.DataSource = listaProductos;
                 dgvProducto.Columns["Id"].Visible = false;
-
+                dgvProducto.Columns["Activo"].Visible = false;
                 Int32 IdArt = listaProductos[0].Id; ;
                 listaImagenes = negocio.listarImgArt(IdArt);
                 DgvImagenes.DataSource = listaImagenes;
@@ -157,20 +157,29 @@ namespace Gestor_Articulos
             cargarImagen(seleccionado.Imagen);
         }
 
-        private  void Eliminar() 
+        private  void Eliminar(bool logico = false) 
         {
-
+            ProductoNegocio negocio = new ProductoNegocio();
+            Producto seleccionado;
+            
+            
             try
             {
-                ProductoNegocio negocio = new ProductoNegocio();
-                DialogResult respuesta = MessageBox.Show("Se Eliminara de manera permanente ,Desea seguir?", "Eliminando...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (respuesta == DialogResult.Yes)
-                {
-                    Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
-                    negocio.EliminarFisico(seleccionado.Id);
-                    CargarPaginaIncial();
 
+                DialogResult respuesta = MessageBox.Show("¿De verdad querés eliminarlo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+               if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+                    if (logico)
+                        negocio.EliminarLogico(seleccionado.Id);
+                    else
+                        negocio.EliminarFisico(seleccionado.Id);
+
+
+                    CargarPaginaIncial();
                 }
+
+                
 
             }
             catch (Exception ex)
@@ -180,11 +189,7 @@ namespace Gestor_Articulos
             }
 
         }
-        private void BtnEliminar_Click(object sender, EventArgs e)
-        {
-
-            Eliminar();
-        }
+      
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
@@ -225,6 +230,16 @@ namespace Gestor_Articulos
             dgvProducto.DataSource = null;
             dgvProducto.DataSource = listaFiltrada;
             dgvProducto.Columns["Id"].Visible = false;
+        }
+
+        private void BtnEliminarFisico_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        private void btnElimarLogico_Click(object sender, EventArgs e)
+        {
+            Eliminar(true);
         }
     }
 }

@@ -111,7 +111,8 @@ namespace Negocio
             { 
                 datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion,IdMarca, IdCategoria,Precio,Activo)values('" + nuevo.CodArtículo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripción + "', @idMarca, @idCategoria, "+nuevo.Precio+",1)");
                 datos.setearParametro("@idMarca", nuevo.marca.Id);
-                datos.setearParametro("@idCategoria", nuevo.categoria.Id);
+                datos.setearParametro("@activo", nuevo.activo);
+               /// datos.setearParametro("@idCategoria", nuevo.categoria.Id);
                 datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo,ImagenUrl)values('" + imagenNueva.Id + "',@ImagenUrl");
                 datos.setearParametro("@ImagenUrl", imagenNueva.Imagen);
                 datos.ejectutarAccion();
@@ -136,6 +137,25 @@ namespace Negocio
             try
             {
                 datos.setearConsulta("delete from articulos where id = @id");
+                datos.setearParametro("@id", Id);
+                datos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void EliminarLogico(Int32 Id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("update articulos set Activo=0 where id = @id");
                 datos.setearParametro("@id", Id);
                 datos.ejectutarAccion();
             }

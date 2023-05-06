@@ -45,7 +45,7 @@ namespace Gestor_Articulos
             this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.DgvImagenes = new System.Windows.Forms.DataGridView();
             this.PBoxImgArt = new System.Windows.Forms.PictureBox();
-            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnEliminarFisico = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.LblModificar = new System.Windows.Forms.Label();
             this.LblEliminar = new System.Windows.Forms.Label();
@@ -55,6 +55,8 @@ namespace Gestor_Articulos
             this.lblFiltro = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnElimarLogico = new System.Windows.Forms.Button();
+            this.lblEliminarLogico = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvImagenes)).BeginInit();
@@ -200,16 +202,16 @@ namespace Gestor_Articulos
             this.PBoxImgArt.TabIndex = 11;
             this.PBoxImgArt.TabStop = false;
             // 
-            // BtnEliminar
+            // BtnEliminarFisico
             // 
-            this.BtnEliminar.AutoSize = true;
-            this.BtnEliminar.Image = global::Gestor_Articulos.Properties.Resources.registro__eliminado;
-            this.BtnEliminar.Location = new System.Drawing.Point(26, 283);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(86, 83);
-            this.BtnEliminar.TabIndex = 7;
-            this.BtnEliminar.UseVisualStyleBackColor = true;
-            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            this.BtnEliminarFisico.AutoSize = true;
+            this.BtnEliminarFisico.Image = global::Gestor_Articulos.Properties.Resources.registro__eliminado;
+            this.BtnEliminarFisico.Location = new System.Drawing.Point(26, 283);
+            this.BtnEliminarFisico.Name = "BtnEliminarFisico";
+            this.BtnEliminarFisico.Size = new System.Drawing.Size(86, 83);
+            this.BtnEliminarFisico.TabIndex = 7;
+            this.BtnEliminarFisico.UseVisualStyleBackColor = true;
+            this.BtnEliminarFisico.Click += new System.EventHandler(this.BtnEliminarFisico_Click);
             // 
             // BtnModificar
             // 
@@ -261,15 +263,17 @@ namespace Gestor_Articulos
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblEliminarLogico);
+            this.groupBox1.Controls.Add(this.btnElimarLogico);
             this.groupBox1.Controls.Add(this.lblAgregar);
             this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Controls.Add(this.BtnEliminar);
+            this.groupBox1.Controls.Add(this.BtnEliminarFisico);
             this.groupBox1.Controls.Add(this.LblEliminar);
             this.groupBox1.Controls.Add(this.LblModificar);
             this.groupBox1.Controls.Add(this.BtnModificar);
-            this.groupBox1.Location = new System.Drawing.Point(656, 61);
+            this.groupBox1.Location = new System.Drawing.Point(656, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(126, 426);
+            this.groupBox1.Size = new System.Drawing.Size(126, 496);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -302,6 +306,26 @@ namespace Gestor_Articulos
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnElimarLogico
+            // 
+            this.btnElimarLogico.AutoSize = true;
+            this.btnElimarLogico.Image = global::Gestor_Articulos.Properties.Resources.registro__eliminado;
+            this.btnElimarLogico.Location = new System.Drawing.Point(26, 407);
+            this.btnElimarLogico.Name = "btnElimarLogico";
+            this.btnElimarLogico.Size = new System.Drawing.Size(86, 83);
+            this.btnElimarLogico.TabIndex = 12;
+            this.btnElimarLogico.UseVisualStyleBackColor = true;
+            this.btnElimarLogico.Click += new System.EventHandler(this.btnElimarLogico_Click);
+            // 
+            // lblEliminarLogico
+            // 
+            this.lblEliminarLogico.AutoSize = true;
+            this.lblEliminarLogico.Location = new System.Drawing.Point(39, 391);
+            this.lblEliminarLogico.Name = "lblEliminarLogico";
+            this.lblEliminarLogico.Size = new System.Drawing.Size(78, 13);
+            this.lblEliminarLogico.TabIndex = 13;
+            this.lblEliminarLogico.Text = "Eliminar Logico";
             // 
             // Articulos
             // 
@@ -348,7 +372,7 @@ namespace Gestor_Articulos
         private System.Windows.Forms.ToolStripMenuItem verTodasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem marcasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verTodasToolStripMenuItem1;
-        private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.Button BtnEliminarFisico;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem2;
         private System.Windows.Forms.DataGridView DgvImagenes;
@@ -362,5 +386,7 @@ namespace Gestor_Articulos
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label lblEliminarLogico;
+        private System.Windows.Forms.Button btnElimarLogico;
     }
 }
