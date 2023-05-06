@@ -60,6 +60,10 @@ namespace Gestor_Articulos
         {
 
             CargarPaginaIncial();
+            cboCampo.Items.Add("Código");
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Marca");
+            cboCampo.Items.Add("Categoría");
         }
 
         private void CargarPaginaIncial()
@@ -202,16 +206,46 @@ namespace Gestor_Articulos
 
         }
 
-       
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            ProductoNegocio producto = new ProductoNegocio();
+
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltro.Text;
+                dgvProducto.DataSource = producto.filtrar(campo, criterio, filtro);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
        
 
-        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        
+
+        private void BtnImagenes_Click(object sender, EventArgs e)
+        {
+
+            Producto seleccionado;
+            seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+
+            NuevaImgArt VentanaNewImg = new NuevaImgArt(seleccionado);
+            VentanaNewImg.ShowDialog();
+            CargarPaginaIncial();
+
+        }
+
+        private void txtFiltro_TextChanged_1(object sender, EventArgs e)
         {
             List<Producto> listaFiltrada;
             string filtro = txtFiltro.Text;
 
-            if (filtro.Length >=3)
+            if (filtro.Length >= 3)
             {
 
                 listaFiltrada = listaProductos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.categoria.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripción.ToUpper().Contains(filtro.ToUpper()));
@@ -226,16 +260,18 @@ namespace Gestor_Articulos
             dgvProducto.Columns["Id"].Visible = false;
         }
 
-        private void BtnImagenes_Click(object sender, EventArgs e)
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string opcion = cboCampo.SelectedItem.ToString();
 
-            Producto seleccionado;
-            seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+            if (opcion != "")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
 
-            NuevaImgArt VentanaNewImg = new NuevaImgArt(seleccionado);
-            VentanaNewImg.ShowDialog();
-            CargarPaginaIncial();
-
+            }
         }
     }
 }

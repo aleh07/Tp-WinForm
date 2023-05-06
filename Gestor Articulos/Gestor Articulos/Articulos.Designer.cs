@@ -48,17 +48,21 @@ namespace Gestor_Articulos
             this.LblEliminar = new System.Windows.Forms.Label();
             this.lblAgregar = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDetalle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnImagenes = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
-            this.lblFiltro = new System.Windows.Forms.Label();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.LblImagenes = new System.Windows.Forms.Label();
             this.PBoxImgArt = new System.Windows.Forms.PictureBox();
-            this.btnDetalle = new System.Windows.Forms.Button();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.cboCriterio = new System.Windows.Forms.ComboBox();
+            this.lblCriterio = new System.Windows.Forms.Label();
+            this.cboCampo = new System.Windows.Forms.ComboBox();
+            this.lblcampo = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvImagenes)).BeginInit();
@@ -171,13 +175,13 @@ namespace Gestor_Articulos
             // dgvProducto
             // 
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducto.Location = new System.Drawing.Point(12, 106);
+            this.dgvProducto.Location = new System.Drawing.Point(12, 149);
             this.dgvProducto.MultiSelect = false;
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
             this.dgvProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dgvProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProducto.Size = new System.Drawing.Size(621, 305);
+            this.dgvProducto.Size = new System.Drawing.Size(621, 262);
             this.dgvProducto.TabIndex = 5;
             this.dgvProducto.SelectionChanged += new System.EventHandler(this.dgvProducto_SelectionChanged);
             // 
@@ -228,18 +232,26 @@ namespace Gestor_Articulos
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.BtnImagenes);
             this.groupBox1.Controls.Add(this.lblAgregar);
-            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.BtnEliminar);
             this.groupBox1.Controls.Add(this.LblEliminar);
             this.groupBox1.Controls.Add(this.LblModificar);
             this.groupBox1.Controls.Add(this.BtnModificar);
-            this.groupBox1.Location = new System.Drawing.Point(656, 77);
+            this.groupBox1.Location = new System.Drawing.Point(656, 80);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(227, 410);
+            this.groupBox1.Size = new System.Drawing.Size(227, 461);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Location = new System.Drawing.Point(66, 349);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(75, 64);
+            this.btnDetalle.TabIndex = 16;
+            this.btnDetalle.Text = "Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -266,13 +278,13 @@ namespace Gestor_Articulos
             this.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.Location = new System.Drawing.Point(24, 50);
+            this.btnBuscar.Location = new System.Drawing.Point(508, 100);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(125, 42);
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
-          
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAgregar
             // 
@@ -307,24 +319,6 @@ namespace Gestor_Articulos
             this.BtnModificar.UseVisualStyleBackColor = true;
             this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
-            // lblFiltro
-            // 
-            this.lblFiltro.AutoSize = true;
-            this.lblFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblFiltro.Location = new System.Drawing.Point(187, 80);
-            this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(29, 13);
-            this.lblFiltro.TabIndex = 12;
-            this.lblFiltro.Text = "Filtro";
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Location = new System.Drawing.Point(237, 77);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(155, 20);
-            this.txtFiltro.TabIndex = 13;
-            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
-            // 
             // LblImagenes
             // 
             this.LblImagenes.AutoSize = true;
@@ -344,23 +338,73 @@ namespace Gestor_Articulos
             this.PBoxImgArt.TabIndex = 11;
             this.PBoxImgArt.TabStop = false;
             // 
-            // btnDetalle
+            // txtFiltro
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(13, 340);
-            this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(75, 64);
-            this.btnDetalle.TabIndex = 16;
-            this.btnDetalle.Text = "Detalle";
-            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.txtFiltro.Location = new System.Drawing.Point(401, 112);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(100, 20);
+            this.txtFiltro.TabIndex = 26;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged_1);
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(355, 115);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(29, 13);
+            this.lblFiltro.TabIndex = 25;
+            this.lblFiltro.Text = "Filtro";
+            // 
+            // cboCriterio
+            // 
+            this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCriterio.FormattingEnabled = true;
+            this.cboCriterio.Location = new System.Drawing.Point(241, 112);
+            this.cboCriterio.Name = "cboCriterio";
+            this.cboCriterio.Size = new System.Drawing.Size(103, 21);
+            this.cboCriterio.TabIndex = 24;
+            // 
+            // lblCriterio
+            // 
+            this.lblCriterio.AutoSize = true;
+            this.lblCriterio.Location = new System.Drawing.Point(195, 115);
+            this.lblCriterio.Name = "lblCriterio";
+            this.lblCriterio.Size = new System.Drawing.Size(39, 13);
+            this.lblCriterio.TabIndex = 23;
+            this.lblCriterio.Text = "Criterio";
+            // 
+            // cboCampo
+            // 
+            this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCampo.FormattingEnabled = true;
+            this.cboCampo.Location = new System.Drawing.Point(86, 112);
+            this.cboCampo.Name = "cboCampo";
+            this.cboCampo.Size = new System.Drawing.Size(98, 21);
+            this.cboCampo.TabIndex = 22;
+            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
+            // 
+            // lblcampo
+            // 
+            this.lblcampo.AutoSize = true;
+            this.lblcampo.Location = new System.Drawing.Point(40, 120);
+            this.lblcampo.Name = "lblcampo";
+            this.lblcampo.Size = new System.Drawing.Size(40, 13);
+            this.lblcampo.TabIndex = 21;
+            this.lblcampo.Text = "Campo";
             // 
             // Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 564);
-            this.Controls.Add(this.LblImagenes);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.lblFiltro);
+            this.Controls.Add(this.cboCriterio);
+            this.Controls.Add(this.lblCriterio);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.cboCampo);
+            this.Controls.Add(this.lblcampo);
+            this.Controls.Add(this.LblImagenes);
             this.Controls.Add(this.PBoxImgArt);
             this.Controls.Add(this.DgvImagenes);
             this.Controls.Add(this.groupBox1);
@@ -409,12 +453,16 @@ namespace Gestor_Articulos
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblAgregar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblFiltro;
-        private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnImagenes;
         private System.Windows.Forms.Label LblImagenes;
         private System.Windows.Forms.Button btnDetalle;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.ComboBox cboCriterio;
+        private System.Windows.Forms.Label lblCriterio;
+        private System.Windows.Forms.ComboBox cboCampo;
+        private System.Windows.Forms.Label lblcampo;
     }
 }
