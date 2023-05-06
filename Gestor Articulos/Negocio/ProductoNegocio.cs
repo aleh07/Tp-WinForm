@@ -197,8 +197,115 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         
-        }  
+        }
 
+        public List<Producto> filtrar(string campo, string criterio, string filtro)
+        {
+             List<Producto> lista =new List<Producto>();
+            AccesoDatos datos = new AccesoDatos();
+            
+            try
+            {
+                string consulta = "SELECT A.id,A.codigo, A.Nombre, A.descripcion,A.IdMArca,A.IdCategoria,M.descripcion as marca , C.descripcion as categoria, a.precio from ARTICULOS A, MARCAS M, CATEGORIAS C  where A.IdMarca = M.Id and C.Id = A.IdCategoria and ";
+                
+                switch (campo)
+                {
+                    case "Código":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "A.codigo like'" + filtro + "%'";
+                                break;
+
+                            case "Termina con":
+                                consulta += "A.codigo like '%" + filtro + "'";
+                                break;
+                            case "Contiene":
+                                consulta += "A.codigo like'%" + filtro + "%'";
+                                break;
+                        }
+                        break;
+                    case "Nombre":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "A.Nombre like'" + filtro + "%'";
+                                break;
+
+                            case "Termina con":
+                                consulta += "A.Nombre like'%" + filtro + "'";
+                                break;
+                            case "Contiene":
+                                consulta += "A.Nombre like'%" + filtro + "%'";
+                                break;
+                        }
+                        break;
+                    case "Marca":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "M.descripcion like'" + filtro + "%'";
+                                break;
+                            case "Termina con":
+                                consulta += "M.descripcion like'%" + filtro + "'";
+                                break;
+                            case "Contiene":
+                                consulta += "M.descripcion like'%" + filtro + "%'";
+                                break;
+                        }
+                        break;
+                    case "Categoria":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "C.descripcion like'" + filtro + "%'";
+                                break;
+                            case "Termina con":
+                                consulta += "C.descripcion like'%" + filtro + "'";
+                                break;
+                            case "Contiene":
+                                consulta += "C.descripcion like'%" + filtro + "%'";
+                                break;
+                        }
+                        break;
+                }
+                datos.setearConsulta( consulta );
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Producto aux = new Producto();
+                    aux.Id = (Int32)datos.Lector["Id"];
+                    if (!(datos.Lector.IsDBNull(datos.lector.GetOrdinal("codigo"))))
+                        aux.CodArtículo = (string)datos.Lector["codigo"];
+                    if (!(datos.Lector.IsDBNull(datos.lector.GetOrdinal("Nombre"))))
+                        aux.Nombre = (string)datos.Lector["Nombre"];
+                    if (!(datos.Lector.IsDBNull(datos.lector.GetOrdinal("Descripcion"))))
+                        aux.Descripción = (string)datos.Lector["Descripcion"];
+                    if (!(datos.Lector.IsDBNull(datos.lector.GetOrdinal("precio"))))
+                    {
+                        decimal DosDecimal;
+                        DosDecimal = (decimal)datos.Lector["precio"];
+                        aux.Precio = Decimal.Parse(DosDecimal.ToString("0.00"));
+                    }
+                    aux.marca = new Marca();
+                    aux.marca.Id = (Int32)datos.Lector["IdMarca"];
+                    if (!(datos.Lector.IsDBNull(datos.lector.GetOrdinal("marca"))))
+                        aux.marca.Nombre = (string)datos.Lector["marca"];
+                    aux.categoria = new Categoria();
+                    if (!(datos.Lector.IsDBNull(datos.lector.GetOrdinal("categoria"))))
+                        aux.categoria.Nombre = (string)datos.Lector["categoria"];
+                    aux.categoria.Id = (Int32)datos.Lector["IdCategoria"];
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch  (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
 

@@ -58,8 +58,11 @@ namespace Gestor_Articulos
 
         private void Articulos_Load(object sender, EventArgs e)
         {
-
             CargarPaginaIncial();
+            cboCampo.Items.Add("Código");
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Marca");
+            cboCampo.Items.Add("Categoría");
         }
 
         private void CargarPaginaIncial()
@@ -207,7 +210,19 @@ namespace Gestor_Articulos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           
+            ProductoNegocio producto = new ProductoNegocio();
+            
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltro.Text;
+                dgvProducto.DataSource = producto.filtrar(campo, criterio, filtro);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
        
@@ -215,12 +230,12 @@ namespace Gestor_Articulos
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
             List<Producto> listaFiltrada;
-            string filtro = txtFiltro.Text;
+            string filtro = txtFiltroRapido.Text;
 
             if (filtro.Length >=3)
             {
 
-                listaFiltrada = listaProductos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.categoria.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripción.ToUpper().Contains(filtro.ToUpper()));
+                listaFiltrada = listaProductos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.categoria.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripción.ToUpper().Contains(filtro.ToUpper()) || x.marca.Nombre.ToUpper().Contains(filtro.ToUpper()));
             }
             else
             {
@@ -240,6 +255,25 @@ namespace Gestor_Articulos
         private void btnElimarLogico_Click(object sender, EventArgs e)
         {
             Eliminar(true);
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           string opcion = cboCampo.SelectedItem.ToString();
+
+            if(opcion != "")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+
+            }
+        }
+
+        private void cboCriterio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
