@@ -217,9 +217,9 @@ namespace Gestor_Articulos
             this.LblImagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblImagenes.Location = new System.Drawing.Point(44, 414);
             this.LblImagenes.Name = "LblImagenes";
-            this.LblImagenes.Size = new System.Drawing.Size(194, 29);
+            this.LblImagenes.Size = new System.Drawing.Size(222, 29);
             this.LblImagenes.TabIndex = 15;
-            this.LblImagenes.Text = "Imanes x Articulo";
+            this.LblImagenes.Text = "Imagenes x Articulo";
             // 
             // PBoxImgArt
             // 
@@ -402,6 +402,8 @@ namespace Gestor_Articulos
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Articulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulos";

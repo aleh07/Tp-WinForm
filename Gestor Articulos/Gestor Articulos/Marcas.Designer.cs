@@ -29,7 +29,7 @@ namespace Gestor_Articulos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,8 +121,8 @@ namespace Gestor_Articulos
             // 
             // DgvMarcas
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
-            this.DgvMarcas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
+            this.DgvMarcas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvMarcas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DgvMarcas.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.DgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -163,7 +163,10 @@ namespace Gestor_Articulos
             this.Controls.Add(this.DgvMarcas);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Marcas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Marcas";
             this.Load += new System.EventHandler(this.Marcas_Load);
             this.menuStrip1.ResumeLayout(false);

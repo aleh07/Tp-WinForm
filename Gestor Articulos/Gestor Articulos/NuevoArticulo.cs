@@ -49,9 +49,9 @@ namespace Gestor_Articulos
                     TxtCodigo.Text = producto.CodArtículo.ToString();
                     txtNombre.Text = producto.Nombre;
                     txtDescripcion.Text = producto.Descripción;
-                    txtPrecio.Text = producto.Precio.ToString();
-                    comboBoxMarca.SelectedValue = producto.marca.Id.ToString();
-                    comboBoxCategoria.SelectedValue = producto.categoria.Id.ToString();
+                    numPrecio.Value = Decimal.Parse(producto.Precio.ToString());
+                    comboBoxMarca.SelectedValue = producto.marca.Id;
+                    comboBoxCategoria.SelectedValue = producto.categoria.Id;
                     
                 }
             }
@@ -88,7 +88,7 @@ namespace Gestor_Articulos
             try
             {
                if(producto == null)
-                producto = new Producto();    
+                producto = new Producto();     
                
 
                 producto.CodArtículo = TxtCodigo.Text;
@@ -96,7 +96,7 @@ namespace Gestor_Articulos
                 producto.Descripción = txtDescripcion.Text;
                 producto.marca = (Marca)comboBoxMarca.SelectedItem;
                 producto.categoria = (Categoria)comboBoxCategoria.SelectedItem;
-                producto.Precio = Decimal.Parse(txtPrecio.Text);
+                producto.Precio = numPrecio.Value ;
                 imagenNuevo.Imagen = txtImagen.Text;
                 Int32 IdArt = productoNegocio.UltimoId();
                 imagenNuevo.IdProducto = IdArt+1 ;
@@ -118,8 +118,8 @@ namespace Gestor_Articulos
                    
                 }
                 
-                this.Refresh();
-                Close();
+               
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -129,7 +129,7 @@ namespace Gestor_Articulos
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void txtImagen_Leave(object sender, EventArgs e)
@@ -156,6 +156,11 @@ namespace Gestor_Articulos
         private void txtImagen_TextChanged(object sender, EventArgs e)
         {
             cargarImagen(txtImagen.Text);
+        }
+
+        private void comboBoxMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

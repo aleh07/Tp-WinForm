@@ -145,6 +145,8 @@ namespace Gestor_Articulos
             this.Controls.Add(this.BtnCategorias);
             this.Controls.Add(this.BtnArticulos);
             this.Controls.Add(this.LblTitulo);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla Principal";

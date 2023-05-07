@@ -39,16 +39,17 @@ namespace Gestor_Articulos
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblImagen = new System.Windows.Forms.Label();
             this.txtImagen = new System.Windows.Forms.TextBox();
             this.PBoxImgArt = new System.Windows.Forms.PictureBox();
+            this.numPrecio = new System.Windows.Forms.NumericUpDown();
+            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -81,6 +82,7 @@ namespace Gestor_Articulos
             // TxtCodigo
             // 
             this.TxtCodigo.Location = new System.Drawing.Point(343, 63);
+            this.TxtCodigo.MaxLength = 50;
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(100, 20);
             this.TxtCodigo.TabIndex = 3;
@@ -124,6 +126,7 @@ namespace Gestor_Articulos
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(343, 99);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 8;
@@ -131,16 +134,10 @@ namespace Gestor_Articulos
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(343, 136);
+            this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 9;
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(343, 257);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecio.TabIndex = 10;
             // 
             // label5
             // 
@@ -159,15 +156,6 @@ namespace Gestor_Articulos
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Categoria";
-            // 
-            // comboBoxMarca
-            // 
-            this.comboBoxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMarca.FormattingEnabled = true;
-            this.comboBoxMarca.Location = new System.Drawing.Point(343, 169);
-            this.comboBoxMarca.Name = "comboBoxMarca";
-            this.comboBoxMarca.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxMarca.TabIndex = 13;
             // 
             // comboBoxCategoria
             // 
@@ -200,6 +188,7 @@ namespace Gestor_Articulos
             // txtImagen
             // 
             this.txtImagen.Location = new System.Drawing.Point(343, 303);
+            this.txtImagen.MaxLength = 1000;
             this.txtImagen.Name = "txtImagen";
             this.txtImagen.Size = new System.Drawing.Size(100, 20);
             this.txtImagen.TabIndex = 17;
@@ -208,27 +197,56 @@ namespace Gestor_Articulos
             // 
             // PBoxImgArt
             // 
-            this.PBoxImgArt.Location = new System.Drawing.Point(547, 226);
+            this.PBoxImgArt.Location = new System.Drawing.Point(524, 106);
             this.PBoxImgArt.Name = "PBoxImgArt";
-            this.PBoxImgArt.Size = new System.Drawing.Size(107, 97);
+            this.PBoxImgArt.Size = new System.Drawing.Size(214, 217);
             this.PBoxImgArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBoxImgArt.TabIndex = 18;
             this.PBoxImgArt.TabStop = false;
+            // 
+            // numPrecio
+            // 
+            this.numPrecio.DecimalPlaces = 2;
+            this.numPrecio.Location = new System.Drawing.Point(343, 255);
+            this.numPrecio.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.numPrecio.Name = "numPrecio";
+            this.numPrecio.Size = new System.Drawing.Size(100, 20);
+            this.numPrecio.TabIndex = 10013;
+            this.numPrecio.ThousandsSeparator = true;
+            this.numPrecio.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // comboBoxMarca
+            // 
+            this.comboBoxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMarca.FormattingEnabled = true;
+            this.comboBoxMarca.Location = new System.Drawing.Point(343, 169);
+            this.comboBoxMarca.MaxDropDownItems = 5;
+            this.comboBoxMarca.Name = "comboBoxMarca";
+            this.comboBoxMarca.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxMarca.TabIndex = 10014;
             // 
             // Nuevo_Articulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBoxMarca);
+            this.Controls.Add(this.numPrecio);
             this.Controls.Add(this.PBoxImgArt);
             this.Controls.Add(this.txtImagen);
             this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.comboBoxCategoria);
-            this.Controls.Add(this.comboBoxMarca);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label4);
@@ -240,11 +258,15 @@ namespace Gestor_Articulos
             this.Controls.Add(this.BtnCargarArt);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Nuevo_Articulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Articulo";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Nuevo_Articulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,14 +284,14 @@ namespace Gestor_Articulos
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBoxMarca;
         private System.Windows.Forms.ComboBox comboBoxCategoria;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblImagen;
         private System.Windows.Forms.TextBox txtImagen;
         private System.Windows.Forms.PictureBox PBoxImgArt;
+        private System.Windows.Forms.NumericUpDown numPrecio;
+        private System.Windows.Forms.ComboBox comboBoxMarca;
     }
 }

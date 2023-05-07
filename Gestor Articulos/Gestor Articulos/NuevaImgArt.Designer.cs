@@ -93,7 +93,10 @@ namespace Gestor_Articulos
             this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.BtnCargarArt);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NuevaImgArt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevaImgArt";
             this.Load += new System.EventHandler(this.NuevaImgArt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt1)).EndInit();

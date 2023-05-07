@@ -208,6 +208,21 @@ namespace Gestor_Articulos
 
         }
 
+        private bool validarFiltro()
+        {
+            if(cboCampo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar campo y criterio para hacer una búsqueda avanzada");
+                return true;
+            }
+            if (cboCriterio.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar campo y criterio para hacer una búsqueda avanzada");
+                return true;
+            }
+            return false;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
@@ -215,6 +230,9 @@ namespace Gestor_Articulos
 
             try
             {
+                if (validarFiltro())
+                    return;
+                
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltro.Text;
