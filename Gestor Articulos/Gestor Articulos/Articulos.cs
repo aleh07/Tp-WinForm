@@ -289,6 +289,50 @@ namespace Gestor_Articulos
 
             }
         }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvProducto.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un artículo para ver el detalle");
+                return;
+            }
+            else
+            {
+                try
+                {
+                    Producto p = new Producto();
+                    p = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+                    MessageBox.Show("Código: " + p.CodArtículo + "\n Nombre: " + p.Nombre + "\n Descripción: " + p.Descripción + "\n Marca: " + p.marca.Nombre + "\n Categoría: " + p.categoria.Nombre + "\n Precio: " + p.Precio.ToString());
+                }
+
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+            }
+            
+            }
+
+
+        private bool ValidarGrid(DataGridView dgv)
+        {
+            for (int i = 0; i < dgv.RowCount - 1; i++)
+            {
+                for (int j = 0; j < dgv.ColumnCount; j++)
+                {
+                    if (string.IsNullOrEmpty(dgv.Rows[i].Cells[j].Value.ToString()))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+
     }
 }
 

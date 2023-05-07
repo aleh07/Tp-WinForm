@@ -374,6 +374,7 @@ namespace Gestor_Articulos
             this.btnDetalle.TabIndex = 16;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // Articulos
             // 
