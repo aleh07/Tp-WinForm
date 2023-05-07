@@ -103,7 +103,7 @@ namespace Gestor_Articulos
 
                 if (producto.Id != 0)
                 {
-                    productoNegocio.Modificar(producto);
+                    productoNegocio.Modificar(producto,imagenNuevo);
                     MessageBox.Show("Modificado exitosamente");
                     
                 }

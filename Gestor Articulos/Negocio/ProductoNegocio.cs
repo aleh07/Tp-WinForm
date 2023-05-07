@@ -208,7 +208,7 @@ namespace Negocio
             }
         }
 
-        public void Modificar(Producto producto)
+        public void Modificar(Producto producto, ImagenArticulo imagenModificar)
         {
             AccesoDatos datos = new AccesoDatos();
 
@@ -222,6 +222,9 @@ namespace Negocio
                 datos.setearParametro("@idCategoria", producto.categoria.Id);
                 datos.setearParametro("@precio", producto.Precio);
                 datos.setearParametro("@id", producto.Id);
+                datos.setearConsulta("update IMAGENES set ImagenUrl =@IdArt where IdArticulo =@Id");
+                datos.setearParametro("@IdArt", imagenModificar.Imagen);
+                datos.setearParametro("@IdArticulo", producto.CodArtículo);
 
                 datos.ejectutarAccion();
             }

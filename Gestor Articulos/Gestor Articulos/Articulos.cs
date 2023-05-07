@@ -194,7 +194,7 @@ namespace Gestor_Articulos
         }
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            Producto seleccionado;
+            Producto seleccionado = new Producto();
             seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
 
             Nuevo_Articulo modificar = new Nuevo_Articulo(seleccionado);
@@ -203,10 +203,6 @@ namespace Gestor_Articulos
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private bool validarFiltro()
         {
