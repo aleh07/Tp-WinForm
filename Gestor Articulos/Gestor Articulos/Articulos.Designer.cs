@@ -174,6 +174,7 @@ namespace Gestor_Articulos
             // 
             this.dgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvProducto.BackgroundColor = System.Drawing.Color.MediumAquamarine;
             this.dgvProducto.Location = new System.Drawing.Point(12, 149);
             this.dgvProducto.MultiSelect = false;
             this.dgvProducto.Name = "dgvProducto";
@@ -187,6 +188,7 @@ namespace Gestor_Articulos
             // DgvImagenes
             // 
             this.DgvImagenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvImagenes.BackgroundColor = System.Drawing.Color.MediumAquamarine;
             this.DgvImagenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvImagenes.Location = new System.Drawing.Point(12, 446);
             this.DgvImagenes.MultiSelect = false;
@@ -377,6 +379,7 @@ namespace Gestor_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(895, 564);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.label1);

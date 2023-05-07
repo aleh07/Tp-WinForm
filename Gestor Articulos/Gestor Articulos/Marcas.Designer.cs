@@ -124,7 +124,7 @@ namespace Gestor_Articulos
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
             this.DgvMarcas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvMarcas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DgvMarcas.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.DgvMarcas.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.DgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvMarcas.Location = new System.Drawing.Point(12, 104);
             this.DgvMarcas.Name = "DgvMarcas";
@@ -156,7 +156,7 @@ namespace Gestor_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.BtnEliminar);

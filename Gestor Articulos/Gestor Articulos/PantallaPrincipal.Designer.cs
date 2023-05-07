@@ -84,7 +84,7 @@ namespace Gestor_Articulos
             // BtnMarcas
             // 
             this.BtnMarcas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnMarcas.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnMarcas.BackColor = System.Drawing.Color.RosyBrown;
             this.BtnMarcas.Image = global::Gestor_Articulos.Properties.Resources.marca;
             this.BtnMarcas.Location = new System.Drawing.Point(503, 162);
             this.BtnMarcas.Name = "BtnMarcas";
@@ -97,7 +97,7 @@ namespace Gestor_Articulos
             // 
             this.BtnCategorias.AccessibleDescription = "";
             this.BtnCategorias.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnCategorias.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnCategorias.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BtnCategorias.Image = global::Gestor_Articulos.Properties.Resources._677299;
             this.BtnCategorias.Location = new System.Drawing.Point(332, 162);
             this.BtnCategorias.Name = "BtnCategorias";
@@ -111,7 +111,7 @@ namespace Gestor_Articulos
             this.BtnArticulos.AccessibleDescription = "";
             this.BtnArticulos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnArticulos.AutoSize = true;
-            this.BtnArticulos.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnArticulos.BackColor = System.Drawing.Color.MediumAquamarine;
             this.BtnArticulos.Image = global::Gestor_Articulos.Properties.Resources._929250;
             this.BtnArticulos.Location = new System.Drawing.Point(185, 162);
             this.BtnArticulos.Name = "BtnArticulos";

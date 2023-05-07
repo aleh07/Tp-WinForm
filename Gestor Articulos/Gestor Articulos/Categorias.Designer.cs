@@ -52,11 +52,11 @@ namespace Gestor_Articulos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvCategoria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvCategoria.BackgroundColor = System.Drawing.Color.Beige;
+            this.dgvCategoria.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategoria.Location = new System.Drawing.Point(12, 59);
             this.dgvCategoria.Name = "dgvCategoria";
-            this.dgvCategoria.Size = new System.Drawing.Size(249, 130);
+            this.dgvCategoria.Size = new System.Drawing.Size(249, 277);
             this.dgvCategoria.TabIndex = 0;
             this.dgvCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -157,6 +157,7 @@ namespace Gestor_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(670, 406);
             this.Controls.Add(this.btbAgregar);
             this.Controls.Add(this.BtnEliminar);

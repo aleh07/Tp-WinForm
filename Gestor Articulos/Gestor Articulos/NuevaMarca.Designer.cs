@@ -39,7 +39,7 @@ namespace Gestor_Articulos
             // Lbleyenda
             // 
             this.Lbleyenda.AutoSize = true;
-            this.Lbleyenda.ForeColor = System.Drawing.Color.ForestGreen;
+            this.Lbleyenda.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Lbleyenda.Location = new System.Drawing.Point(298, 155);
             this.Lbleyenda.Name = "Lbleyenda";
             this.Lbleyenda.Size = new System.Drawing.Size(139, 13);
@@ -87,6 +87,7 @@ namespace Gestor_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Lbleyenda);
             this.Controls.Add(this.btnCancelar);
