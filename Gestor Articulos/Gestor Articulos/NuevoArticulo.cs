@@ -61,6 +61,25 @@ namespace Gestor_Articulos
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        public bool ValidarCampos()
+        {
+            if (TxtCodigo.Text == "" || txtNombre.Text == "" || txtDescripcion.Text == "" || txtImagen.Text == "")
+            {
+                MessageBox.Show("Hay campos vacios");
+
+                return false;
+
+
+            }
+            else
+
+            {
+
+                return true;
+            }
+
+        }
         private void BtnCargarArt_Click(object sender, EventArgs e)
         {
             //Producto producto = new Producto();
@@ -69,7 +88,7 @@ namespace Gestor_Articulos
             try
             {
                if(producto == null)
-                producto = new Producto();  
+                producto = new Producto();    
                
 
                 producto.CodArtículo = TxtCodigo.Text;
@@ -90,9 +109,13 @@ namespace Gestor_Articulos
                 }
                 else
                 {
-                   
-                    productoNegocio.agregar(producto,imagenNuevo);
+                    if (ValidarCampos()==true ) 
+                    {
+                     productoNegocio.agregar(producto,imagenNuevo);
                     MessageBox.Show("Agregado exitosamente");
+                    
+                    }
+                   
                 }
                 
                 this.Refresh();

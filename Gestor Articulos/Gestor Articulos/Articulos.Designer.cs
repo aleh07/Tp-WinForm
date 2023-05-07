@@ -44,17 +44,7 @@ namespace Gestor_Articulos
             this.LblTitulo = new System.Windows.Forms.Label();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.DgvImagenes = new System.Windows.Forms.DataGridView();
-            this.LblModificar = new System.Windows.Forms.Label();
-            this.LblEliminar = new System.Windows.Forms.Label();
-            this.lblAgregar = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDetalle = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BtnImagenes = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
             this.LblImagenes = new System.Windows.Forms.Label();
             this.PBoxImgArt = new System.Windows.Forms.PictureBox();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -63,10 +53,18 @@ namespace Gestor_Articulos
             this.lblCriterio = new System.Windows.Forms.Label();
             this.cboCampo = new System.Windows.Forms.ComboBox();
             this.lblcampo = new System.Windows.Forms.Label();
+            this.BtnModificar = new System.Windows.Forms.Button();
+            this.LblModificar = new System.Windows.Forms.Label();
+            this.LblEliminar = new System.Windows.Forms.Label();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.lblAgregar = new System.Windows.Forms.Label();
+            this.BtnImagenes = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnDetalle = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvImagenes)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,7 +164,7 @@ namespace Gestor_Articulos
             // 
             this.LblTitulo.AutoSize = true;
             this.LblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitulo.Location = new System.Drawing.Point(245, 28);
+            this.LblTitulo.Location = new System.Drawing.Point(259, 61);
             this.LblTitulo.Name = "LblTitulo";
             this.LblTitulo.Size = new System.Drawing.Size(105, 29);
             this.LblTitulo.TabIndex = 4;
@@ -174,7 +172,8 @@ namespace Gestor_Articulos
             // 
             // dgvProducto
             // 
-            this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProducto.Location = new System.Drawing.Point(12, 149);
             this.dgvProducto.MultiSelect = false;
             this.dgvProducto.Name = "dgvProducto";
@@ -199,80 +198,6 @@ namespace Gestor_Articulos
             this.DgvImagenes.SelectionChanged += new System.EventHandler(this.DgvImagenes_SelectionChanged);
             this.DgvImagenes.Click += new System.EventHandler(this.DgvImagenes_Click);
             // 
-            // LblModificar
-            // 
-            this.LblModificar.AutoSize = true;
-            this.LblModificar.Location = new System.Drawing.Point(44, 230);
-            this.LblModificar.Name = "LblModificar";
-            this.LblModificar.Size = new System.Drawing.Size(50, 13);
-            this.LblModificar.TabIndex = 8;
-            this.LblModificar.Text = "Modificar";
-            // 
-            // LblEliminar
-            // 
-            this.LblEliminar.AutoSize = true;
-            this.LblEliminar.Location = new System.Drawing.Point(126, 230);
-            this.LblEliminar.Name = "LblEliminar";
-            this.LblEliminar.Size = new System.Drawing.Size(46, 13);
-            this.LblEliminar.TabIndex = 9;
-            this.LblEliminar.Text = "Eliminar ";
-            // 
-            // lblAgregar
-            // 
-            this.lblAgregar.AutoSize = true;
-            this.lblAgregar.Location = new System.Drawing.Point(44, 117);
-            this.lblAgregar.Name = "lblAgregar";
-            this.lblAgregar.Size = new System.Drawing.Size(44, 13);
-            this.lblAgregar.TabIndex = 11;
-            this.lblAgregar.Text = "Agregar";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnDetalle);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.BtnImagenes);
-            this.groupBox1.Controls.Add(this.lblAgregar);
-            this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Controls.Add(this.BtnEliminar);
-            this.groupBox1.Controls.Add(this.LblEliminar);
-            this.groupBox1.Controls.Add(this.LblModificar);
-            this.groupBox1.Controls.Add(this.BtnModificar);
-            this.groupBox1.Location = new System.Drawing.Point(656, 80);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(227, 461);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // btnDetalle
-            // 
-            this.btnDetalle.Location = new System.Drawing.Point(66, 349);
-            this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(75, 64);
-            this.btnDetalle.TabIndex = 16;
-            this.btnDetalle.Text = "Detalle";
-            this.btnDetalle.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 114);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Agregar mas imagenes";
-            // 
-            // BtnImagenes
-            // 
-            this.BtnImagenes.Image = global::Gestor_Articulos.Properties.Resources.nuevo21;
-            this.BtnImagenes.Location = new System.Drawing.Point(116, 130);
-            this.BtnImagenes.Name = "BtnImagenes";
-            this.BtnImagenes.Size = new System.Drawing.Size(86, 84);
-            this.BtnImagenes.TabIndex = 12;
-            this.BtnImagenes.UseVisualStyleBackColor = true;
-            this.BtnImagenes.Click += new System.EventHandler(this.BtnImagenes_Click);
-            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -285,39 +210,6 @@ namespace Gestor_Articulos
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Image = global::Gestor_Articulos.Properties.Resources.nuevo21;
-            this.btnAgregar.Location = new System.Drawing.Point(24, 130);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(86, 84);
-            this.btnAgregar.TabIndex = 10;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.AutoSize = true;
-            this.BtnEliminar.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.BtnEliminar.Image = global::Gestor_Articulos.Properties.Resources.registro__eliminado;
-            this.BtnEliminar.Location = new System.Drawing.Point(113, 246);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(86, 83);
-            this.BtnEliminar.TabIndex = 7;
-            this.BtnEliminar.UseVisualStyleBackColor = true;
-            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
-            // 
-            // BtnModificar
-            // 
-            this.BtnModificar.AutoSize = true;
-            this.BtnModificar.Image = global::Gestor_Articulos.Properties.Resources.registro_detalle;
-            this.BtnModificar.Location = new System.Drawing.Point(24, 246);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(83, 83);
-            this.BtnModificar.TabIndex = 0;
-            this.BtnModificar.UseVisualStyleBackColor = true;
-            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // LblImagenes
             // 
@@ -392,22 +284,119 @@ namespace Gestor_Articulos
             this.lblcampo.TabIndex = 21;
             this.lblcampo.Text = "Campo";
             // 
+            // BtnModificar
+            // 
+            this.BtnModificar.AutoSize = true;
+            this.BtnModificar.Image = global::Gestor_Articulos.Properties.Resources.registro_detalle;
+            this.BtnModificar.Location = new System.Drawing.Point(639, 331);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(83, 83);
+            this.BtnModificar.TabIndex = 0;
+            this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
+            // LblModificar
+            // 
+            this.LblModificar.AutoSize = true;
+            this.LblModificar.Location = new System.Drawing.Point(639, 315);
+            this.LblModificar.Name = "LblModificar";
+            this.LblModificar.Size = new System.Drawing.Size(50, 13);
+            this.LblModificar.TabIndex = 8;
+            this.LblModificar.Text = "Modificar";
+            // 
+            // LblEliminar
+            // 
+            this.LblEliminar.AutoSize = true;
+            this.LblEliminar.Location = new System.Drawing.Point(741, 315);
+            this.LblEliminar.Name = "LblEliminar";
+            this.LblEliminar.Size = new System.Drawing.Size(46, 13);
+            this.LblEliminar.TabIndex = 9;
+            this.LblEliminar.Text = "Eliminar ";
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.AutoSize = true;
+            this.BtnEliminar.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.BtnEliminar.Image = global::Gestor_Articulos.Properties.Resources.registro__eliminado;
+            this.BtnEliminar.Location = new System.Drawing.Point(744, 331);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(86, 83);
+            this.BtnEliminar.TabIndex = 7;
+            this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = global::Gestor_Articulos.Properties.Resources.nuevo21;
+            this.btnAgregar.Location = new System.Drawing.Point(639, 219);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(86, 84);
+            this.btnAgregar.TabIndex = 10;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // lblAgregar
+            // 
+            this.lblAgregar.AutoSize = true;
+            this.lblAgregar.Location = new System.Drawing.Point(645, 203);
+            this.lblAgregar.Name = "lblAgregar";
+            this.lblAgregar.Size = new System.Drawing.Size(44, 13);
+            this.lblAgregar.TabIndex = 11;
+            this.lblAgregar.Text = "Agregar";
+            // 
+            // BtnImagenes
+            // 
+            this.BtnImagenes.Image = global::Gestor_Articulos.Properties.Resources.nuevo21;
+            this.BtnImagenes.Location = new System.Drawing.Point(744, 219);
+            this.BtnImagenes.Name = "BtnImagenes";
+            this.BtnImagenes.Size = new System.Drawing.Size(86, 84);
+            this.BtnImagenes.TabIndex = 12;
+            this.BtnImagenes.UseVisualStyleBackColor = true;
+            this.BtnImagenes.Click += new System.EventHandler(this.BtnImagenes_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(741, 203);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Agregar mas imagenes";
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Location = new System.Drawing.Point(663, 149);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(167, 38);
+            this.btnDetalle.TabIndex = 16;
+            this.btnDetalle.Text = "Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            // 
             // Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 564);
+            this.Controls.Add(this.btnDetalle);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BtnImagenes);
             this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.lblFiltro);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.cboCriterio);
+            this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.lblCriterio);
+            this.Controls.Add(this.LblEliminar);
             this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.LblModificar);
             this.Controls.Add(this.cboCampo);
+            this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.lblcampo);
             this.Controls.Add(this.LblImagenes);
             this.Controls.Add(this.PBoxImgArt);
             this.Controls.Add(this.DgvImagenes);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvProducto);
             this.Controls.Add(this.LblTitulo);
             this.Controls.Add(this.toolStrip1);
@@ -421,8 +410,6 @@ namespace Gestor_Articulos
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvImagenes)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -442,27 +429,26 @@ namespace Gestor_Articulos
         private System.Windows.Forms.ToolStripMenuItem verTodasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem marcasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verTodasToolStripMenuItem1;
-        private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem2;
         private System.Windows.Forms.DataGridView DgvImagenes;
         private System.Windows.Forms.PictureBox PBoxImgArt;
-        private System.Windows.Forms.Button BtnModificar;
-        private System.Windows.Forms.Label LblModificar;
-        private System.Windows.Forms.Label LblEliminar;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Label lblAgregar;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnImagenes;
         private System.Windows.Forms.Label LblImagenes;
-        private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.ComboBox cboCriterio;
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.ComboBox cboCampo;
         private System.Windows.Forms.Label lblcampo;
+        private System.Windows.Forms.Button BtnModificar;
+        private System.Windows.Forms.Label LblModificar;
+        private System.Windows.Forms.Label LblEliminar;
+        private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label lblAgregar;
+        private System.Windows.Forms.Button BtnImagenes;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDetalle;
     }
 }

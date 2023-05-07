@@ -94,6 +94,8 @@ namespace Gestor_Articulos
             }
 
         }
+
+        
         private void dgvProducto_SelectionChanged(object sender, EventArgs e)
         {
             try
