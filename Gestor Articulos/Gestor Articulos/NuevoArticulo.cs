@@ -50,8 +50,8 @@ namespace Gestor_Articulos
                     txtNombre.Text = producto.Nombre;
                     txtDescripcion.Text = producto.Descripción;
                     txtPrecio.Text = producto.Precio.ToString();
-                    comboBoxMarca.SelectedValue = producto.marca.Id.ToString();
-                    comboBoxCategoria.SelectedValue = producto.categoria.Id.ToString();
+                    comboBoxMarca.SelectedValue = producto.marca.Id;
+                    comboBoxCategoria.SelectedValue = producto.categoria.Id;
                     
                 }
             }
@@ -133,6 +133,11 @@ namespace Gestor_Articulos
         private void txtImagen_TextChanged(object sender, EventArgs e)
         {
             cargarImagen(txtImagen.Text);
+        }
+
+        private void comboBoxMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -51,10 +51,10 @@ namespace Gestor_Articulos
             this.btnDetalle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnImagenes = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.LblImagenes = new System.Windows.Forms.Label();
             this.PBoxImgArt = new System.Windows.Forms.PictureBox();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -273,19 +273,6 @@ namespace Gestor_Articulos
             this.BtnImagenes.UseVisualStyleBackColor = true;
             this.BtnImagenes.Click += new System.EventHandler(this.BtnImagenes_Click);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.Location = new System.Drawing.Point(508, 100);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(125, 42);
-            this.btnBuscar.TabIndex = 14;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // btnAgregar
             // 
             this.btnAgregar.Image = global::Gestor_Articulos.Properties.Resources.nuevo21;
@@ -319,15 +306,28 @@ namespace Gestor_Articulos
             this.BtnModificar.UseVisualStyleBackColor = true;
             this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.Location = new System.Drawing.Point(508, 100);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(125, 42);
+            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // LblImagenes
             // 
             this.LblImagenes.AutoSize = true;
             this.LblImagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblImagenes.Location = new System.Drawing.Point(44, 414);
             this.LblImagenes.Name = "LblImagenes";
-            this.LblImagenes.Size = new System.Drawing.Size(194, 29);
+            this.LblImagenes.Size = new System.Drawing.Size(222, 29);
             this.LblImagenes.TabIndex = 15;
-            this.LblImagenes.Text = "Imanes x Articulo";
+            this.LblImagenes.Text = "Imagenes x Articulo";
             // 
             // PBoxImgArt
             // 
