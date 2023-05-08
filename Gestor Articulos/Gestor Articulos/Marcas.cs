@@ -64,7 +64,7 @@ namespace Gestor_Articulos
             {
                 listaMarca = negocio.listar();
                 DgvMarcas.DataSource = listaMarca;
-
+                DgvMarcas.Columns["Id"].Visible = false;
 
                 listaMarca = negocio.listar();
                 DgvMarcas.DataSource = listaMarca;
@@ -109,6 +109,11 @@ namespace Gestor_Articulos
 
                 throw ex;
             }
+        }
+
+        private void DgvMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

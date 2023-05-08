@@ -37,16 +37,18 @@ namespace Gestor_Articulos
             this.BtnCategorias = new System.Windows.Forms.Button();
             this.BtnArticulos = new System.Windows.Forms.Button();
             this.lblFecha = new System.Windows.Forms.Label();
+            this.Gbprincipal = new System.Windows.Forms.GroupBox();
+            this.Gbprincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // LblTitulo
             // 
             this.LblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LblTitulo.AutoSize = true;
-            this.LblTitulo.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitulo.Location = new System.Drawing.Point(299, 46);
+            this.LblTitulo.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitulo.Location = new System.Drawing.Point(261, 81);
             this.LblTitulo.Name = "LblTitulo";
-            this.LblTitulo.Size = new System.Drawing.Size(169, 24);
+            this.LblTitulo.Size = new System.Drawing.Size(224, 29);
             this.LblTitulo.TabIndex = 2;
             this.LblTitulo.Text = "Gestor de Articulos";
             this.LblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -86,7 +88,7 @@ namespace Gestor_Articulos
             this.BtnMarcas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnMarcas.BackColor = System.Drawing.Color.RosyBrown;
             this.BtnMarcas.Image = global::Gestor_Articulos.Properties.Resources.marca;
-            this.BtnMarcas.Location = new System.Drawing.Point(503, 162);
+            this.BtnMarcas.Location = new System.Drawing.Point(465, 33);
             this.BtnMarcas.Name = "BtnMarcas";
             this.BtnMarcas.Size = new System.Drawing.Size(83, 83);
             this.BtnMarcas.TabIndex = 2;
@@ -131,6 +133,17 @@ namespace Gestor_Articulos
             this.lblFecha.TabIndex = 9;
             this.lblFecha.Text = "fecha";
             // 
+            // Gbprincipal
+            // 
+            this.Gbprincipal.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Gbprincipal.Controls.Add(this.BtnMarcas);
+            this.Gbprincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Gbprincipal.Location = new System.Drawing.Point(34, 129);
+            this.Gbprincipal.Name = "Gbprincipal";
+            this.Gbprincipal.Size = new System.Drawing.Size(691, 166);
+            this.Gbprincipal.TabIndex = 10;
+            this.Gbprincipal.TabStop = false;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,15 +154,16 @@ namespace Gestor_Articulos
             this.Controls.Add(this.LblMarca);
             this.Controls.Add(this.LblCategoria);
             this.Controls.Add(this.LblArticulo);
-            this.Controls.Add(this.BtnMarcas);
             this.Controls.Add(this.BtnCategorias);
             this.Controls.Add(this.BtnArticulos);
             this.Controls.Add(this.LblTitulo);
+            this.Controls.Add(this.Gbprincipal);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla Principal";
+            this.Gbprincipal.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,6 +178,7 @@ namespace Gestor_Articulos
         private System.Windows.Forms.Label LblCategoria;
         private System.Windows.Forms.Label LblMarca;
         private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.GroupBox Gbprincipal;
     }
 }
 

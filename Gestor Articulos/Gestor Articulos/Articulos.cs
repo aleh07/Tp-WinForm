@@ -16,7 +16,7 @@ namespace Gestor_Articulos
         private List<Producto> listaProductos;
         private List<ImagenArticulo> listaImagenes;
         private Producto producto;
-      
+        private ImagenArticulo iamgenInicial;
         public Articulos()
         {
             InitializeComponent();
@@ -195,9 +195,10 @@ namespace Gestor_Articulos
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             Producto seleccionado = new Producto();
+            ImagenArticulo ImagenInicial = new ImagenArticulo();
             seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
-
-            Nuevo_Articulo modificar = new Nuevo_Articulo(seleccionado);
+            ImagenInicial = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
+            Nuevo_Articulo modificar = new Nuevo_Articulo(seleccionado,ImagenInicial);
             modificar.ShowDialog();
             CargarPaginaIncial();
 
@@ -332,7 +333,7 @@ namespace Gestor_Articulos
             return false;
         }
 
-
+       
     }
 }
 

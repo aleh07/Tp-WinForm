@@ -16,16 +16,17 @@ namespace Gestor_Articulos
     public partial class Nuevo_Articulo : Form
     {
         private Producto producto = null;
-      
-        
+        private ImagenArticulo Imgproducto = null;
+
         public Nuevo_Articulo()
         {
             InitializeComponent();
         }
-        public Nuevo_Articulo(Producto producto)
+        public Nuevo_Articulo(Producto producto ,ImagenArticulo ImagenInicial)
         {
             InitializeComponent();
             this.producto = producto;
+            this.Imgproducto = ImagenInicial;
             Text = "Modificar Producto";
         }
 
@@ -52,6 +53,7 @@ namespace Gestor_Articulos
                     numPrecio.Value = Decimal.Parse(producto.Precio.ToString());
                     comboBoxMarca.SelectedValue = producto.marca.Id;
                     comboBoxCategoria.SelectedValue = producto.categoria.Id;
+                    txtImagen.Text = Imgproducto.Imagen;
                     
                 }
             }

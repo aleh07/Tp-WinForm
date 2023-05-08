@@ -66,6 +66,7 @@ namespace Gestor_Articulos
 
             CategoriaNegocio categoria = new CategoriaNegocio();
             dgvCategoria.DataSource = categoria.listar();
+            dgvCategoria.Columns["Id"].Visible = false;
         }
 
         private void btbAgregar_Click(object sender, EventArgs e)

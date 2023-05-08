@@ -42,8 +42,11 @@ namespace Gestor_Articulos
             this.DgvMarcas = new System.Windows.Forms.DataGridView();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.Lbltitulo = new System.Windows.Forms.Label();
+            this.Gbmac = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMarcas)).BeginInit();
+            this.Gbmac.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -54,7 +57,7 @@ namespace Gestor_Articulos
             this.articulosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(313, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -124,17 +127,20 @@ namespace Gestor_Articulos
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
             this.DgvMarcas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvMarcas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DgvMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvMarcas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvMarcas.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.DgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvMarcas.Location = new System.Drawing.Point(12, 104);
+            this.DgvMarcas.Location = new System.Drawing.Point(20, 19);
             this.DgvMarcas.Name = "DgvMarcas";
-            this.DgvMarcas.Size = new System.Drawing.Size(292, 263);
+            this.DgvMarcas.Size = new System.Drawing.Size(248, 90);
             this.DgvMarcas.TabIndex = 1;
+            this.DgvMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMarcas_CellContentClick);
             // 
             // BtnEliminar
             // 
             this.BtnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnEliminar.Location = new System.Drawing.Point(351, 258);
+            this.BtnEliminar.Location = new System.Drawing.Point(186, 187);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
             this.BtnEliminar.TabIndex = 3;
@@ -144,7 +150,7 @@ namespace Gestor_Articulos
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(351, 127);
+            this.btnAgregar.Location = new System.Drawing.Point(56, 187);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 2;
@@ -152,16 +158,36 @@ namespace Gestor_Articulos
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // Lbltitulo
+            // 
+            this.Lbltitulo.AutoSize = true;
+            this.Lbltitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbltitulo.Location = new System.Drawing.Point(120, 47);
+            this.Lbltitulo.Name = "Lbltitulo";
+            this.Lbltitulo.Size = new System.Drawing.Size(59, 16);
+            this.Lbltitulo.TabIndex = 5;
+            this.Lbltitulo.Text = "Marcas";
+            // 
+            // Gbmac
+            // 
+            this.Gbmac.Controls.Add(this.DgvMarcas);
+            this.Gbmac.Location = new System.Drawing.Point(12, 63);
+            this.Gbmac.Name = "Gbmac";
+            this.Gbmac.Size = new System.Drawing.Size(289, 118);
+            this.Gbmac.TabIndex = 6;
+            this.Gbmac.TabStop = false;
+            // 
             // Marcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(313, 245);
+            this.Controls.Add(this.Lbltitulo);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.BtnEliminar);
-            this.Controls.Add(this.DgvMarcas);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.Gbmac);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -172,6 +198,7 @@ namespace Gestor_Articulos
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMarcas)).EndInit();
+            this.Gbmac.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +218,7 @@ namespace Gestor_Articulos
         private System.Windows.Forms.ToolStripMenuItem verTodosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem2;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label Lbltitulo;
+        private System.Windows.Forms.GroupBox Gbmac;
     }
 }
