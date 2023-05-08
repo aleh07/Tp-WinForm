@@ -42,7 +42,7 @@ namespace Gestor_Articulos
             this.txtImagen1.Location = new System.Drawing.Point(173, 193);
             this.txtImagen1.Name = "txtImagen1";
             this.txtImagen1.Size = new System.Drawing.Size(100, 20);
-            this.txtImagen1.TabIndex = 22;
+            this.txtImagen1.TabIndex = 0;
             this.txtImagen1.TextChanged += new System.EventHandler(this.txtImagen1_TextChanged);
             this.txtImagen1.Leave += new System.EventHandler(this.txtImagen1_Leave);
             // 
@@ -60,16 +60,17 @@ namespace Gestor_Articulos
             this.btnCancelar.Location = new System.Drawing.Point(530, 237);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 23);
-            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // BtnCargarArt
             // 
             this.BtnCargarArt.Location = new System.Drawing.Point(530, 174);
             this.BtnCargarArt.Name = "BtnCargarArt";
             this.BtnCargarArt.Size = new System.Drawing.Size(125, 23);
-            this.BtnCargarArt.TabIndex = 19;
+            this.BtnCargarArt.TabIndex = 1;
             this.BtnCargarArt.Text = "Cargar imagen";
             this.BtnCargarArt.UseVisualStyleBackColor = true;
             this.BtnCargarArt.Click += new System.EventHandler(this.BtnCargarArt_Click);

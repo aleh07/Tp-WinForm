@@ -57,7 +57,7 @@ namespace Gestor_Articulos
             this.dgvCategoria.Location = new System.Drawing.Point(12, 59);
             this.dgvCategoria.Name = "dgvCategoria";
             this.dgvCategoria.Size = new System.Drawing.Size(249, 277);
-            this.dgvCategoria.TabIndex = 0;
+            this.dgvCategoria.TabIndex = 1;
             this.dgvCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // BtnEliminar
@@ -65,7 +65,7 @@ namespace Gestor_Articulos
             this.BtnEliminar.Location = new System.Drawing.Point(474, 145);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.BtnEliminar.TabIndex = 8;
+            this.BtnEliminar.TabIndex = 3;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
@@ -79,7 +79,7 @@ namespace Gestor_Articulos
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(670, 24);
-            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // gestionarToolStripMenuItem
@@ -148,7 +148,7 @@ namespace Gestor_Articulos
             this.btbAgregar.Location = new System.Drawing.Point(474, 96);
             this.btbAgregar.Name = "btbAgregar";
             this.btbAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btbAgregar.TabIndex = 10;
+            this.btbAgregar.TabIndex = 2;
             this.btbAgregar.Text = "Agregar";
             this.btbAgregar.UseVisualStyleBackColor = true;
             this.btbAgregar.Click += new System.EventHandler(this.btbAgregar_Click);

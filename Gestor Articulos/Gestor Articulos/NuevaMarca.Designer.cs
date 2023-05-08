@@ -51,7 +51,7 @@ namespace Gestor_Articulos
             this.btnCancelar.Location = new System.Drawing.Point(434, 272);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 10044;
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
@@ -61,7 +61,7 @@ namespace Gestor_Articulos
             this.btnAceptar.Location = new System.Drawing.Point(291, 272);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 10043;
+            this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -72,7 +72,7 @@ namespace Gestor_Articulos
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(144, 20);
-            this.txtNombre.TabIndex = 10045;
+            this.txtNombre.TabIndex = 0;
             // 
             // lblNombre
             // 

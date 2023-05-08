@@ -81,5 +81,11 @@ namespace Gestor_Articulos
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+         
+        }
     }
 }

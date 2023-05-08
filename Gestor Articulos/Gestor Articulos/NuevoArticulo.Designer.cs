@@ -65,7 +65,7 @@ namespace Gestor_Articulos
             this.BtnCargarArt.Location = new System.Drawing.Point(334, 366);
             this.BtnCargarArt.Name = "BtnCargarArt";
             this.BtnCargarArt.Size = new System.Drawing.Size(125, 23);
-            this.BtnCargarArt.TabIndex = 1;
+            this.BtnCargarArt.TabIndex = 8;
             this.BtnCargarArt.Text = "Cargar Articulo";
             this.BtnCargarArt.UseVisualStyleBackColor = true;
             this.BtnCargarArt.Click += new System.EventHandler(this.BtnCargarArt_Click);
@@ -76,7 +76,7 @@ namespace Gestor_Articulos
             this.LblArticulos.Location = new System.Drawing.Point(357, 38);
             this.LblArticulos.Name = "LblArticulos";
             this.LblArticulos.Size = new System.Drawing.Size(77, 13);
-            this.LblArticulos.TabIndex = 2;
+            this.LblArticulos.TabIndex = 0;
             this.LblArticulos.Text = "Nuevo Articulo";
             // 
             // TxtCodigo
@@ -85,7 +85,7 @@ namespace Gestor_Articulos
             this.TxtCodigo.MaxLength = 50;
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.TxtCodigo.TabIndex = 3;
+            this.TxtCodigo.TabIndex = 1;
             // 
             // label1
             // 
@@ -129,7 +129,7 @@ namespace Gestor_Articulos
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabIndex = 2;
             // 
             // txtDescripcion
             // 
@@ -137,7 +137,7 @@ namespace Gestor_Articulos
             this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
-            this.txtDescripcion.TabIndex = 9;
+            this.txtDescripcion.TabIndex = 3;
             // 
             // label5
             // 
@@ -164,14 +164,14 @@ namespace Gestor_Articulos
             this.comboBoxCategoria.Location = new System.Drawing.Point(343, 210);
             this.comboBoxCategoria.Name = "comboBoxCategoria";
             this.comboBoxCategoria.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxCategoria.TabIndex = 14;
+            this.comboBoxCategoria.TabIndex = 5;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(334, 412);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 23);
-            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -191,7 +191,7 @@ namespace Gestor_Articulos
             this.txtImagen.MaxLength = 1000;
             this.txtImagen.Name = "txtImagen";
             this.txtImagen.Size = new System.Drawing.Size(100, 20);
-            this.txtImagen.TabIndex = 17;
+            this.txtImagen.TabIndex = 7;
             this.txtImagen.TextChanged += new System.EventHandler(this.txtImagen_TextChanged);
             this.txtImagen.Leave += new System.EventHandler(this.txtImagen_Leave);
             // 
@@ -215,7 +215,7 @@ namespace Gestor_Articulos
             0});
             this.numPrecio.Name = "numPrecio";
             this.numPrecio.Size = new System.Drawing.Size(100, 20);
-            this.numPrecio.TabIndex = 10013;
+            this.numPrecio.TabIndex = 6;
             this.numPrecio.ThousandsSeparator = true;
             this.numPrecio.Value = new decimal(new int[] {
             1,
@@ -231,7 +231,7 @@ namespace Gestor_Articulos
             this.comboBoxMarca.MaxDropDownItems = 5;
             this.comboBoxMarca.Name = "comboBoxMarca";
             this.comboBoxMarca.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxMarca.TabIndex = 10014;
+            this.comboBoxMarca.TabIndex = 4;
             // 
             // Nuevo_Articulo
             // 

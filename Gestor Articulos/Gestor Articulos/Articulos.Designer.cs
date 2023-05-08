@@ -91,7 +91,7 @@ namespace Gestor_Articulos
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(895, 24);
-            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // nuevoToolStripMenuItem
@@ -196,7 +196,7 @@ namespace Gestor_Articulos
             this.DgvImagenes.ReadOnly = true;
             this.DgvImagenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvImagenes.Size = new System.Drawing.Size(261, 95);
-            this.DgvImagenes.TabIndex = 10;
+            this.DgvImagenes.TabIndex = 11;
             this.DgvImagenes.SelectionChanged += new System.EventHandler(this.DgvImagenes_SelectionChanged);
             this.DgvImagenes.Click += new System.EventHandler(this.DgvImagenes_Click);
             // 
@@ -208,7 +208,7 @@ namespace Gestor_Articulos
             this.btnBuscar.Location = new System.Drawing.Point(508, 100);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(125, 42);
-            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -237,7 +237,7 @@ namespace Gestor_Articulos
             this.txtFiltro.Location = new System.Drawing.Point(401, 112);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(100, 20);
-            this.txtFiltro.TabIndex = 26;
+            this.txtFiltro.TabIndex = 3;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged_1);
             // 
             // lblFiltro
@@ -256,7 +256,7 @@ namespace Gestor_Articulos
             this.cboCriterio.Location = new System.Drawing.Point(241, 112);
             this.cboCriterio.Name = "cboCriterio";
             this.cboCriterio.Size = new System.Drawing.Size(103, 21);
-            this.cboCriterio.TabIndex = 24;
+            this.cboCriterio.TabIndex = 2;
             // 
             // lblCriterio
             // 
@@ -274,7 +274,7 @@ namespace Gestor_Articulos
             this.cboCampo.Location = new System.Drawing.Point(86, 112);
             this.cboCampo.Name = "cboCampo";
             this.cboCampo.Size = new System.Drawing.Size(98, 21);
-            this.cboCampo.TabIndex = 22;
+            this.cboCampo.TabIndex = 1;
             this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
             // 
             // lblcampo
@@ -293,7 +293,7 @@ namespace Gestor_Articulos
             this.BtnModificar.Location = new System.Drawing.Point(639, 331);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(83, 83);
-            this.BtnModificar.TabIndex = 0;
+            this.BtnModificar.TabIndex = 9;
             this.BtnModificar.UseVisualStyleBackColor = true;
             this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
@@ -323,7 +323,7 @@ namespace Gestor_Articulos
             this.BtnEliminar.Location = new System.Drawing.Point(744, 331);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(86, 83);
-            this.BtnEliminar.TabIndex = 7;
+            this.BtnEliminar.TabIndex = 10;
             this.BtnEliminar.UseVisualStyleBackColor = true;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
@@ -333,7 +333,7 @@ namespace Gestor_Articulos
             this.btnAgregar.Location = new System.Drawing.Point(639, 219);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(86, 84);
-            this.btnAgregar.TabIndex = 10;
+            this.btnAgregar.TabIndex = 7;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -352,7 +352,7 @@ namespace Gestor_Articulos
             this.BtnImagenes.Location = new System.Drawing.Point(744, 219);
             this.BtnImagenes.Name = "BtnImagenes";
             this.BtnImagenes.Size = new System.Drawing.Size(86, 84);
-            this.BtnImagenes.TabIndex = 12;
+            this.BtnImagenes.TabIndex = 8;
             this.BtnImagenes.UseVisualStyleBackColor = true;
             this.BtnImagenes.Click += new System.EventHandler(this.BtnImagenes_Click);
             // 
@@ -371,7 +371,7 @@ namespace Gestor_Articulos
             this.btnDetalle.Location = new System.Drawing.Point(663, 149);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(167, 38);
-            this.btnDetalle.TabIndex = 16;
+            this.btnDetalle.TabIndex = 6;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);

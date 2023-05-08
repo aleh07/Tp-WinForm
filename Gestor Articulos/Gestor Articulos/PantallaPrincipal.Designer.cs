@@ -89,7 +89,7 @@ namespace Gestor_Articulos
             this.BtnMarcas.Location = new System.Drawing.Point(503, 162);
             this.BtnMarcas.Name = "BtnMarcas";
             this.BtnMarcas.Size = new System.Drawing.Size(83, 83);
-            this.BtnMarcas.TabIndex = 5;
+            this.BtnMarcas.TabIndex = 2;
             this.BtnMarcas.UseVisualStyleBackColor = false;
             this.BtnMarcas.Click += new System.EventHandler(this.BtnMarcas_Click);
             // 
@@ -102,7 +102,7 @@ namespace Gestor_Articulos
             this.BtnCategorias.Location = new System.Drawing.Point(332, 162);
             this.BtnCategorias.Name = "BtnCategorias";
             this.BtnCategorias.Size = new System.Drawing.Size(83, 83);
-            this.BtnCategorias.TabIndex = 4;
+            this.BtnCategorias.TabIndex = 1;
             this.BtnCategorias.UseVisualStyleBackColor = false;
             this.BtnCategorias.Click += new System.EventHandler(this.BtnCategorias_Click);
             // 
@@ -116,7 +116,7 @@ namespace Gestor_Articulos
             this.BtnArticulos.Location = new System.Drawing.Point(185, 162);
             this.BtnArticulos.Name = "BtnArticulos";
             this.BtnArticulos.Size = new System.Drawing.Size(83, 83);
-            this.BtnArticulos.TabIndex = 3;
+            this.BtnArticulos.TabIndex = 0;
             this.BtnArticulos.Tag = "";
             this.BtnArticulos.UseVisualStyleBackColor = false;
             this.BtnArticulos.Click += new System.EventHandler(this.BtnArticulos_Click_1);
