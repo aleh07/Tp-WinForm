@@ -197,6 +197,10 @@ namespace Negocio
                 datos.setearConsulta("delete from articulos where id = @id");
                 datos.setearParametro("@id", Id);
                 datos.ejectutarAccion();
+                datos.cerrarConexion();
+                datos.setearConsulta("delete from IMAGENES where IdArticulo = @idart");
+                datos.setearParametro("@idart", Id);
+                datos.ejectutarAccion();
             }
             catch (Exception ex)
             {
@@ -208,6 +212,26 @@ namespace Negocio
             }
         }
 
+        public void EliminarFisicoImg(Int32 Id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                
+                datos.setearConsulta("delete from IMAGENES where IdArticulo = @id");
+                datos.setearParametro("@id", Id);
+                datos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         public void Modificar(Producto producto, ImagenArticulo imagenModificar)
         {
             AccesoDatos datos = new AccesoDatos();

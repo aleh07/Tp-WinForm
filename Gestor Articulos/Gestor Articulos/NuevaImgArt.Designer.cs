@@ -36,8 +36,10 @@ namespace Gestor_Articulos
             this.PBoxImgArt1 = new System.Windows.Forms.PictureBox();
             this.LblImg = new System.Windows.Forms.Label();
             this.GBImg = new System.Windows.Forms.GroupBox();
+            this.GBImag = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt1)).BeginInit();
             this.GBImg.SuspendLayout();
+            this.GBImag.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtImagen1
@@ -80,9 +82,9 @@ namespace Gestor_Articulos
             // 
             // PBoxImgArt1
             // 
-            this.PBoxImgArt1.Location = new System.Drawing.Point(17, 57);
+            this.PBoxImgArt1.Location = new System.Drawing.Point(17, 19);
             this.PBoxImgArt1.Name = "PBoxImgArt1";
-            this.PBoxImgArt1.Size = new System.Drawing.Size(255, 59);
+            this.PBoxImgArt1.Size = new System.Drawing.Size(158, 34);
             this.PBoxImgArt1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBoxImgArt1.TabIndex = 23;
             this.PBoxImgArt1.TabStop = false;
@@ -99,7 +101,7 @@ namespace Gestor_Articulos
             // 
             // GBImg
             // 
-            this.GBImg.Controls.Add(this.PBoxImgArt1);
+            this.GBImg.Controls.Add(this.GBImag);
             this.GBImg.Controls.Add(this.lblImagen);
             this.GBImg.Controls.Add(this.txtImagen1);
             this.GBImg.Location = new System.Drawing.Point(19, 55);
@@ -107,6 +109,15 @@ namespace Gestor_Articulos
             this.GBImg.Size = new System.Drawing.Size(286, 129);
             this.GBImg.TabIndex = 10043;
             this.GBImg.TabStop = false;
+            // 
+            // GBImag
+            // 
+            this.GBImag.Controls.Add(this.PBoxImgArt1);
+            this.GBImag.Location = new System.Drawing.Point(42, 53);
+            this.GBImag.Name = "GBImag";
+            this.GBImag.Size = new System.Drawing.Size(191, 70);
+            this.GBImag.TabIndex = 33;
+            this.GBImag.TabStop = false;
             // 
             // NuevaImgArt
             // 
@@ -127,6 +138,7 @@ namespace Gestor_Articulos
             ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt1)).EndInit();
             this.GBImg.ResumeLayout(false);
             this.GBImg.PerformLayout();
+            this.GBImag.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +153,6 @@ namespace Gestor_Articulos
         private System.Windows.Forms.Button BtnCargarArt;
         private System.Windows.Forms.Label LblImg;
         private System.Windows.Forms.GroupBox GBImg;
+        private System.Windows.Forms.GroupBox GBImag;
     }
 }

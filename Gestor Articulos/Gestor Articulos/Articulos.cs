@@ -187,6 +187,30 @@ namespace Gestor_Articulos
             }
 
         }
+
+        private void EliminarImg()
+        {
+
+            try
+            {
+                ProductoNegocio negocio = new ProductoNegocio();
+                DialogResult respuesta = MessageBox.Show("Se Eliminara de manera permanente ,Desea seguir?", "Eliminando...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    ImagenArticulo seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
+                    negocio.EliminarFisicoImg(seleccionado.Id);
+                    CargarPaginaIncial();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
 
@@ -333,7 +357,10 @@ namespace Gestor_Articulos
             return false;
         }
 
-       
+        private void BtnEliminarImg_Click(object sender, EventArgs e)
+        {
+            EliminarImg();
+        }
     }
 }
 

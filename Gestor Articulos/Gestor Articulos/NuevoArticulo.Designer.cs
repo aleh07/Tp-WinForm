@@ -50,6 +50,7 @@ namespace Gestor_Articulos
             this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.GBArt = new System.Windows.Forms.GroupBox();
             this.Lblimg = new System.Windows.Forms.Label();
+            this.GbImg = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             this.GBArt.SuspendLayout();
@@ -201,9 +202,9 @@ namespace Gestor_Articulos
             // 
             // PBoxImgArt
             // 
-            this.PBoxImgArt.Location = new System.Drawing.Point(400, 80);
+            this.PBoxImgArt.Location = new System.Drawing.Point(429, 80);
             this.PBoxImgArt.Name = "PBoxImgArt";
-            this.PBoxImgArt.Size = new System.Drawing.Size(214, 105);
+            this.PBoxImgArt.Size = new System.Drawing.Size(167, 105);
             this.PBoxImgArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBoxImgArt.TabIndex = 18;
             this.PBoxImgArt.TabStop = false;
@@ -241,6 +242,7 @@ namespace Gestor_Articulos
             // 
             this.GBArt.Controls.Add(this.Lblimg);
             this.GBArt.Controls.Add(this.PBoxImgArt);
+            this.GBArt.Controls.Add(this.GbImg);
             this.GBArt.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.GBArt.Location = new System.Drawing.Point(31, 95);
             this.GBArt.Name = "GBArt";
@@ -251,11 +253,19 @@ namespace Gestor_Articulos
             // Lblimg
             // 
             this.Lblimg.AutoSize = true;
-            this.Lblimg.Location = new System.Drawing.Point(478, 55);
+            this.Lblimg.Location = new System.Drawing.Point(488, 45);
             this.Lblimg.Name = "Lblimg";
             this.Lblimg.Size = new System.Drawing.Size(42, 13);
             this.Lblimg.TabIndex = 20;
             this.Lblimg.Text = "Imagen";
+            // 
+            // GbImg
+            // 
+            this.GbImg.Location = new System.Drawing.Point(419, 61);
+            this.GbImg.Name = "GbImg";
+            this.GbImg.Size = new System.Drawing.Size(187, 145);
+            this.GbImg.TabIndex = 33;
+            this.GbImg.TabStop = false;
             // 
             // Nuevo_Articulo
             // 
@@ -322,5 +332,6 @@ namespace Gestor_Articulos
         private System.Windows.Forms.ComboBox comboBoxMarca;
         private System.Windows.Forms.GroupBox GBArt;
         private System.Windows.Forms.Label Lblimg;
+        private System.Windows.Forms.GroupBox GbImg;
     }
 }

@@ -34,8 +34,13 @@ namespace Gestor_Articulos
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verTodasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.marcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verTodasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.LblTitulo = new System.Windows.Forms.Label();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.DgvImagenes = new System.Windows.Forms.DataGridView();
@@ -57,21 +62,25 @@ namespace Gestor_Articulos
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.PBoxImgArt = new System.Windows.Forms.PictureBox();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verTodasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.verTodasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.LblLeyenda = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.GBGestores = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GbImg = new System.Windows.Forms.GroupBox();
+            this.BtnmodificarImg = new System.Windows.Forms.Button();
+            this.BtnEliminarImg = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.GBImgGestores = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvImagenes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).BeginInit();
+            this.GBGestores.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.GbImg.SuspendLayout();
+            this.GBImgGestores.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -108,6 +117,14 @@ namespace Gestor_Articulos
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.nuevoToolStripMenuItem.Text = "Ges&tionar";
             // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Image = global::Gestor_Articulos.Properties.Resources.agregar_registro;
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.eliminarToolStripMenuItem.Text = "Nuevo";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.NuevoToolStripMenuItem_Click);
+            // 
             // categoriasToolStripMenuItem
             // 
             this.categoriasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -117,6 +134,22 @@ namespace Gestor_Articulos
             this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.categoriasToolStripMenuItem.Text = "Cat&egorias";
             // 
+            // verTodasToolStripMenuItem
+            // 
+            this.verTodasToolStripMenuItem.Image = global::Gestor_Articulos.Properties.Resources.lupa_registro;
+            this.verTodasToolStripMenuItem.Name = "verTodasToolStripMenuItem";
+            this.verTodasToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.verTodasToolStripMenuItem.Text = "Ver Todas";
+            this.verTodasToolStripMenuItem.Click += new System.EventHandler(this.verTodasToolStripMenuItem_Click);
+            // 
+            // nuevoToolStripMenuItem1
+            // 
+            this.nuevoToolStripMenuItem1.Image = global::Gestor_Articulos.Properties.Resources.agregar_registro;
+            this.nuevoToolStripMenuItem1.Name = "nuevoToolStripMenuItem1";
+            this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.nuevoToolStripMenuItem1.Text = "Nuevo";
+            this.nuevoToolStripMenuItem1.Click += new System.EventHandler(this.nuevoToolStripMenuItem1_Click);
+            // 
             // marcasToolStripMenuItem
             // 
             this.marcasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -125,6 +158,22 @@ namespace Gestor_Articulos
             this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
             this.marcasToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.marcasToolStripMenuItem.Text = "Marca&s";
+            // 
+            // verTodasToolStripMenuItem1
+            // 
+            this.verTodasToolStripMenuItem1.Image = global::Gestor_Articulos.Properties.Resources.lupa_registro;
+            this.verTodasToolStripMenuItem1.Name = "verTodasToolStripMenuItem1";
+            this.verTodasToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.verTodasToolStripMenuItem1.Text = "Ver Todas";
+            this.verTodasToolStripMenuItem1.Click += new System.EventHandler(this.verTodasToolStripMenuItem1_Click);
+            // 
+            // nuevoToolStripMenuItem2
+            // 
+            this.nuevoToolStripMenuItem2.Image = global::Gestor_Articulos.Properties.Resources.agregar_registro;
+            this.nuevoToolStripMenuItem2.Name = "nuevoToolStripMenuItem2";
+            this.nuevoToolStripMenuItem2.Size = new System.Drawing.Size(123, 22);
+            this.nuevoToolStripMenuItem2.Text = "Nuevo";
+            this.nuevoToolStripMenuItem2.Click += new System.EventHandler(this.nuevoToolStripMenuItem2_Click);
             // 
             // LblTitulo
             // 
@@ -248,7 +297,7 @@ namespace Gestor_Articulos
             // LblModificar
             // 
             this.LblModificar.AutoSize = true;
-            this.LblModificar.Location = new System.Drawing.Point(320, 469);
+            this.LblModificar.Location = new System.Drawing.Point(194, 465);
             this.LblModificar.Name = "LblModificar";
             this.LblModificar.Size = new System.Drawing.Size(50, 13);
             this.LblModificar.TabIndex = 8;
@@ -257,7 +306,7 @@ namespace Gestor_Articulos
             // LblEliminar
             // 
             this.LblEliminar.AutoSize = true;
-            this.LblEliminar.Location = new System.Drawing.Point(563, 468);
+            this.LblEliminar.Location = new System.Drawing.Point(267, 21);
             this.LblEliminar.Name = "LblEliminar";
             this.LblEliminar.Size = new System.Drawing.Size(46, 13);
             this.LblEliminar.TabIndex = 9;
@@ -266,7 +315,7 @@ namespace Gestor_Articulos
             // lblAgregar
             // 
             this.lblAgregar.AutoSize = true;
-            this.lblAgregar.Location = new System.Drawing.Point(192, 468);
+            this.lblAgregar.Location = new System.Drawing.Point(66, 464);
             this.lblAgregar.Name = "lblAgregar";
             this.lblAgregar.Size = new System.Drawing.Size(44, 13);
             this.lblAgregar.TabIndex = 11;
@@ -276,7 +325,7 @@ namespace Gestor_Articulos
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(402, 468);
+            this.label1.Location = new System.Drawing.Point(17, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 13);
             this.label1.TabIndex = 15;
@@ -288,7 +337,7 @@ namespace Gestor_Articulos
             this.btnDetalle.BackColor = System.Drawing.Color.Silver;
             this.btnDetalle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDetalle.Image = global::Gestor_Articulos.Properties.Resources._929250;
-            this.btnDetalle.Location = new System.Drawing.Point(658, 485);
+            this.btnDetalle.Location = new System.Drawing.Point(365, 37);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(86, 83);
             this.btnDetalle.TabIndex = 6;
@@ -298,7 +347,7 @@ namespace Gestor_Articulos
             // BtnImagenes
             // 
             this.BtnImagenes.Image = global::Gestor_Articulos.Properties.Resources.nuevo21;
-            this.BtnImagenes.Location = new System.Drawing.Point(410, 484);
+            this.BtnImagenes.Location = new System.Drawing.Point(30, 33);
             this.BtnImagenes.Name = "BtnImagenes";
             this.BtnImagenes.Size = new System.Drawing.Size(86, 84);
             this.BtnImagenes.TabIndex = 8;
@@ -308,7 +357,7 @@ namespace Gestor_Articulos
             // btnAgregar
             // 
             this.btnAgregar.Image = global::Gestor_Articulos.Properties.Resources.nuevo21;
-            this.btnAgregar.Location = new System.Drawing.Point(174, 484);
+            this.btnAgregar.Location = new System.Drawing.Point(48, 480);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(86, 84);
             this.btnAgregar.TabIndex = 7;
@@ -320,7 +369,7 @@ namespace Gestor_Articulos
             this.BtnEliminar.AutoSize = true;
             this.BtnEliminar.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.BtnEliminar.Image = global::Gestor_Articulos.Properties.Resources.registro__eliminado;
-            this.BtnEliminar.Location = new System.Drawing.Point(537, 485);
+            this.BtnEliminar.Location = new System.Drawing.Point(247, 36);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(86, 83);
             this.BtnEliminar.TabIndex = 10;
@@ -331,7 +380,7 @@ namespace Gestor_Articulos
             // 
             this.BtnModificar.AutoSize = true;
             this.BtnModificar.Image = global::Gestor_Articulos.Properties.Resources.registro_detalle;
-            this.BtnModificar.Location = new System.Drawing.Point(287, 485);
+            this.BtnModificar.Location = new System.Drawing.Point(161, 481);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(83, 83);
             this.BtnModificar.TabIndex = 9;
@@ -340,52 +389,12 @@ namespace Gestor_Articulos
             // 
             // PBoxImgArt
             // 
-            this.PBoxImgArt.Location = new System.Drawing.Point(859, 266);
+            this.PBoxImgArt.Location = new System.Drawing.Point(16, 19);
             this.PBoxImgArt.Name = "PBoxImgArt";
-            this.PBoxImgArt.Size = new System.Drawing.Size(76, 95);
+            this.PBoxImgArt.Size = new System.Drawing.Size(90, 70);
             this.PBoxImgArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBoxImgArt.TabIndex = 11;
             this.PBoxImgArt.TabStop = false;
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.Image = global::Gestor_Articulos.Properties.Resources.agregar_registro;
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.eliminarToolStripMenuItem.Text = "Nuevo";
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.NuevoToolStripMenuItem_Click);
-            // 
-            // verTodasToolStripMenuItem
-            // 
-            this.verTodasToolStripMenuItem.Image = global::Gestor_Articulos.Properties.Resources.lupa_registro;
-            this.verTodasToolStripMenuItem.Name = "verTodasToolStripMenuItem";
-            this.verTodasToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.verTodasToolStripMenuItem.Text = "Ver Todas";
-            this.verTodasToolStripMenuItem.Click += new System.EventHandler(this.verTodasToolStripMenuItem_Click);
-            // 
-            // nuevoToolStripMenuItem1
-            // 
-            this.nuevoToolStripMenuItem1.Image = global::Gestor_Articulos.Properties.Resources.agregar_registro;
-            this.nuevoToolStripMenuItem1.Name = "nuevoToolStripMenuItem1";
-            this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
-            this.nuevoToolStripMenuItem1.Text = "Nuevo";
-            this.nuevoToolStripMenuItem1.Click += new System.EventHandler(this.nuevoToolStripMenuItem1_Click);
-            // 
-            // verTodasToolStripMenuItem1
-            // 
-            this.verTodasToolStripMenuItem1.Image = global::Gestor_Articulos.Properties.Resources.lupa_registro;
-            this.verTodasToolStripMenuItem1.Name = "verTodasToolStripMenuItem1";
-            this.verTodasToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
-            this.verTodasToolStripMenuItem1.Text = "Ver Todas";
-            this.verTodasToolStripMenuItem1.Click += new System.EventHandler(this.verTodasToolStripMenuItem1_Click);
-            // 
-            // nuevoToolStripMenuItem2
-            // 
-            this.nuevoToolStripMenuItem2.Image = global::Gestor_Articulos.Properties.Resources.agregar_registro;
-            this.nuevoToolStripMenuItem2.Name = "nuevoToolStripMenuItem2";
-            this.nuevoToolStripMenuItem2.Size = new System.Drawing.Size(123, 22);
-            this.nuevoToolStripMenuItem2.Text = "Nuevo";
-            this.nuevoToolStripMenuItem2.Click += new System.EventHandler(this.nuevoToolStripMenuItem2_Click);
             // 
             // LblLeyenda
             // 
@@ -408,7 +417,7 @@ namespace Gestor_Articulos
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(683, 468);
+            this.label3.Location = new System.Drawing.Point(383, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 29;
@@ -416,21 +425,88 @@ namespace Gestor_Articulos
             // 
             // GBGestores
             // 
-            this.GBGestores.Location = new System.Drawing.Point(146, 448);
+            this.GBGestores.Controls.Add(this.BtnEliminar);
+            this.GBGestores.Controls.Add(this.LblEliminar);
+            this.GBGestores.Controls.Add(this.btnDetalle);
+            this.GBGestores.Controls.Add(this.label3);
+            this.GBGestores.Location = new System.Drawing.Point(20, 444);
             this.GBGestores.Name = "GBGestores";
-            this.GBGestores.Size = new System.Drawing.Size(633, 131);
+            this.GBGestores.Size = new System.Drawing.Size(498, 131);
             this.GBGestores.TabIndex = 30;
             this.GBGestores.TabStop = false;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvProducto);
+            this.groupBox1.Controls.Add(this.GbImg);
             this.groupBox1.Location = new System.Drawing.Point(12, 138);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(975, 289);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
-            
+            // 
+            // GbImg
+            // 
+            this.GbImg.Controls.Add(this.PBoxImgArt);
+            this.GbImg.Location = new System.Drawing.Point(834, 128);
+            this.GbImg.Name = "GbImg";
+            this.GbImg.Size = new System.Drawing.Size(122, 95);
+            this.GbImg.TabIndex = 32;
+            this.GbImg.TabStop = false;
+            // 
+            // BtnmodificarImg
+            // 
+            this.BtnmodificarImg.AutoSize = true;
+            this.BtnmodificarImg.Image = global::Gestor_Articulos.Properties.Resources.registro_detalle;
+            this.BtnmodificarImg.Location = new System.Drawing.Point(146, 34);
+            this.BtnmodificarImg.Name = "BtnmodificarImg";
+            this.BtnmodificarImg.Size = new System.Drawing.Size(83, 83);
+            this.BtnmodificarImg.TabIndex = 32;
+            this.BtnmodificarImg.UseVisualStyleBackColor = true;
+            // 
+            // BtnEliminarImg
+            // 
+            this.BtnEliminarImg.AutoSize = true;
+            this.BtnEliminarImg.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.BtnEliminarImg.Image = global::Gestor_Articulos.Properties.Resources.registro__eliminado;
+            this.BtnEliminarImg.Location = new System.Drawing.Point(247, 33);
+            this.BtnEliminarImg.Name = "BtnEliminarImg";
+            this.BtnEliminarImg.Size = new System.Drawing.Size(86, 83);
+            this.BtnEliminarImg.TabIndex = 33;
+            this.BtnEliminarImg.UseVisualStyleBackColor = true;
+            this.BtnEliminarImg.Click += new System.EventHandler(this.BtnEliminarImg_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(156, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 13);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Modificar IMG";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(251, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Eliminar IMG";
+            // 
+            // GBImgGestores
+            // 
+            this.GBImgGestores.Controls.Add(this.label6);
+            this.GBImgGestores.Controls.Add(this.label4);
+            this.GBImgGestores.Controls.Add(this.BtnImagenes);
+            this.GBImgGestores.Controls.Add(this.BtnmodificarImg);
+            this.GBImgGestores.Controls.Add(this.BtnEliminarImg);
+            this.GBImgGestores.Controls.Add(this.label1);
+            this.GBImgGestores.Location = new System.Drawing.Point(635, 448);
+            this.GBImgGestores.Name = "GBImgGestores";
+            this.GBImgGestores.Size = new System.Drawing.Size(352, 131);
+            this.GBImgGestores.TabIndex = 36;
+            this.GBImgGestores.TabStop = false;
             // 
             // Articulos
             // 
@@ -439,18 +515,12 @@ namespace Gestor_Articulos
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(999, 591);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.LblEliminar);
             this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.LblModificar);
-            this.Controls.Add(this.BtnImagenes);
-            this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.LblLeyenda);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.cboCriterio);
@@ -459,13 +529,13 @@ namespace Gestor_Articulos
             this.Controls.Add(this.cboCampo);
             this.Controls.Add(this.lblcampo);
             this.Controls.Add(this.LblImagenes);
-            this.Controls.Add(this.PBoxImgArt);
             this.Controls.Add(this.DgvImagenes);
             this.Controls.Add(this.LblTitulo);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GBGestores);
+            this.Controls.Add(this.GBImgGestores);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -478,7 +548,12 @@ namespace Gestor_Articulos
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvImagenes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBoxImgArt)).EndInit();
+            this.GBGestores.ResumeLayout(false);
+            this.GBGestores.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.GbImg.ResumeLayout(false);
+            this.GBImgGestores.ResumeLayout(false);
+            this.GBImgGestores.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,5 +598,11 @@ namespace Gestor_Articulos
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox GBGestores;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GbImg;
+        private System.Windows.Forms.Button BtnmodificarImg;
+        private System.Windows.Forms.Button BtnEliminarImg;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox GBImgGestores;
     }
 }
