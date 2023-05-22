@@ -173,8 +173,8 @@ namespace Negocio
             {
               
                 datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo,ImagenUrl)values(@IdArt,@ImagenUrl)");
-                datos.setearParametro("@ImagenUrl", ImagenNueva.Imagen);
                 datos.setearParametro("@IdArt", ImagenNueva.IdProducto);
+                datos.setearParametro("@ImagenUrl", ImagenNueva.Imagen);
                 datos.ejectutarAccion();
             }
             catch (Exception ex)

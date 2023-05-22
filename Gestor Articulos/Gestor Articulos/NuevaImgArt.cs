@@ -62,6 +62,7 @@ namespace Gestor_Articulos
             
             ProductoNegocio productoNegocio = new ProductoNegocio();
             ImagenArticulo imagenNuevo = new ImagenArticulo();
+
             try
             {
                 if (producto != null)
