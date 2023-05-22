@@ -14,6 +14,7 @@ namespace Dominio
 
         public Int32 IdProducto { get; set; }
         public string Imagen { get; set; }
+        public bool PreView { get; set; }
     }
 }
  

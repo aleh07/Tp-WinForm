@@ -81,8 +81,8 @@ namespace Gestor_Articulos
                 Int32 IdArt = listaProductos[0].Id; ;
                 listaImagenes = negocio.listarImgArt(IdArt);
                 DgvImagenes.DataSource = listaImagenes;
-                DgvImagenes.Columns[0].Visible = false;
-                DgvImagenes.Columns[2].Visible = false;
+                DgvImagenes.Columns["PreView"].Visible = false;
+                DgvImagenes.Columns["Imagen"].Visible = false;
                 PBoxImgArt.Load(listaImagenes[0].Imagen);
 
 
@@ -138,6 +138,23 @@ namespace Gestor_Articulos
 
         private void DgvImagenes_SelectionChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (DgvImagenes.CurrentRow != null)
+                {
+                    
+                    ImagenArticulo seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
+                    
+                }
+
+
+            }
+
+            catch (Exception ex)
+            {
+
+                PBoxImgArt.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
 
 
             PBoxImgArt.Load(listaImagenes[0].Imagen);
@@ -272,9 +289,9 @@ namespace Gestor_Articulos
         private void BtnImagenes_Click(object sender, EventArgs e)
         {
 
-            Producto seleccionado;
-            seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
-
+            ImagenArticulo seleccionado;
+            seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
+            seleccionado.PreView = true;
             NuevaImgArt VentanaNewImg = new NuevaImgArt(seleccionado);
             VentanaNewImg.ShowDialog();
             CargarPaginaIncial();
@@ -360,6 +377,16 @@ namespace Gestor_Articulos
         private void BtnEliminarImg_Click(object sender, EventArgs e)
         {
             EliminarImg();
+        }
+
+        private void BtnmodificarImg_Click(object sender, EventArgs e)
+        {
+
+            ImagenArticulo seleccionado = new ImagenArticulo();
+            seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem; 
+            NuevaImgArt modificar = new NuevaImgArt(seleccionado);
+            modificar.ShowDialog();
+            CargarPaginaIncial();
         }
     }
 }
