@@ -463,7 +463,6 @@ namespace Gestor_Articulos
             this.BtnmodificarImg.Size = new System.Drawing.Size(83, 83);
             this.BtnmodificarImg.TabIndex = 32;
             this.BtnmodificarImg.UseVisualStyleBackColor = true;
-            this.BtnmodificarImg.Click += new System.EventHandler(this.BtnmodificarImg_Click);
             // 
             // BtnEliminarImg
             // 

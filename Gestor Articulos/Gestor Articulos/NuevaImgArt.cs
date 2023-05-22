@@ -13,63 +13,24 @@ namespace Gestor_Articulos
 {
     public partial class NuevaImgArt : Form
     {
-
-        private ImagenArticulo producto = null;
-
-        
+        private Producto producto = null;
         public NuevaImgArt()
         {
             InitializeComponent();
         }
 
-        public NuevaImgArt(ImagenArticulo producto)
+        public NuevaImgArt(Producto producto)
         {
             InitializeComponent();
             this.producto = producto;
-
-            
+            Text = "Modificar Imagen";
         }
 
-
-
+        
 
         private void NuevaImgArt_Load(object sender, EventArgs e)
         {
-            try
-            {
-               
-                if (producto.PreView!= true)
-                {
-                    txtImagen1.Text = producto.Imagen;
-                }
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-
-        }
-
-        public bool ValidarCampos()
-        {
-            if (txtImagen1.Text == "")
-            {
-                MessageBox.Show("Hay campos vacios");
-
-                return false;
-
-
-            }
-            else
-
-            {
-
-                return true;
-            }
-
+           
         }
 
         private void cargarImagen(string imagen)
@@ -98,53 +59,34 @@ namespace Gestor_Articulos
 
         private void BtnCargarArt_Click(object sender, EventArgs e)
         {
-
-
+            
             ProductoNegocio productoNegocio = new ProductoNegocio();
             ImagenArticulo imagenNuevo = new ImagenArticulo();
 
             try
             {
-                if (producto.Id != 0 && producto.PreView != true )
-                {
-                    if (ValidarCampos() == true)
-                    {
-                        imagenNuevo.IdProducto = producto.Id;
-                        imagenNuevo.Imagen = txtImagen1.Text;
-                        imagenNuevo.Id = producto.Id;
-                        productoNegocio.ModificarImg(imagenNuevo);
-                        MessageBox.Show("Modificado exitosamente");
-                        Close();
-                    }
+                if (producto != null)
+                { 
+                    imagenNuevo.IdProducto = producto.Id;           
+                    imagenNuevo.Imagen = txtImagen1.Text;
+                productoNegocio.agregarImg(imagenNuevo);
                 }
-                else
-                {
-                    if (ValidarCampos() == true)
-                    {
-                        imagenNuevo.IdProducto = producto.Id;
-                        imagenNuevo.Imagen = txtImagen1.Text;
-                        productoNegocio.agregarImg(imagenNuevo);
-                        MessageBox.Show("Agregado exitosamente");
-                        Close();
-
-                    }
-
-                }
+                            
+                    MessageBox.Show("Agregado exitosamente");
+ 
+                this.Refresh();
+                Close();
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
 
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
-
+         
         }
     }
 }
-    
-

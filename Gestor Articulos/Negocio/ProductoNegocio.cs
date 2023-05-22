@@ -35,7 +35,7 @@ namespace Negocio
                     {
                         decimal DosDecimal;
                         DosDecimal = (decimal)datos.Lector["precio"];
-                        aux.Precio = float.Parse(DosDecimal.ToString("0.00"));
+                        aux.Precio = Decimal.Parse(DosDecimal.ToString("0.00"));
                     }
                     aux.marca = new Marca();
                     aux.marca.Id = (Int32)datos.Lector["IdMarca"];
@@ -72,18 +72,16 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("select  i.id,a.Codigo, i.IdArticulo , i.ImagenUrl from imagenes as i inner join ARTICULOS as a on a.id = i.IdArticulo  where a.id=" + id);
+                datos.setearConsulta("select  a.Codigo, i.IdArticulo , i.ImagenUrl from imagenes as i inner join ARTICULOS as a on a.id = i.IdArticulo  where a.id=" + id);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     ImagenArticulo aux = new ImagenArticulo();
                     aux.producto = new Producto();
-                    aux.Id = (Int32)datos.Lector["id"];
                     aux.producto.Id = (Int32)datos.Lector["IdArticulo"];
                     aux.producto.Nombre= (string)datos.Lector["Codigo"];
                     aux.Imagen = (string)datos.Lector["ImagenUrl"];
-                    aux.PreView = false;
 
 
                     lista.Add(aux);
@@ -173,7 +171,7 @@ namespace Negocio
 
             try
             {
-
+              
                 datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo,ImagenUrl)values(@IdArt,@ImagenUrl)");
                 datos.setearParametro("@IdArt", ImagenNueva.IdProducto);
                 datos.setearParametro("@ImagenUrl", ImagenNueva.Imagen);
@@ -221,7 +219,7 @@ namespace Negocio
             try
             {
                 
-                datos.setearConsulta("delete from IMAGENES where id = @id");
+                datos.setearConsulta("delete from IMAGENES where IdArticulo = @id");
                 datos.setearParametro("@id", Id);
                 datos.ejectutarAccion();
             }
@@ -265,33 +263,6 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         
-        }
-
-        public void ModificarImg( ImagenArticulo imagenModificar)
-         {
-            AccesoDatos datos = new AccesoDatos();
-
-            try
-            {
-              
-                datos.setearConsulta("update IMAGENES set ImagenUrl =@Url where Id =@Id and IdArticulo =@IdArt ");
-                datos.setearParametro("@Url", imagenModificar.Imagen);
-                datos.setearParametro("@Id", imagenModificar.Id);
-                datos.setearParametro("@IdArt", imagenModificar.IdProducto);
-
-                datos.ejectutarAccion();
-            }
-
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
-
         }
 
         public List<Producto> filtrar(string campo, string criterio, string filtro)
@@ -380,7 +351,7 @@ namespace Negocio
                     {
                         decimal DosDecimal;
                         DosDecimal = (decimal)datos.Lector["precio"];
-                        aux.Precio = float.Parse(DosDecimal.ToString("0.00"));
+                        aux.Precio = Decimal.Parse(DosDecimal.ToString("0.00"));
                     }
                     aux.marca = new Marca();
                     aux.marca.Id = (Int32)datos.Lector["IdMarca"];

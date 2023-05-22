@@ -50,7 +50,7 @@ namespace Gestor_Articulos
                     TxtCodigo.Text = producto.CodArtículo.ToString();
                     txtNombre.Text = producto.Nombre;
                     txtDescripcion.Text = producto.Descripción;
-                    numPrecio.Value = Convert.ToDecimal(producto.Precio);
+                    numPrecio.Value = Decimal.Parse(producto.Precio.ToString());
                     comboBoxMarca.SelectedValue = producto.marca.Id;
                     comboBoxCategoria.SelectedValue = producto.categoria.Id;
                     txtImagen.Text = Imgproducto.Imagen;
@@ -98,7 +98,7 @@ namespace Gestor_Articulos
                 producto.Descripción = txtDescripcion.Text;
                 producto.marca = (Marca)comboBoxMarca.SelectedItem;
                 producto.categoria = (Categoria)comboBoxCategoria.SelectedItem;
-                producto.Precio = (float)numPrecio.Value ;
+                producto.Precio = numPrecio.Value ;
                 imagenNuevo.Imagen = txtImagen.Text;
                 Int32 IdArt = productoNegocio.UltimoId();
                 imagenNuevo.IdProducto = IdArt+1 ;
@@ -107,8 +107,7 @@ namespace Gestor_Articulos
                 {
                     productoNegocio.Modificar(producto,imagenNuevo);
                     MessageBox.Show("Modificado exitosamente");
-                    this.Close();
-
+                    
                 }
                 else
                 {
@@ -116,14 +115,13 @@ namespace Gestor_Articulos
                     {
                      productoNegocio.agregar(producto,imagenNuevo);
                     MessageBox.Show("Agregado exitosamente");
-                        this.Close();
-
+                    
                     }
                    
                 }
                 
                
-                
+                this.Close();
             }
             catch (Exception ex)
             {
