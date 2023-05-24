@@ -21,6 +21,7 @@ namespace Gestor_Articulos
         public Nuevo_Articulo()
         {
             InitializeComponent();
+            Text = "Nuevo Producto";
         }
         public Nuevo_Articulo(Producto producto ,ImagenArticulo ImagenInicial)
         {
@@ -99,13 +100,20 @@ namespace Gestor_Articulos
                 producto.marca = (Marca)comboBoxMarca.SelectedItem;
                 producto.categoria = (Categoria)comboBoxCategoria.SelectedItem;
                 producto.Precio = (float)numPrecio.Value ;
+               
                 imagenNuevo.Imagen = txtImagen.Text;
+                
                 Int32 IdArt = productoNegocio.UltimoId();
                 imagenNuevo.IdProducto = IdArt+1 ;
 
+
                 if (producto.Id != 0)
                 {
-                    productoNegocio.Modificar(producto,imagenNuevo);
+                  
+                    imagenNuevo.IdProducto = producto.Id;
+                    productoNegocio.Modificar(producto);
+                    productoNegocio.ModificarImg(imagenNuevo);
+
                     MessageBox.Show("Modificado exitosamente");
                     this.Close();
 

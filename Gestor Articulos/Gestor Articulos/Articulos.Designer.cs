@@ -213,7 +213,7 @@ namespace Gestor_Articulos
             this.DgvImagenes.Size = new System.Drawing.Size(175, 95);
             this.DgvImagenes.TabIndex = 11;
             this.DgvImagenes.SelectionChanged += new System.EventHandler(this.DgvImagenes_SelectionChanged);
-            this.DgvImagenes.Click += new System.EventHandler(this.DgvImagenes_Click);
+           
             // 
             // btnBuscar
             // 

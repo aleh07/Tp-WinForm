@@ -294,9 +294,7 @@ namespace Gestor_Articulos
             this.Controls.Add(this.GBArt);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Nuevo_Articulo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Articulo";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Nuevo_Articulo_Load);

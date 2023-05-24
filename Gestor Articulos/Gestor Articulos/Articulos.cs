@@ -16,7 +16,7 @@ namespace Gestor_Articulos
         private List<Producto> listaProductos;
         private List<ImagenArticulo> listaImagenes;
         private Producto producto;
-        private ImagenArticulo iamgenInicial;
+       // private ImagenArticulo imagenInicial;
         public Articulos()
         {
             InitializeComponent();
@@ -78,12 +78,8 @@ namespace Gestor_Articulos
                 dgvProducto.DataSource = listaProductos;
                 dgvProducto.Columns["Id"].Visible = false;
 
-                Int32 IdArt = listaProductos[0].Id; ;
-                listaImagenes = negocio.listarImgArt(IdArt);
-                DgvImagenes.DataSource = listaImagenes;
-                DgvImagenes.Columns["PreView"].Visible = false;
-                DgvImagenes.Columns["Imagen"].Visible = false;
-                PBoxImgArt.Load(listaImagenes[0].Imagen);
+                Int32 IdArt = listaProductos[0].Id   ;
+                CargarDgvImagenes(IdArt);
 
 
 
@@ -95,7 +91,34 @@ namespace Gestor_Articulos
 
         }
 
-        
+
+        private void CargarDgvImagenes(Int32 id)
+        {
+
+            ProductoNegocio negocio = new ProductoNegocio();
+            try
+            {
+     
+                    listaImagenes = negocio.listarImgArt(id);
+              
+               
+                    DgvImagenes.DataSource = listaImagenes;
+                    DgvImagenes.Columns[1].Visible = false;
+                    DgvImagenes.Columns[2].Visible = false;
+                    DgvImagenes.Columns[3].Visible = false;
+                cargarImagen(listaImagenes[0].Imagen);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+
+
+
         private void dgvProducto_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -104,10 +127,8 @@ namespace Gestor_Articulos
                 {
                     ProductoNegocio negocio = new ProductoNegocio();
                     Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
-                    listaImagenes = negocio.listarImgArt(seleccionado.Id);
-                    DgvImagenes.DataSource = listaImagenes;
-                    DgvImagenes.Columns[0].Visible = false;
-                    DgvImagenes.Columns[2].Visible = false;
+                    CargarDgvImagenes(seleccionado.Id);
+                   
                     
                 }
                
@@ -144,7 +165,7 @@ namespace Gestor_Articulos
                 {
                     
                     ImagenArticulo seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
-                    
+                    cargarImagen(seleccionado.Imagen);
                 }
 
 
@@ -157,7 +178,7 @@ namespace Gestor_Articulos
             }
 
 
-            PBoxImgArt.Load(listaImagenes[0].Imagen);
+           
 
         }
 
@@ -172,15 +193,13 @@ namespace Gestor_Articulos
             Nuevo_Articulo VentanaNewArt = new Nuevo_Articulo();
             VentanaNewArt.ShowDialog();
             CargarPaginaIncial();
+            Producto seleccionadoArt = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+            CargarDgvImagenes(seleccionadoArt.Id);
+
 
         }
 
-        private void DgvImagenes_Click(object sender, EventArgs e)
-        {
-            ImagenArticulo seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.Imagen);
-        }
-
+        
         private  void Eliminar() 
         {
 
@@ -192,6 +211,7 @@ namespace Gestor_Articulos
                 {
                     Producto seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
                     negocio.EliminarFisico(seleccionado.Id);
+
                     CargarPaginaIncial();
 
                 }
@@ -205,7 +225,7 @@ namespace Gestor_Articulos
 
         }
 
-        private void EliminarImg()
+        private void EliminarImg() 
         {
 
             try
@@ -216,7 +236,8 @@ namespace Gestor_Articulos
                 {
                     ImagenArticulo seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
                     negocio.EliminarFisicoImg(seleccionado.Id);
-                    CargarPaginaIncial();
+                    Producto seleccionadoArt = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+                    CargarDgvImagenes(seleccionadoArt.Id);
 
                 }
 
@@ -238,6 +259,7 @@ namespace Gestor_Articulos
             Producto seleccionado = new Producto();
             ImagenArticulo ImagenInicial = new ImagenArticulo();
             seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+            //ojo que tal vez no este seleccionado la ing
             ImagenInicial = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
             Nuevo_Articulo modificar = new Nuevo_Articulo(seleccionado,ImagenInicial);
             modificar.ShowDialog();
@@ -283,18 +305,15 @@ namespace Gestor_Articulos
         }
 
        
-
-        
-
         private void BtnImagenes_Click(object sender, EventArgs e)
         {
 
-            ImagenArticulo seleccionado;
-            seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
-            seleccionado.PreView = true;
-            NuevaImgArt VentanaNewImg = new NuevaImgArt(seleccionado);
+            Producto Seleccionado = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+            
+            NuevaImgArt VentanaNewImg = new NuevaImgArt(Seleccionado.Id);
             VentanaNewImg.ShowDialog();
-            CargarPaginaIncial();
+            Producto seleccionadoArt = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+            CargarDgvImagenes(Seleccionado.Id);
 
         }
 
@@ -381,12 +400,12 @@ namespace Gestor_Articulos
 
         private void BtnmodificarImg_Click(object sender, EventArgs e)
         {
-
-            ImagenArticulo seleccionado = new ImagenArticulo();
-            seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem; 
+            Producto seleccionadoArt = (Producto)dgvProducto.CurrentRow.DataBoundItem;
+            ImagenArticulo seleccionado = (ImagenArticulo)DgvImagenes.CurrentRow.DataBoundItem;
+            seleccionado.IdProducto = seleccionadoArt.Id;
             NuevaImgArt modificar = new NuevaImgArt(seleccionado);
             modificar.ShowDialog();
-            CargarPaginaIncial();
+            CargarDgvImagenes(seleccionadoArt.Id);
         }
     }
 }

@@ -15,19 +15,22 @@ namespace Gestor_Articulos
     {
 
         private ImagenArticulo producto = null;
+        private Int32 idart = 0;
 
-        
-        public NuevaImgArt()
+        public NuevaImgArt(Int32  IdArt)
         {
             InitializeComponent();
+            this.idart = IdArt;
+            Text = "Nueva Imagen";
         }
 
         public NuevaImgArt(ImagenArticulo producto)
         {
             InitializeComponent();
             this.producto = producto;
+            Text = "Modificacion de Imagen";
 
-            
+
         }
 
 
@@ -38,7 +41,7 @@ namespace Gestor_Articulos
             try
             {
                
-                if (producto.PreView!= true)
+                if (producto!= null)
                 {
                     txtImagen1.Text = producto.Imagen;
                 }
@@ -104,11 +107,11 @@ namespace Gestor_Articulos
             ImagenArticulo imagenNuevo = new ImagenArticulo();
             try
             {
-                if (producto.Id != 0 && producto.PreView != true )
+                if (producto != null )
                 {
                     if (ValidarCampos() == true)
                     {
-                        imagenNuevo.IdProducto = producto.Id;
+                        imagenNuevo.IdProducto = producto.IdProducto;
                         imagenNuevo.Imagen = txtImagen1.Text;
                         imagenNuevo.Id = producto.Id;
                         productoNegocio.ModificarImg(imagenNuevo);
@@ -120,7 +123,7 @@ namespace Gestor_Articulos
                 {
                     if (ValidarCampos() == true)
                     {
-                        imagenNuevo.IdProducto = producto.Id;
+                        imagenNuevo.IdProducto = idart;
                         imagenNuevo.Imagen = txtImagen1.Text;
                         productoNegocio.agregarImg(imagenNuevo);
                         MessageBox.Show("Agregado exitosamente");

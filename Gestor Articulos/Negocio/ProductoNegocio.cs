@@ -72,19 +72,18 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("select  i.id,a.Codigo, i.IdArticulo , i.ImagenUrl from imagenes as i inner join ARTICULOS as a on a.id = i.IdArticulo  where a.id=" + id);
+                datos.setearConsulta("select  i.id as IMG ,a.Codigo, i.IdArticulo , i.ImagenUrl from imagenes as i inner join ARTICULOS as a on a.id = i.IdArticulo  where a.id=" + id);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     ImagenArticulo aux = new ImagenArticulo();
                     aux.producto = new Producto();
-                    aux.Id = (Int32)datos.Lector["id"];
+                    aux.Id  = (Int32)datos.Lector["IMG"];
                     aux.producto.Id = (Int32)datos.Lector["IdArticulo"];
                     aux.producto.Nombre= (string)datos.Lector["Codigo"];
                     aux.Imagen = (string)datos.Lector["ImagenUrl"];
-                    aux.PreView = false;
-
+                    
 
                     lista.Add(aux);
                 }
@@ -234,7 +233,7 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
-        public void Modificar(Producto producto, ImagenArticulo imagenModificar)
+        public void Modificar(Producto producto)
         {
             AccesoDatos datos = new AccesoDatos();
 
@@ -248,9 +247,7 @@ namespace Negocio
                 datos.setearParametro("@idCategoria", producto.categoria.Id);
                 datos.setearParametro("@precio", producto.Precio);
                 datos.setearParametro("@id", producto.Id);
-                datos.setearConsulta("update IMAGENES set ImagenUrl =@IdArt where IdArticulo =@Id");
-                datos.setearParametro("@IdArt", imagenModificar.Imagen);
-                datos.setearParametro("@IdArticulo", producto.CodArtículo);
+                
 
                 datos.ejectutarAccion();
             }
